@@ -1,241 +1,204 @@
-:root {
-  --bg: #ffffff;
-  --text: #0b0b0c;
-  --muted: rgba(0, 0, 0, 0.65);
-  --border: rgba(0, 0, 0, 0.12);
-  --card: rgba(0, 0, 0, 0.02);
-  --radius: 16px;
-}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YOUR NAME — Data Science & Business Analytics</title>
+    <meta
+      name="description"
+      content="Portfolio of YOUR NAME — Data Scientist / Business Analyst. Projects in Python, SQL, dashboards, experimentation, and machine learning."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-* { box-sizing: border-box; }
+  <body>
+    <header class="wrap header">
+      <nav class="nav">
+        <a class="brand" href="#top">YOUR NAME</a>
+        <div class="navlinks">
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
 
-html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-}
+      <section id="top" class="hero">
+        <p class="kicker">Data Scientist / Business Analyst</p>
+        <h1>I turn messy data into decisions.</h1>
+        <p class="sub">
+          I build dashboards, run analyses and experiments, and develop models using
+          <strong>Python</strong> and <strong>SQL</strong>.
+        </p>
 
-a { color: inherit; text-decoration: none; }
-a:hover { text-decoration: underline; }
+        <div class="cta">
+          <a class="btn primary" href="resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn ghost" href="https://github.com/YOUR_GITHUB" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
 
-.wrap {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 24px 20px;
-}
+        <div class="meta">
+          <span>Based in: YOUR CITY (optional)</span>
+          <span class="dot">•</span>
+          <span>Open to: DS / BA / Analytics roles</span>
+        </div>
+      </section>
+    </header>
 
-.header { padding-top: 28px; }
+    <main class="wrap">
+      <!-- PROJECTS -->
+      <section id="projects" class="section">
+        <div class="sectionhead">
+          <h2>Featured Projects</h2>
+          <p>Each one includes a quick write-up + links to code/demos.</p>
+        </div>
 
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 10px 0 18px;
-  border-bottom: 1px solid var(--border);
-}
+        <div class="grid">
+          <article class="card">
+            <h3>Inventory Analytics Dashboard</h3>
+            <p>
+              Built a dashboard to track stockouts, reorder triggers, and SKU performance with
+              role-based access.
+            </p>
+            <div class="tags">
+              <span>SQL</span><span>Dashboard</span><span>Web</span>
+            </div>
+            <div class="links">
+              <a href="PROJECT1_CASE_STUDY_LINK" target="_blank" rel="noreferrer">Case Study</a>
+              <a href="PROJECT1_GITHUB_LINK" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="PROJECT1_DEMO_LINK" target="_blank" rel="noreferrer">Live</a>
+            </div>
+          </article>
 
-.brand {
-  font-weight: 700;
-  letter-spacing: -0.2px;
-}
+          <article class="card">
+            <h3>Scaling Simulation Pipelines with MPI</h3>
+            <p>
+              Optimized compute + reduced I/O overhead for large-scale simulations. Includes runtime
+              benchmarks and profiling notes.
+            </p>
+            <div class="tags">
+              <span>Python</span><span>HPC</span><span>Performance</span>
+            </div>
+            <div class="links">
+              <a href="PROJECT2_CASE_STUDY_LINK" target="_blank" rel="noreferrer">Case Study</a>
+              <a href="PROJECT2_GITHUB_LINK" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
 
-.navlinks {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
+          <article class="card">
+            <h3>Emotion Classification (CNN)</h3>
+            <p>
+              Trained and evaluated a CNN model; includes confusion matrix, error analysis, and model
+              improvements.
+            </p>
+            <div class="tags">
+              <span>Machine Learning</span><span>Computer Vision</span><span>Evaluation</span>
+            </div>
+            <div class="links">
+              <a href="PROJECT3_CASE_STUDY_LINK" target="_blank" rel="noreferrer">Case Study</a>
+              <a href="PROJECT3_GITHUB_LINK" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
 
-.hero {
-  padding: 36px 0 10px;
-}
+          <article class="card">
+            <h3>Signal Component Separation (Deep Learning)</h3>
+            <p>
+              Built a multi-frequency separation pipeline; includes qualitative results and
+              reconstruction metrics.
+            </p>
+            <div class="tags">
+              <span>Deep Learning</span><span>Modeling</span><span>Research</span>
+            </div>
+            <div class="links">
+              <a href="PROJECT4_CASE_STUDY_LINK" target="_blank" rel="noreferrer">Case Study</a>
+              <a href="PROJECT4_GITHUB_LINK" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+        </div>
 
-.kicker {
-  margin: 0 0 8px;
-  color: var(--muted);
-  font-weight: 600;
-}
+        <p class="note">
+          Tip: If you don’t have case-study pages yet, set “Case Study” to the GitHub README for now.
+        </p>
+      </section>
 
-.hero h1 {
-  font-size: 44px;
-  line-height: 1.05;
-  margin: 0 0 12px;
-  letter-spacing: -1px;
-}
+      <!-- ABOUT -->
+      <section id="about" class="section">
+        <div class="sectionhead">
+          <h2>About</h2>
+        </div>
+        <div class="twoCol">
+          <div>
+            <p>
+              I’m a <strong>Computer Science + Applied Statistics</strong> student focused on data-driven
+              decision-making. I enjoy working with messy real-world datasets and building clean,
+              repeatable workflows.
+            </p>
+            <p>
+              I’m particularly interested in <strong>experimentation</strong>, <strong>analytics dashboards</strong>,
+              and <strong>ML evaluation</strong>—and communicating results clearly to stakeholders.
+            </p>
+          </div>
+          <div class="callout">
+            <h3>What I’m looking for</h3>
+            <ul>
+              <li>Data Science / Business Analyst / Data Analyst roles</li>
+              <li>Work that blends analysis + practical implementation</li>
+              <li>Teams that value clear thinking and measurable impact</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-.sub {
-  margin: 0 0 18px;
-  max-width: 62ch;
-  color: var(--muted);
-  font-size: 18px;
-  line-height: 1.5;
-}
+      <!-- SKILLS -->
+      <section id="skills" class="section">
+        <div class="sectionhead">
+          <h2>Skills</h2>
+          <p>Tools I’ve used in projects.</p>
+        </div>
+        <div class="skillgrid">
+          <div class="skillbox">
+            <h3>Analytics</h3>
+            <p>SQL, Python, R (optional), statistics, A/B testing, hypothesis testing</p>
+          </div>
+          <div class="skillbox">
+            <h3>Data</h3>
+            <p>Data cleaning, feature engineering, pipelines, APIs, ETL basics</p>
+          </div>
+          <div class="skillbox">
+            <h3>Visualization</h3>
+            <p>Tableau/Power BI, matplotlib/ggplot, dashboards, storytelling</p>
+          </div>
+          <div class="skillbox">
+            <h3>Engineering</h3>
+            <p>Git/GitHub, performance profiling, Linux basics, documentation</p>
+          </div>
+        </div>
+      </section>
 
-.cta {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 14px;
-}
+      <!-- CONTACT -->
+      <section id="contact" class="section">
+        <div class="sectionhead">
+          <h2>Contact</h2>
+          <p>Best way to reach me is email or LinkedIn.</p>
+        </div>
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 14px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: transparent;
-  font-weight: 600;
-}
+        <div class="contactRow">
+          <a class="btn primary" href="hr394@cornell.edu">Email me</a>
+          <a class="btn" href="www.linkedin.com/in/hansini-rajesh-827075214" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/hansinirajesh92" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </section>
+    </main>
 
-.btn.primary {
-  background: #000;
-  color: #fff;
-  border-color: #000;
-}
+    <footer class="wrap footer">
+      <span>© <span id="year"></span> YOUR NAME</span>
+      <span class="dot">•</span>
+      <span>Built with HTML/CSS + GitHub Pages</span>
+    </footer>
 
-.btn.ghost {
-  background: rgba(0, 0, 0, 0.03);
-}
-
-.meta {
-  color: var(--muted);
-  font-size: 14px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.dot { opacity: 0.6; }
-
-.section {
-  padding: 46px 0;
-  border-top: 1px solid var(--border);
-}
-
-.sectionhead h2 {
-  margin: 0 0 6px;
-  font-size: 24px;
-  letter-spacing: -0.3px;
-}
-
-.sectionhead p {
-  margin: 0 0 18px;
-  color: var(--muted);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
-}
-
-.card {
-  border: 1px solid var(--border);
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 16px;
-}
-
-.card h3 {
-  margin: 0 0 8px;
-  letter-spacing: -0.2px;
-}
-
-.card p {
-  margin: 0 0 12px;
-  color: var(--muted);
-  line-height: 1.45;
-}
-
-.tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.tags span {
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: #fff;
-}
-
-.links {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 14px;
-  font-weight: 600;
-}
-
-.links a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.note {
-  margin: 14px 0 0;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.twoCol {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 18px;
-}
-
-.callout {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px;
-  background: rgba(0, 0, 0, 0.02);
-}
-
-.callout h3 { margin: 0 0 10px; }
-.callout ul { margin: 0; padding-left: 18px; color: var(--muted); }
-.callout li { margin: 8px 0; }
-
-.skillgrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-}
-
-.skillbox {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px;
-  background: #fff;
-}
-
-.skillbox h3 { margin: 0 0 8px; }
-.skillbox p { margin: 0; color: var(--muted); line-height: 1.45; }
-
-.contactRow {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.footer {
-  border-top: 1px solid var(--border);
-  padding-top: 18px;
-  padding-bottom: 30px;
-  color: var(--muted);
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-@media (max-width: 720px) {
-  .hero h1 { font-size: 36px; }
-  .twoCol { grid-template-columns: 1fr; }
-}
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
