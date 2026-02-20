@@ -1,10 +1,14 @@
 :root {
-  --bg: #ffffff;
-  --text: #0b0b0c;
-  --muted: rgba(0, 0, 0, 0.65);
-  --border: rgba(0, 0, 0, 0.12);
-  --card: rgba(0, 0, 0, 0.02);
+  --bg: #f3f0e7;          /* cream */
+  --text: #2b2421;        /* deep warm near-black */
+  --muted: rgba(43, 36, 33, 0.70);
+  --border: rgba(140, 117, 106, 0.35); /* taupe-ish */
+  --card: rgba(219, 197, 165, 0.25);   /* sand tint */
   --radius: 16px;
+
+  --accent: #bd806d;      /* terracotta */
+  --accent2: #cc9a86;     /* dusty rose */
+  --chip: #dbc5a5;        /* sand */
 }
 
 * { box-sizing: border-box; }
@@ -63,7 +67,19 @@ a:hover { text-decoration: underline; }
   line-height: 1.05;
   margin: 0 0 12px;
   letter-spacing: -1px;
+  position: relative;
 }
+
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 86px;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--accent2);
+  margin-top: 14px;
+}
+
 
 .sub {
   margin: 0 0 18px;
@@ -92,13 +108,17 @@ a:hover { text-decoration: underline; }
 }
 
 .btn.primary {
-  background: #000;
+  background: var(--accent);
   color: #fff;
-  border-color: #000;
+  border-color: var(--accent);
+}
+
+.btn.primary:hover {
+  filter: brightness(0.95);
 }
 
 .btn.ghost {
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(219, 197, 165, 0.35);
 }
 
 .meta {
@@ -136,7 +156,7 @@ a:hover { text-decoration: underline; }
 
 .card {
   border: 1px solid var(--border);
-  background: var(--card);
+  background: rgba(219, 197, 165, 0.18);
   border-radius: var(--radius);
   padding: 16px;
 }
@@ -163,8 +183,10 @@ a:hover { text-decoration: underline; }
   padding: 6px 10px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: #fff;
+  background: rgba(243, 240, 231, 0.75);
+  color: rgba(43, 36, 33, 0.9);
 }
+
 
 .links {
   display: flex;
@@ -172,6 +194,12 @@ a:hover { text-decoration: underline; }
   flex-wrap: wrap;
   margin-top: 14px;
   font-weight: 600;
+}
+
+.links a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .links a {
