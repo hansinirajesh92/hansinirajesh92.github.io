@@ -283,3 +283,32 @@ a:hover { text-decoration: underline; }
   .hero h1 { font-size: 36px; }
   .twoCol { grid-template-columns: 1fr; }
 }
+
+/* ===== About section: keep text readable + card aligned ===== */
+#about .twoCol {
+  display: grid;
+  grid-template-columns: minmax(320px, 62ch) 360px; /* readable text + fixed card */
+  gap: 28px;
+  align-items: start;
+}
+
+#about .twoCol > div:first-child {
+  max-width: 62ch; /* prevents long stretched lines */
+}
+
+#about .callout {
+  width: 100%;
+  max-width: 360px;
+  justify-self: end;
+}
+
+@media (max-width: 860px) {
+  #about .twoCol {
+    grid-template-columns: 1fr;
+  }
+  #about .callout {
+    max-width: 100%;
+    justify-self: start;
+  }
+}
+
