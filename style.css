@@ -339,3 +339,4 @@ a:hover { text-decoration: underline; }
   }
 }
 
+body { outline: 8px solid hotpink !important; }
