@@ -312,3 +312,30 @@ a:hover { text-decoration: underline; }
   }
 }
 
+/* ===== About section: centered + balanced ===== */
+#about .twoCol{
+  display: grid;
+  grid-template-columns: 1fr 360px;   /* flexible text + fixed card */
+  gap: 28px;
+  align-items: start;
+}
+
+#about .twoCol > div:first-child{
+  max-width: 68ch;                   /* readable but not tiny */
+}
+
+#about .callout{
+  width: 100%;
+  max-width: 360px;
+  justify-self: start;               /* stops the "floating in space" look */
+}
+
+@media (max-width: 860px){
+  #about .twoCol{
+    grid-template-columns: 1fr;
+  }
+  #about .callout{
+    max-width: 100%;
+  }
+}
+
