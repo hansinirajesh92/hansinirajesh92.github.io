@@ -220,12 +220,16 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 
 /* About layout (balanced + readable) */
+/* About layout (centered + not stretched) */
 .twoCol {
   display: grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: minmax(320px, 70ch) 360px;
   gap: 28px;
   align-items: start;
+  justify-content: center;  /* centers the whole grid */
+  justify-items: start;
 }
+
 
 .twoCol > div:first-child {
   max-width: 70ch;
@@ -238,6 +242,8 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 #about p:last-child { margin-bottom: 0; }
 
 .callout {
+  width: 100%;
+  max-width: 360px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 18px;
