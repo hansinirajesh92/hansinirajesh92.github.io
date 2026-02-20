@@ -219,20 +219,16 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   font-size: 14px;
 }
 
-/* About layout (balanced + readable) */
-/* About layout (centered + not stretched) */
+/* About layout (aligned with section, not floating) */
 .twoCol {
   display: grid;
-  grid-template-columns: minmax(320px, 70ch) 360px;
+  grid-template-columns: minmax(520px, 1fr) 360px; /* wider left column */
   gap: 28px;
   align-items: start;
-  justify-content: center;  /* centers the whole grid */
-  justify-items: start;
 }
 
-
 .twoCol > div:first-child {
-  max-width: 70ch;
+  max-width: 70ch; /* readable line length */
 }
 
 #about p {
@@ -244,6 +240,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .callout {
   width: 100%;
   max-width: 360px;
+  justify-self: end;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 18px;
@@ -293,6 +290,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 /* Responsive */
 @media (max-width: 860px) {
   .twoCol { grid-template-columns: 1fr; }
+  .callout { max-width: 100%; justify-self: start; }
 }
 
 @media (max-width: 720px) {
