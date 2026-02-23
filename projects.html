@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects — Hansini Rajesh</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="wrap header">
+      <nav class="nav">
+        <a class="brand" href="index.html">Hansini Rajesh</a>
+        <div class="navlinks">
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+
+      <section class="hero" style="padding-bottom: 0;">
+        <p class="kicker">Projects</p>
+        <h1>All projects</h1>
+        <p class="sub">
+          Click any tile to open details. Replace placeholders with real links and project write-ups.
+        </p>
+      </section>
+    </header>
+
+    <main class="wrap">
+      <section class="section" style="border-top: none; padding-top: 24px;">
+        <div class="tileGrid">
+
+          <!-- Copy/paste more tiles like these -->
+          <button class="tile" type="button"
+            data-title="Inventory Analytics Dashboard"
+            data-subtitle="SQL • Dashboard • Web"
+            data-desc="Placeholder description. Replace with your real project summary."
+            data-bullets="What you did|What data you used|Result / metric / impact"
+            data-case="#"
+            data-github="#"
+            data-live="#"
+          >
+            <img src="assets/inventory.png" alt="Inventory Analytics Dashboard preview" />
+            <div class="tileTitle">Inventory Analytics Dashboard</div>
+          </button>
+
+          <button class="tile" type="button"
+            data-title="Scaling Simulation Pipelines with MPI"
+            data-subtitle="Python • HPC • Performance"
+            data-desc="Placeholder description. Replace with your real project summary."
+            data-bullets="Optimization step|Benchmark result|What you’d do next"
+            data-case="#"
+            data-github="#"
+            data-live=""
+          >
+            <img src="assets/mpi.png" alt="MPI optimization preview" />
+            <div class="tileTitle">Scaling Simulation Pipelines with MPI</div>
+          </button>
+
+          <button class="tile" type="button"
+            data-title="Emotion Classification (CNN)"
+            data-subtitle="ML • Computer Vision • Evaluation"
+            data-desc="Placeholder description. Replace with your real project summary."
+            data-bullets="Dataset + preprocessing|Model + evaluation|Error analysis"
+            data-case="#"
+            data-github="#"
+            data-live=""
+          >
+            <img src="assets/cnn.png" alt="CNN preview" />
+            <div class="tileTitle">Emotion Classification (CNN)</div>
+          </button>
+
+          <button class="tile" type="button"
+            data-title="Signal Component Separation (Deep Learning)"
+            data-subtitle="Deep Learning • Modeling • Research"
+            data-desc="Placeholder description. Replace with your real project summary."
+            data-bullets="Approach|Metric|Next step"
+            data-case="#"
+            data-github="#"
+            data-live=""
+          >
+            <img src="assets/sz.png" alt="Signal separation preview" />
+            <div class="tileTitle">Signal Component Separation (DL)</div>
+          </button>
+
+          <!-- Add more tiles below (use any image in assets/) -->
+          <button class="tile" type="button"
+            data-title="Placeholder Project Title"
+            data-subtitle="Tag • Tag • Tag"
+            data-desc="Short placeholder description."
+            data-bullets="Bullet 1|Bullet 2|Bullet 3"
+            data-case="#"
+            data-github="#"
+            data-live=""
+          >
+            <img src="assets/placeholder.png" alt="Placeholder preview" />
+            <div class="tileTitle">Placeholder Project Title</div>
+          </button>
+
+        </div>
+
+        <p class="moreLink" style="margin-top: 22px;">
+          <a href="index.html">← Back to home</a>
+        </p>
+      </section>
+    </main>
+
+    <!-- MODAL -->
+    <div class="modalOverlay" id="modalOverlay" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modalClose" id="modalClose" type="button" aria-label="Close">×</button>
+
+        <div class="modalTop">
+          <img id="modalImg" class="modalImg" src="" alt="" />
+          <div>
+            <h3 id="modalTitle" class="modalTitle"></h3>
+            <p id="modalSubtitle" class="modalSubtitle"></p>
+            <p id="modalDesc" class="modalDesc"></p>
+          </div>
+        </div>
+
+        <ul id="modalBullets" class="modalBullets"></ul>
+
+        <div class="modalLinks">
+          <a id="modalCase" href="#" target="_blank" rel="noreferrer">Case Study</a>
+          <a id="modalGitHub" href="#" target="_blank" rel="noreferrer">GitHub</a>
+          <a id="modalLive" href="#" target="_blank" rel="noreferrer">Live</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="wrap footer">
+      <span>© <span id="year"></span> Hansini Rajesh</span>
+      <span class="dot">•</span>
+      <span><a href="index.html">Home</a></span>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const overlay = document.getElementById("modalOverlay");
+      const closeBtn = document.getElementById("modalClose");
+
+      const modalImg = document.getElementById("modalImg");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalSubtitle = document.getElementById("modalSubtitle");
+      const modalDesc = document.getElementById("modalDesc");
+      const modalBullets = document.getElementById("modalBullets");
+
+      const modalCase = document.getElementById("modalCase");
+      const modalGitHub = document.getElementById("modalGitHub");
+      const modalLive = document.getElementById("modalLive");
+
+      function openModal(tile){
+        const img = tile.querySelector("img");
+
+        modalImg.src = img.getAttribute("src");
+        modalImg.alt = img.getAttribute("alt") || "";
+
+        modalTitle.textContent = tile.dataset.title || "";
+        modalSubtitle.textContent = tile.dataset.subtitle || "";
+        modalDesc.textContent = tile.dataset.desc || "";
+
+        modalBullets.innerHTML = "";
+        const bullets = (tile.dataset.bullets || "").split("|").filter(Boolean);
+        bullets.forEach(b => {
+          const li = document.createElement("li");
+          li.textContent = b;
+          modalBullets.appendChild(li);
+        });
+
+        modalCase.href = tile.dataset.case || "#";
+        modalGitHub.href = tile.dataset.github || "#";
+
+        const live = tile.dataset.live || "";
+        if (live.trim()){
+          modalLive.href = live;
+          modalLive.style.display = "inline";
+        } else {
+          modalLive.style.display = "none";
+        }
+
+        overlay.classList.add("open");
+        overlay.setAttribute("aria-hidden", "false");
+      }
+
+      function closeModal(){
+        overlay.classList.remove("open");
+        overlay.setAttribute("aria-hidden", "true");
+      }
+
+      document.querySelectorAll(".tile").forEach(tile => {
+        tile.addEventListener("click", () => openModal(tile));
+      });
+
+      closeBtn.addEventListener("click", closeModal);
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeModal();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+    </script>
+  </body>
+</html>
