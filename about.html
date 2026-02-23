@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Hansini Rajesh</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="wrap header">
+      <nav class="nav">
+        <a class="brand" href="index.html">Hansini Rajesh</a>
+        <div class="navlinks">
+          <a href="index.html#projects">Projects</a>
+          <a href="about.html">About</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+
+      <section class="hero" style="padding-bottom: 0;">
+        <p class="kicker">About</p>
+        <h1>More about me</h1>
+        <p class="sub">
+          This page is a placeholder you can customize. Add your story, photos, interests, and anything
+          you want recruiters to know.
+        </p>
+      </section>
+    </header>
+
+    <main class="wrap">
+      <section class="section" style="border-top: none; padding-top: 24px;">
+        <div class="twoCol">
+          <div>
+            <h2 style="margin:0 0 10px;">Quick intro</h2>
+            <p>
+              Placeholder: Write 6–10 sentences about your background, what you’re studying, what kind of
+              work you like, and what roles you’re looking for.
+            </p>
+            <p>
+              Placeholder: Mention 2–3 themes (experimentation, dashboards, modeling, performance, etc.)
+              and what you enjoy about them.
+            </p>
+
+            <h2 style="margin:26px 0 10px;">Highlights</h2>
+            <ul style="margin:0; padding-left:18px; color: var(--muted); line-height:1.6;">
+              <li>Placeholder highlight (award, project, internship, leadership)</li>
+              <li>Placeholder highlight (impact metric or interesting technical win)</li>
+              <li>Placeholder highlight (what makes you unique)</li>
+            </ul>
+          </div>
+
+          <div class="callout">
+            <h3>Fast facts</h3>
+            <ul>
+              <li><strong>Based in:</strong> Ithaca, NY</li>
+              <li><strong>Open to:</strong> DS / BA / Analytics</li>
+              <li><strong>Tools:</strong> Python, SQL, Tableau/Power BI</li>
+              <li><strong>Email:</strong> <a href="mailto:YOU@EMAIL.COM">YOU@EMAIL.COM</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="sectionhead">
+          <h2>Photos</h2>
+          <p>Upload images to <code>assets/</code> and replace the placeholders below.</p>
+        </div>
+
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+          <div class="card">
+            <img src="assets/about1.png" alt="Placeholder" style="width:100%; height:180px; object-fit:cover; border-radius:12px; border:1px solid var(--border);" />
+            <p style="margin-top:12px;">Caption placeholder (conference, project, hobby).</p>
+          </div>
+
+          <div class="card">
+            <img src="assets/about2.png" alt="Placeholder" style="width:100%; height:180px; object-fit:cover; border-radius:12px; border:1px solid var(--border);" />
+            <p style="margin-top:12px;">Caption placeholder (team photo, class, event).</p>
+          </div>
+
+          <div class="card">
+            <img src="assets/about3.png" alt="Placeholder" style="width:100%; height:180px; object-fit:cover; border-radius:12px; border:1px solid var(--border);" />
+            <p style="margin-top:12px;">Caption placeholder (anything you want).</p>
+          </div>
+        </div>
+
+        <p class="moreLink" style="margin-top: 22px;">
+          <a href="index.html">← Back to home</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="wrap footer">
+      <span>© <span id="year"></span> Hansini Rajesh</span>
+      <span class="dot">•</span>
+      <span><a href="index.html">Home</a></span>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
