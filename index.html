@@ -76,75 +76,94 @@
 
 
 
+      
       <!-- PROJECTS -->
       <section id="projects" class="section">
         <div class="sectionhead">
           <h2>Featured Projects</h2>
-          <p>Each one includes a quick write-up + links to code/demos.</p>
+          <p>Click a tile to see details + links.</p>
         </div>
-
-        <div class="grid">
-          <article class="card">
-            <h3>Inventory Analytics Dashboard</h3>
-            <p>
-              Built a dashboard to track stockouts, reorder triggers, and SKU performance with
-              role-based access.
-            </p>
-            <div class="tags">
-              <span>SQL</span><span>Dashboard</span><span>Web</span>
-            </div>
-            <div class="links">
-              <a href="PROJECT1_CASE_STUDY_LINK" target="_blank" rel="noreferrer">Case Study</a>
-              <a href="PROJECT1_GITHUB_LINK" target="_blank" rel="noreferrer">GitHub</a>
-              <a href="PROJECT1_DEMO_LINK" target="_blank" rel="noreferrer">Live</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Scaling Simulation Pipelines with MPI</h3>
-            <p>
-              Optimized compute + reduced I/O overhead for large-scale simulations. Includes runtime
-              benchmarks and profiling notes.
-            </p>
-            <div class="tags">
-              <span>Python</span><span>HPC</span><span>Performance</span>
-            </div>
-            <div class="links">
-              <a href="PROJECT2_CASE_STUDY_LINK" target="_blank" rel="noreferrer">Case Study</a>
-              <a href="PROJECT2_GITHUB_LINK" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Emotion Classification (CNN)</h3>
-            <p>
-              Trained and evaluated a CNN model; includes confusion matrix, error analysis, and model
-              improvements.
-            </p>
-            <div class="tags">
-              <span>Machine Learning</span><span>Computer Vision</span><span>Evaluation</span>
-            </div>
-            <div class="links">
-              <a href="PROJECT3_CASE_STUDY_LINK" target="_blank" rel="noreferrer">Case Study</a>
-              <a href="PROJECT3_GITHUB_LINK" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Signal Component Separation (Deep Learning)</h3>
-            <p>
-              Built a multi-frequency separation pipeline; includes qualitative results and
-              reconstruction metrics.
-            </p>
-            <div class="tags">
-              <span>Deep Learning</span><span>Modeling</span><span>Research</span>
-            </div>
-            <div class="links">
-              <a href="PROJECT4_CASE_STUDY_LINK" target="_blank" rel="noreferrer">Case Study</a>
-              <a href="PROJECT4_GITHUB_LINK" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </article>
+      
+        <div class="tileGrid">
+      
+          <button class="tile" type="button"
+            data-title="Inventory Analytics Dashboard"
+            data-subtitle="SQL • Dashboard • Web"
+            data-desc="Built a dashboard to track stockouts, reorder triggers, and SKU performance with role-based access."
+            data-bullets="Designed schema + KPI views|Implemented role-based access|Added filters for SKU/category/date ranges"
+            data-case="#"
+            data-github="#"
+            data-live="#"
+          >
+            <img src="assets/inventory.png" alt="Inventory Analytics Dashboard preview" />
+            <div class="tileTitle">Inventory Analytics Dashboard</div>
+          </button>
+      
+          <button class="tile" type="button"
+            data-title="Scaling Simulation Pipelines with MPI"
+            data-subtitle="Python • HPC • Performance"
+            data-desc="Optimized compute and reduced I/O overhead for large-scale simulations. Includes runtime benchmarks and profiling notes."
+            data-bullets="Parallelized workload with MPI|Reduced I/O bottlenecks with better data layout|Benchmarked runtime across cores"
+            data-case="#"
+            data-github="#"
+            data-live=""
+          >
+            <img src="assets/mpi.png" alt="MPI optimization preview" />
+            <div class="tileTitle">Scaling Simulation Pipelines with MPI</div>
+          </button>
+      
+          <button class="tile" type="button"
+            data-title="Emotion Classification (CNN)"
+            data-subtitle="ML • Computer Vision • Evaluation"
+            data-desc="Trained and evaluated a CNN model; includes confusion matrix, error analysis, and model improvements."
+            data-bullets="Built training pipeline + preprocessing|Evaluated with F1 + confusion matrix|Did error analysis for failure modes"
+            data-case="#"
+            data-github="#"
+            data-live=""
+          >
+            <img src="assets/cnn.png" alt="CNN preview" />
+            <div class="tileTitle">Emotion Classification (CNN)</div>
+          </button>
+      
+          <button class="tile" type="button"
+            data-title="Signal Component Separation (Deep Learning)"
+            data-subtitle="Deep Learning • Modeling • Research"
+            data-desc="Built a multi-frequency separation pipeline; includes qualitative results and reconstruction metrics."
+            data-bullets="Modeled multi-frequency inputs|Trained separation network|Measured reconstruction quality"
+            data-case="#"
+            data-github="#"
+            data-live=""
+          >
+            <img src="assets/sz.png" alt="Signal separation preview" />
+            <div class="tileTitle">Signal Component Separation (DL)</div>
+          </button>
+      
         </div>
+      </section>
+
+<!-- MODAL (paste this RIGHT AFTER the Projects section, before the next section) -->
+<div class="modalOverlay" id="modalOverlay" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modalClose" id="modalClose" type="button" aria-label="Close">×</button>
+
+    <div class="modalTop">
+      <img id="modalImg" class="modalImg" src="" alt="" />
+      <div>
+        <h3 id="modalTitle" class="modalTitle"></h3>
+        <p id="modalSubtitle" class="modalSubtitle"></p>
+        <p id="modalDesc" class="modalDesc"></p>
+      </div>
+    </div>
+
+    <ul id="modalBullets" class="modalBullets"></ul>
+
+    <div class="modalLinks">
+      <a id="modalCase" href="#" target="_blank" rel="noreferrer">Case Study</a>
+      <a id="modalGitHub" href="#" target="_blank" rel="noreferrer">GitHub</a>
+      <a id="modalLive" href="#" target="_blank" rel="noreferrer">Live</a>
+    </div>
+  </div>
+</div>
         
     <!--
         <p class="note">
@@ -200,6 +219,71 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      const overlay = document.getElementById("modalOverlay");
+      const closeBtn = document.getElementById("modalClose");
+    
+      const modalImg = document.getElementById("modalImg");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalSubtitle = document.getElementById("modalSubtitle");
+      const modalDesc = document.getElementById("modalDesc");
+      const modalBullets = document.getElementById("modalBullets");
+    
+      const modalCase = document.getElementById("modalCase");
+      const modalGitHub = document.getElementById("modalGitHub");
+      const modalLive = document.getElementById("modalLive");
+    
+      function openModal(tile){
+        const img = tile.querySelector("img");
+    
+        modalImg.src = img.getAttribute("src");
+        modalImg.alt = img.getAttribute("alt") || "";
+    
+        modalTitle.textContent = tile.dataset.title || "";
+        modalSubtitle.textContent = tile.dataset.subtitle || "";
+        modalDesc.textContent = tile.dataset.desc || "";
+    
+        modalBullets.innerHTML = "";
+        const bullets = (tile.dataset.bullets || "").split("|").filter(Boolean);
+        bullets.forEach(b => {
+          const li = document.createElement("li");
+          li.textContent = b;
+          modalBullets.appendChild(li);
+        });
+    
+        modalCase.href = tile.dataset.case || "#";
+        modalGitHub.href = tile.dataset.github || "#";
+    
+        const live = tile.dataset.live || "";
+        if (live.trim()){
+          modalLive.href = live;
+          modalLive.style.display = "inline";
+        } else {
+          modalLive.style.display = "none";
+        }
+    
+        overlay.classList.add("open");
+        overlay.setAttribute("aria-hidden", "false");
+      }
+    
+      function closeModal(){
+        overlay.classList.remove("open");
+        overlay.setAttribute("aria-hidden", "true");
+      }
+    
+      document.querySelectorAll(".tile").forEach(tile => {
+        tile.addEventListener("click", () => openModal(tile));
+      });
+    
+      closeBtn.addEventListener("click", closeModal);
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeModal();
+      });
+    
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
     </script>
   </body>
 </html>
