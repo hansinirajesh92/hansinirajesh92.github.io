@@ -504,3 +504,36 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .tileLink:hover{
   filter: brightness(0.95);
 }
+
+
+/* Keep the container aligned nicely */
+.story-media {
+  display: flex;
+  justify-content: center;
+}
+
+/* First image: circular profile vibe */
+.img-profile {
+  width: 190px;        /* adjust size */
+  height: 190px;       /* same as width for a perfect circle */
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+}
+
+/* Second image: smaller square */
+.img-square {
+  width: 280px;        /* adjust size */
+  height: 280px;       /* square */
+  border-radius: 16px; /* or 0px if you want perfectly sharp square */
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+}
+
+/* Mobile: keep them from overflowing */
+@media (max-width: 800px) {
+  .img-profile { width: 160px; height: 160px; }
+  .img-square { width: 100%; height: auto; max-width: 360px; }
+}
