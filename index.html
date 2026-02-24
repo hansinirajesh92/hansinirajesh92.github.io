@@ -98,6 +98,7 @@
           >
             <img src="assets/inventory.png" alt="Inventory Analytics Dashboard preview" />
             <div class="tileTitle">Inventory Analytics Dashboard</div>
+            <a class="tileLink" href="#" data-action="case">Case Study</a>
           </button>
       
           <button class="tile" type="button"
@@ -111,6 +112,7 @@
           >
             <img src="assets/mpi.png" alt="MPI optimization preview" />
             <div class="tileTitle">Scaling Simulation Pipelines with MPI</div>
+            <a class="tileLink" href="#" data-action="case">Case Study</a>
           </button>
       
           <button class="tile" type="button"
@@ -124,6 +126,7 @@
           >
             <img src="assets/cnn.png" alt="CNN preview" />
             <div class="tileTitle">Emotion Classification (CNN)</div>
+            <a class="tileLink" href="#" data-action="case">Case Study</a>
           </button>
       
           <button class="tile" type="button"
@@ -137,6 +140,7 @@
           >
             <img src="assets/sz.png" alt="Signal separation preview" />
             <div class="tileTitle">Signal Component Separation (DL)</div>
+            <a class="tileLink" href="#" data-action="case">Case Study</a>
           </button>
       
         </div>
@@ -351,6 +355,14 @@
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeModal();
       });
+        document.querySelectorAll('.tile [data-action="case"]').forEach((link) => {
+        link.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // prevents the tile click from also firing
+        const tile = link.closest(".tile");
+        openWithZoom(tile);  // this is the zoom animation function
+      });
+    });
     </script>
   </body>
 </html>
