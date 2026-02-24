@@ -491,6 +491,16 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   text-underline-offset: 3px;
 }
 
+/* About page images */
+.about-img {
+  width: 100%;
+  max-width: 360px;   /* adjust: 280–420 is common */
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+}
+
 .tileLink:hover{
   filter: brightness(0.95);
 }
