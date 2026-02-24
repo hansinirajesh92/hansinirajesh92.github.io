@@ -149,7 +149,7 @@
     <button class="modalClose" id="modalClose" type="button" aria-label="Close">×</button>
 
     <div class="modalTop">
-      <img id="modalImg" class="modalImg" src="" alt="" />
+      <img id="modalImg" class="modalImg animTarget" src="" alt="" />
       <div>
         <h3 id="modalTitle" class="modalTitle"></h3>
         <p id="modalSubtitle" class="modalSubtitle"></p>
@@ -225,6 +225,7 @@
     <script>
       const overlay = document.getElementById("modalOverlay");
       const closeBtn = document.getElementById("modalClose");
+      const modal = overlay.querySelector(".modal");
     
       const modalImg = document.getElementById("modalImg");
       const modalTitle = document.getElementById("modalTitle");
@@ -236,7 +237,7 @@
       const modalGitHub = document.getElementById("modalGitHub");
       const modalLive = document.getElementById("modalLive");
     
-      function openModal(tile){
+      function fillModal(tile){
         const img = tile.querySelector("img");
     
         modalImg.src = img.getAttribute("src");
@@ -264,9 +265,55 @@
         } else {
           modalLive.style.display = "none";
         }
+      }
     
+      function openWithZoom(tile){
+        const sourceImg = tile.querySelector("img");
+        if (!sourceImg) return;
+    
+        // 1) Fill modal content immediately (but hide it during animation)
+        fillModal(tile);
+    
+        // 2) Open overlay, mark modal as animating (hides content)
         overlay.classList.add("open");
         overlay.setAttribute("aria-hidden", "false");
+        modal.classList.add("isAnimating");
+    
+        // 3) Compute start & end rectangles
+        const start = sourceImg.getBoundingClientRect();
+    
+        // Force modal to layout so we can measure the target image position
+        // (modal is visible now, but content hidden)
+        const target = modalImg.getBoundingClientRect();
+    
+        // 4) Create a flying clone
+        const fly = sourceImg.cloneNode(true);
+        fly.classList.add("flyImg");
+        fly.style.top = start.top + "px";
+        fly.style.left = start.left + "px";
+        fly.style.width = start.width + "px";
+        fly.style.height = start.height + "px";
+        document.body.appendChild(fly);
+    
+        // Hide the real modal image until fly lands
+        modalImg.style.visibility = "hidden";
+    
+        // 5) Animate to the modal image position
+        requestAnimationFrame(() => {
+          fly.style.top = target.top + "px";
+          fly.style.left = target.left + "px";
+          fly.style.width = target.width + "px";
+          fly.style.height = target.height + "px";
+        });
+    
+        // 6) When animation ends, clean up and show content
+        const done = () => {
+          fly.removeEventListener("transitionend", done);
+          fly.remove();
+          modalImg.style.visibility = "visible";
+          modal.classList.remove("isAnimating");
+        };
+        fly.addEventListener("transitionend", done);
       }
     
       function closeModal(){
@@ -274,8 +321,26 @@
         overlay.setAttribute("aria-hidden", "true");
       }
     
+      // IMPORTANT: open only when clicking the IMAGE area, not the whole tile
+      document.querySelectorAll(".tile img").forEach(img => {
+        img.style.cursor = "pointer";
+        img.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const tile = img.closest(".tile");
+          openWithZoom(tile);
+        });
+      });
+    
+      // If you still want clicking the tile to open normally:
       document.querySelectorAll(".tile").forEach(tile => {
-        tile.addEventListener("click", () => openModal(tile));
+        tile.addEventListener("click", (e) => {
+          // Clicks on the image are handled above
+          if (e.target.tagName.toLowerCase() === "img") return;
+          // Normal open (no zoom)
+          fillModal(tile);
+          overlay.classList.add("open");
+          overlay.setAttribute("aria-hidden", "false");
+        });
       });
     
       closeBtn.addEventListener("click", closeModal);
