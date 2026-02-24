@@ -491,15 +491,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   text-underline-offset: 3px;
 }
 
-/* About page images */
-.about-img {
-  width: 100%;
-  max-width: 360px;   /* adjust: 280–420 is common */
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  display: block;
-}
+
 
 .tileLink:hover{
   filter: brightness(0.95);
@@ -534,6 +526,52 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 /* Mobile: keep them from overflowing */
 @media (max-width: 800px) {
+  .story-row {
+    grid-template-columns: 1fr;
+  }
+
+  .story-row.reverse {
+    direction: ltr;
+  }
   .img-profile { width: 160px; height: 160px; }
   .img-square { width: 100%; height: auto; max-width: 360px; }
+}
+/* ===== About story layout ===== */
+.story {
+  padding: 30px 0;
+}
+
+.story .muted {
+  color: var(--muted);
+}
+
+.story-row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  align-items: center;
+  margin: 28px 0;
+}
+
+.story-row.reverse {
+  direction: rtl; /* flips columns */
+}
+
+.story-row.reverse > * {
+  direction: ltr; /* keeps text normal */
+}
+
+.story-text h3 {
+  margin: 0 0 8px;
+  letter-spacing: -0.2px;
+}
+
+.story-text p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.story-after {
+  margin-top: 40px;
 }
