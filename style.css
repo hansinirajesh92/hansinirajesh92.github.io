@@ -440,3 +440,44 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+/* ===== Zoom-in image transition ===== */
+.modalOverlay{
+  /* you already have this — keep it, just add fade */
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.modalOverlay.open{
+  opacity: 1;
+}
+
+.modal{
+  transform: translateY(6px);
+  transition: transform 220ms ease;
+}
+
+.modalOverlay.open .modal{
+  transform: translateY(0);
+}
+
+/* Hide modal image/content until the animation finishes */
+.modal.isAnimating .modalImg,
+.modal.isAnimating .modalTitle,
+.modal.isAnimating .modalSubtitle,
+.modal.isAnimating .modalDesc,
+.modal.isAnimating .modalBullets,
+.modal.isAnimating .modalLinks{
+  opacity: 0;
+}
+
+/* The flying image clone */
+.flyImg{
+  position: fixed;
+  z-index: 1000;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.12);
+  object-fit: cover;
+  will-change: transform, width, height, top, left;
+  transition: all 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+}
