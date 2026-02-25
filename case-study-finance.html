@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Finance Tracker Dashboard — Case Study</title>
+  <meta name="description" content="Case study for a Finance Tracker Dashboard: problem, solution, features, decisions, challenges, and next steps." />
+
+  <style>
+    :root {
+      /* Earthy palette (matching your site) */
+      --bg: #f3f0e7;          /* cream */
+      --text: #2b2421;        /* deep warm near-black */
+      --muted: rgba(43, 36, 33, 0.72);
+      --border: rgba(140, 117, 106, 0.35); /* taupe-ish */
+      --card: rgba(219, 197, 165, 0.22);   /* sand tint */
+      --radius: 16px;
+
+      --accent: #bd806d;      /* terracotta */
+      --accent2: #cc9a86;     /* dusty rose */
+      --shadow: 0 14px 30px rgba(43, 36, 33, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    .wrap {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 28px 18px 80px;
+    }
+
+    /* Top nav */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 14px;
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      background: rgba(255, 255, 255, 0.35);
+      box-shadow: 0 8px 20px rgba(43, 36, 33, 0.06);
+      backdrop-filter: blur(6px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 650;
+      letter-spacing: 0.2px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 35% 35%, var(--accent2), var(--accent));
+      box-shadow: 0 6px 12px rgba(189, 128, 109, 0.25);
+      border: 1px solid rgba(43, 36, 33, 0.12);
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(219, 197, 165, 0.20);
+      transition: transform 160ms ease, background 160ms ease;
+      font-size: 14px;
+      color: var(--text);
+    }
+    .pill:hover {
+      transform: translateY(-1px);
+      background: rgba(219, 197, 165, 0.30);
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero {
+      margin-top: 18px;
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 10px);
+      background:
+        radial-gradient(900px 340px at 30% -10%, rgba(204, 154, 134, 0.35), transparent 55%),
+        radial-gradient(780px 300px at 90% 10%, rgba(189, 128, 109, 0.22), transparent 60%),
+        rgba(255, 255, 255, 0.25);
+      box-shadow: var(--shadow);
+      padding: 28px 22px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: clamp(26px, 4vw, 38px);
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 70ch;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .metaCard {
+      grid-column: span 6;
+      padding: 14px 14px;
+      border: 1px solid var(--border);
+      background: rgba(219, 197, 165, 0.18);
+      border-radius: var(--radius);
+    }
+
+    .metaCard strong { display: block; font-size: 13px; letter-spacing: 0.3px; color: var(--muted); text-transform: uppercase; }
+    .metaCard span { display: block; margin-top: 6px; font-weight: 600; }
+
+    .metaActions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(43, 36, 33, 0.18);
+      background: rgba(255, 255, 255, 0.45);
+      transition: transform 160ms ease, background 160ms ease;
+      font-weight: 650;
+      font-size: 14px;
+    }
+    .btn:hover { transform: translateY(-1px); background: rgba(255, 255, 255, 0.65); text-decoration: none; }
+
+    .btn.primary {
+      background: linear-gradient(135deg, rgba(189,128,109,0.88), rgba(204,154,134,0.86));
+      color: #fff;
+      border: 1px solid rgba(43, 36, 33, 0.18);
+      box-shadow: 0 10px 22px rgba(189, 128, 109, 0.22);
+    }
+    .btn.primary:hover { background: linear-gradient(135deg, rgba(189,128,109,0.96), rgba(204,154,134,0.94)); }
+
+    /* Content layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+      align-items: start;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: 0 10px 22px rgba(43, 36, 33, 0.06);
+      overflow: hidden;
+    }
+
+    .cardHeader {
+      padding: 16px 16px 0;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin: 0 0 8px;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 6px 12px rgba(189, 128, 109, 0.22);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -0.2px;
+    }
+
+    .cardBody {
+      padding: 0 16px 16px;
+      color: var(--text);
+    }
+
+    .muted { color: var(--muted); }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+
+    li { margin: 6px 0; }
+
+    /* Split: text + media */
+    .split {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 14px;
+      padding: 16px;
+    }
+
+    .media {
+      border: 1px dashed rgba(140, 117, 106, 0.55);
+      border-radius: var(--radius);
+      background: rgba(219, 197, 165, 0.12);
+      min-height: 220px;
+      display: grid;
+      place-items: center;
+      padding: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .media small { display: block; margin-top: 8px; }
+
+    /* Content widths */
+    .main { grid-column: span 8; }
+    .side { grid-column: span 4; position: sticky; top: 18px; }
+
+    /* Sidebar */
+    .side .cardBody { padding-top: 10px; }
+    .tagRow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .tag {
+      font-size: 12px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(219, 197, 165, 0.22);
+      color: var(--text);
+    }
+
+    .hr {
+      height: 1px;
+      background: rgba(140, 117, 106, 0.35);
+      margin: 12px 0;
+    }
+
+    /* Two-up cards */
+    .twoUp {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      padding: 0 16px 16px;
+    }
+
+    .mini {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(219, 197, 165, 0.16);
+      padding: 14px;
+    }
+    .mini h3 {
+      margin: 0 0 6px;
+      font-size: 15px;
+      letter-spacing: -0.2px;
+    }
+    .mini p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    /* Footer nav */
+    .footerNav {
+      margin-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .main { grid-column: span 12; }
+      .side { grid-column: span 12; position: static; }
+      .split { grid-template-columns: 1fr; }
+      .twoUp { grid-template-columns: 1fr; }
+      .metaCard { grid-column: span 12; }
+    }
+
+    /* Optional: smooth anchor scroll */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- Top Bar -->
+    <header class="topbar">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Your Name</span>
+      </div>
+
+      <nav class="navlinks">
+        <a class="pill" href="index.html">Home</a>
+        <a class="pill" href="projects.html">Projects</a>
+        <a class="pill" href="#overview">Overview</a>
+        <a class="pill" href="#details">Details</a>
+        <a class="pill" href="#next">Next</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="overview">
+      <h1>Finance Tracker Dashboard</h1>
+      <p class="subtitle">
+        A web dashboard that helps users track income/expenses, visualize spending patterns, and stay on budget —
+        turning raw transactions into quick, readable insights.
+      </p>
+
+      <div class="meta">
+        <div class="metaCard">
+          <strong>Role</strong>
+          <span>Front-end / Full-stack (edit)</span>
+        </div>
+        <div class="metaCard">
+          <strong>Timeline</strong>
+          <span>1–2 weeks (edit)</span>
+        </div>
+        <div class="metaCard">
+          <strong>Tools</strong>
+          <span>React, Tailwind (or CSS), Chart library, Vercel (edit)</span>
+        </div>
+        <div class="metaCard">
+          <strong>Links</strong>
+          <span>
+            <a href="#" title="Add your live link">Live</a>
+            <span class="muted"> | </span>
+            <a href="#" title="Add your GitHub link">GitHub</a>
+          </span>
+        </div>
+      </div>
+
+      <div class="metaActions">
+        <a class="btn primary" href="#details">Read the case study →</a>
+        <a class="btn" href="projects.html">← Back to projects</a>
+      </div>
+    </section>
+
+    <div class="grid" id="details">
+      <!-- Main content -->
+      <main class="main">
+        <!-- Problem -->
+        <section class="card">
+          <div class="cardHeader">
+            <p class="kicker">Problem</p>
+            <h2>Tracking spending is fragmented and effort-heavy</h2>
+          </div>
+          <div class="cardBody">
+            <p class="muted">
+              People track spending across bank apps, notes, and spreadsheets — which makes it hard to understand
+              where money goes, spot trends early, and make decisions without manual work.
+            </p>
+            <p><strong>Goal:</strong> Create one dashboard that makes personal finance visible and manageable.</p>
+          </div>
+        </section>
+
+        <!-- Solution -->
+        <section class="card" style="margin-top:16px;">
+          <div class="cardHeader">
+            <p class="kicker">Solution</p>
+            <h2>A dashboard that turns transactions into clarity</h2>
+          </div>
+
+          <div class="split">
+            <div>
+              <p class="muted">
+                I designed and built a dashboard that organizes transactions, summarizes key totals, and visualizes
+                spending patterns — with filtering so users can drill down quickly.
+              </p>
+              <ul>
+                <li><strong>Overview cards</strong> for income, expenses, and net</li>
+                <li><strong>Charts</strong> for category breakdown and trends over time</li>
+                <li><strong>Transaction table</strong> for detailed browsing + filtering</li>
+              </ul>
+              <p style="margin-top:12px;"><strong>Key idea:</strong> reduce spreadsheet effort and replace it with instant insight.</p>
+            </div>
+
+            <aside class="media" aria-label="Project screenshot placeholder">
+              <div>
+                <div style="font-weight:650;">Screenshot / GIF placeholder</div>
+                <small>Drop in an image of your dashboard here later</small>
+                <!-- Replace this whole media div with an <img> when ready:
+                <img src="images/finance-dashboard.png" alt="Finance Tracker Dashboard screenshot" style="width:100%; height:auto; border-radius: var(--radius); border:1px solid var(--border);" />
+                -->
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- Responsibilities -->
+        <section class="card" style="margin-top:16px;">
+          <div class="cardHeader">
+            <p class="kicker">My Responsibilities</p>
+            <h2>What I owned end-to-end</h2>
+          </div>
+          <div class="cardBody">
+            <div class="twoUp">
+              <div class="mini">
+                <h3>UI/UX</h3>
+                <p>Layout, component design, and dashboard information hierarchy.</p>
+              </div>
+              <div class="mini">
+                <h3>Frontend</h3>
+                <p>Reusable components, state management, and responsive behavior.</p>
+              </div>
+              <div class="mini">
+                <h3>Data Modeling</h3>
+                <p>Transaction schema + aggregations for month/category chart views.</p>
+              </div>
+              <div class="mini">
+                <h3>Deployment</h3>
+                <p>Production build + hosting (e.g., Vercel), routing + env setup.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Features -->
+        <section class="card" style="margin-top:16px;">
+          <div class="cardHeader">
+            <p class="kicker">Features</p>
+            <h2>Built for quick scanning and deeper drill-downs</h2>
+          </div>
+          <div class="cardBody">
+            <ul>
+              <li><strong>Dashboard overview cards:</strong> monthly totals + net balance</li>
+              <li><strong>Transaction table:</strong> readable list with sorting/filtering (edit to match yours)</li>
+              <li><strong>Category breakdown:</strong> where money goes at a glance</li>
+              <li><strong>Trends over time:</strong> monthly spend/income patterns</li>
+              <li><strong>Responsive layout:</strong> comfortable on desktop + mobile</li>
+              <li><strong>Reusable components:</strong> consistent UI as the dashboard grows</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Design Decisions -->
+        <section class="card" style="margin-top:16px;">
+          <div class="cardHeader">
+            <p class="kicker">Design Decisions</p>
+            <h2>How I made it feel simple (even with lots of data)</h2>
+          </div>
+          <div class="cardBody">
+            <p><strong>Information hierarchy:</strong> most important answers first (totals + net), then trends, then details (table).</p>
+            <p><strong>Clarity over decoration:</strong> neutral visuals, clear labels, and spacing to keep data readable.</p>
+            <p><strong>Fast interaction loop:</strong> filters and view switching should feel immediate to encourage exploration.</p>
+          </div>
+        </section>
+
+        <!-- Challenges -->
+        <section class="card" style="margin-top:16px;">
+          <div class="cardHeader">
+            <p class="kicker">Challenges & Learnings</p>
+            <h2>What stretched me (and what improved)</h2>
+          </div>
+          <div class="cardBody">
+            <ul>
+              <li><strong>Chart data formatting:</strong> implemented aggregation logic (group by month/category) so charts stay accurate.</li>
+              <li><strong>Deployment reliability:</strong> tightened build settings, routing, and environment variables to avoid production errors.</li>
+              <li><strong>Consistency at scale:</strong> leaned on reusable components + spacing/type scale to prevent “UI drift.”</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Results -->
+        <section class="card" style="margin-top:16px;">
+          <div class="cardHeader">
+            <p class="kicker">Results</p>
+            <h2>Outcome and impact</h2>
+          </div>
+          <div class="cardBody">
+            <ul>
+              <li>A working dashboard that transforms transactions into readable insights</li>
+              <li>A scalable structure (easy to add budgets, exports, auth later)</li>
+              <li>Improved confidence deploying and debugging real production builds</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Next Improvements -->
+        <section class="card" id="next" style="margin-top:16px;">
+          <div class="cardHeader">
+            <p class="kicker">Next Improvements</p>
+            <h2>Where I’d take it next</h2>
+          </div>
+          <div class="cardBody">
+            <ul>
+              <li>Budget goals + alerts when spending exceeds thresholds</li>
+              <li>CSV import/export</li>
+              <li>Authentication + secure storage</li>
+              <li>Recurring transactions</li>
+              <li>Mobile-first refinements</li>
+            </ul>
+
+            <div class="hr"></div>
+
+            <div class="footerNav">
+              <a class="btn" href="#overview">↑ Back to top</a>
+              <a class="btn primary" href="projects.html">Back to projects →</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="side">
+        <section class="card">
+          <div class="cardHeader">
+            <p class="kicker">TL;DR</p>
+            <h2>Quick summary</h2>
+          </div>
+          <div class="cardBody">
+            <p class="muted">
+              I built a finance dashboard that turns raw transactions into clear insights (category spend, trends,
+              and monthly summaries) with a clean, extendable UI.
+            </p>
+
+            <div class="hr"></div>
+
+            <p style="margin:0;"><strong>Highlights</strong></p>
+            <div class="tagRow" aria-label="Project tags">
+              <span class="tag">Dashboard UI</span>
+              <span class="tag">Charts</span>
+              <span class="tag">Filtering</span>
+              <span class="tag">Data aggregation</span>
+              <span class="tag">Deployment</span>
+            </div>
+
+            <div class="hr"></div>
+
+            <p style="margin:0;"><strong>Proof links</strong></p>
+            <p class="muted" style="margin-top:8px;">
+              <a href="#">Live Demo</a> <span class="muted">•</span>
+              <a href="#">GitHub Repo</a>
+            </p>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
