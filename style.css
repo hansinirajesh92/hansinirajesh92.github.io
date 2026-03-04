@@ -575,3 +575,39 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .story-after {
   margin-top: 40px;
 }
+
+/* About hero: force single-column layout */
+.about-hero,
+.about-intro,
+.about-header,
+.about-top {
+  display: block !important;
+}
+
+/* Make the intro paragraph span full width */
+.about-hero p,
+.about-intro p {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Reduce vertical spacing between intro and story */
+.about-hero,
+.about-intro {
+  margin-bottom: 24px !important;
+  padding-bottom: 0 !important;
+}
+
+.my-story,
+.story-section,
+.about-story {
+  margin-top: 24px !important;
+  padding-top: 0 !important;
+}
+
+.my-story h2,
+.my-story h3,
+.story-section h2,
+.story-section h3 {
+  margin-top: 0 !important;
+}
