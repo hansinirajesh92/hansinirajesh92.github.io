@@ -63,7 +63,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 /* Hero */
 .hero {
-  padding: 36px 0 10px;
+  padding: 36px 0 0;
 }
 
 .kicker {
@@ -92,11 +92,11 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 
 .sub {
-  margin: 0 0 18px;
-  max-width: 62ch;
+  margin: 0;
+  max-width: 78ch;
   color: var(--muted);
   font-size: 18px;
-  line-height: 1.55;
+  line-height: 1.65;
 }
 
 .cta {
@@ -538,7 +538,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 /* ===== About story layout ===== */
 .story {
-  padding: 30px 0;
+  padding: 8px 0 30px;
 }
 
 .story .muted {
@@ -550,7 +550,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   grid-template-columns: 1.2fr 0.8fr;
   gap: 28px;
   align-items: center;
-  margin: 28px 0;
+  margin: 20px 0;
 }
 
 .story-row.reverse {
@@ -573,41 +573,6 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 
 .story-after {
-  margin-top: 40px;
+  margin-top: 24px;
 }
 
-/* About hero: force single-column layout */
-.about-hero,
-.about-intro,
-.about-header,
-.about-top {
-  display: block !important;
-}
-
-/* Make the intro paragraph span full width */
-.about-hero p,
-.about-intro p {
-  max-width: 100% !important;
-  width: 100% !important;
-}
-
-/* Reduce vertical spacing between intro and story */
-.about-hero,
-.about-intro {
-  margin-bottom: 24px !important;
-  padding-bottom: 0 !important;
-}
-
-.my-story,
-.story-section,
-.about-story {
-  margin-top: 24px !important;
-  padding-top: 0 !important;
-}
-
-.my-story h2,
-.my-story h3,
-.story-section h2,
-.story-section h3 {
-  margin-top: 0 !important;
-}
