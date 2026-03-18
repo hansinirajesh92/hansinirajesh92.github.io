@@ -1,142 +1,546 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Me</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --olive-light: #A49A6E;
+  --olive-dark: #7B7B56;
+  --tan: #D4B896;
+  --camel: #C0A07A;
+  --cream: #FAF6EF;
+  --bg-primary: var(--cream);
+  --bg-secondary: #F3EDE3;
+  --bg-card: #FFFFFF;
+  --text-primary: #2C2A22;
+  --text-secondary: #5E5A4E;
+  --text-muted: #8C8778;
+  --accent: var(--olive-dark);
+  --accent-light: #EDEBD8;
+  --accent-dark: #5C5C3E;
+  --accent-glow: rgba(123, 123, 86, 0.15);
+  --border: rgba(44, 42, 34, 0.08);
+  --border-hover: rgba(123, 123, 86, 0.35);
+  --shadow-sm: 0 1px 3px rgba(44,42,34,0.04);
+  --shadow-md: 0 4px 20px rgba(44,42,34,0.06);
+  --shadow-lg: 0 12px 40px rgba(44,42,34,0.1);
+  --shadow-glow: 0 0 40px rgba(123, 123, 86, 0.12);
+  --font-display: 'Lora', Georgia, serif;
+  --font-body: 'Instrument Sans', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --nav-height: 72px;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-body); background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+::selection { background: var(--accent); color: white; }
+a { color: inherit; text-decoration: none; }
+.icon-svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
-  <body>
-    <header class="wrap header">
-      <nav class="nav">
-        <a class="brand" href="index.html">Hansini Rajesh</a>
-        <div class="navlinks">
-          <a href="index.html#projects">Projects</a>
-          <a href="about.html">About</a>
-          <a href="index.html#skills">Skills</a>
-          <a href="index.html#contact">Contact</a>
+/* Grain */
+body::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; }
+
+/* Custom cursor */
+.cursor-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; position: fixed; pointer-events: none; z-index: 10000; mix-blend-mode: difference; }
+.cursor-ring { width: 36px; height: 36px; border: 1.5px solid var(--olive-light); border-radius: 50%; position: fixed; pointer-events: none; z-index: 10000; transition: width 0.3s, height 0.3s, border-color 0.3s; transform: translate(-50%, -50%); }
+.cursor-ring.hovering { width: 56px; height: 56px; border-color: var(--accent-dark); background: var(--accent-glow); }
+@media (max-width: 768px) { .cursor-dot, .cursor-ring { display: none !important; } }
+
+/* ========== NAV ========== */
+nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height); display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(24px, 4vw, 60px); z-index: 1000; background: rgba(250, 246, 239, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid transparent; transition: border-color 0.3s, box-shadow 0.3s; }
+nav.scrolled { border-bottom-color: var(--border); box-shadow: var(--shadow-sm); }
+.nav-logo { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; color: var(--accent); }
+.nav-logo span { color: var(--text-muted); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em; color: var(--text-secondary); position: relative; transition: color 0.3s; }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--accent); transition: width 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--accent); }
+.nav-links a.active::after { width: 100%; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
+.nav-hamburger span { width: 24px; height: 2px; background: var(--text-primary); transition: all 0.3s; border-radius: 2px; }
+@media (max-width: 768px) {
+  .nav-hamburger { display: flex; }
+  .nav-links { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; flex-direction: column; background: var(--bg-primary); padding: 100px 40px; gap: 28px; transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: -10px 0 40px rgba(0,0,0,0.1); }
+  .nav-links.open { right: 0; }
+  .nav-links a { font-size: 1.1rem; }
+}
+
+/* ========== PAGE HERO ========== */
+.page-hero {
+  padding: calc(var(--nav-height) + 60px) clamp(24px, 6vw, 80px) 80px;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.page-hero-text { }
+.page-hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px; background: var(--accent-light); color: var(--accent);
+  border-radius: 100px; font-family: var(--font-mono); font-size: 0.75rem;
+  font-weight: 500; letter-spacing: 0.06em; margin-bottom: 24px;
+  opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s 0.2s forwards;
+}
+.page-hero-title {
+  font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400; line-height: 1.15; margin-bottom: 24px;
+  opacity: 0; transform: translateY(30px); animation: fadeUp 0.8s 0.4s forwards;
+}
+.page-hero-title .accent { color: var(--camel); }
+.page-hero-desc {
+  font-size: 1.05rem; color: var(--text-secondary); line-height: 1.8; max-width: 560px;
+  opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s 0.6s forwards;
+}
+.page-hero-photo {
+  opacity: 0; transform: translateY(30px) scale(0.97);
+  animation: fadeUp 0.8s 0.5s forwards;
+}
+.photo-frame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+}
+.photo-frame img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s;
+}
+.photo-frame:hover img { transform: scale(1.03); }
+.photo-frame-accent {
+  position: absolute;
+  bottom: -12px; right: -12px;
+  width: 120px; height: 120px;
+  border: 2px solid var(--camel);
+  border-radius: 16px;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+@media (max-width: 900px) {
+  .page-hero { grid-template-columns: 1fr; text-align: center; }
+  .page-hero-photo { max-width: 320px; margin: 0 auto; }
+  .page-hero-desc { max-width: 100%; }
+}
+
+/* ========== REVEAL ========== */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0) scale(1); } }
+
+/* ========== STORY SECTION ========== */
+.story-section {
+  padding: 80px clamp(24px, 6vw, 80px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-label { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--olive-light); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+.section-label::before { content: ''; width: 32px; height: 1px; background: var(--camel); }
+.section-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; line-height: 1.15; margin-bottom: 48px; }
+
+/* Story rows */
+.story-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.story-row.reverse { direction: rtl; }
+.story-row.reverse > * { direction: ltr; }
+.story-row-text h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+.story-row-text p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.story-row-text p:last-child { margin-bottom: 0; }
+.story-row-media {
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s;
+}
+.story-row-media:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+.story-row-media img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.6s;
+}
+.story-row-media:hover img { transform: scale(1.03); }
+
+@media (max-width: 768px) {
+  .story-row, .story-row.reverse { grid-template-columns: 1fr; gap: 32px; direction: ltr; }
+}
+
+/* ========== VALUES / HOW I WORK ========== */
+.values-section {
+  padding: 80px clamp(24px, 6vw, 80px);
+  background: var(--bg-secondary);
+}
+.values-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.value-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 32px 28px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--olive-light), var(--camel));
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+.value-card:hover::before { transform: scaleX(1); }
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-hover);
+}
+.value-icon {
+  width: 44px; height: 44px;
+  background: var(--accent-light);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+  color: var(--accent);
+}
+.value-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.value-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .values-grid { grid-template-columns: 1fr; }
+}
+
+/* ========== CURRENTLY SECTION ========== */
+.currently-section {
+  padding: 80px clamp(24px, 6vw, 80px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.currently-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.currently-text p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.currently-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.02em; transition: all 0.3s; cursor: pointer; border: none; }
+.btn-primary { background: var(--accent); color: var(--cream); box-shadow: 0 4px 15px rgba(123,123,86,0.25); }
+.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 6px 25px rgba(123,123,86,0.35); }
+.btn-outline { background: transparent; color: var(--text-primary); border: 1.5px solid var(--border); }
+.btn-outline:hover { border-color: var(--camel); color: var(--accent); transform: translateY(-2px); }
+
+.currently-fun {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 32px;
+}
+.currently-fun h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.fun-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.fun-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+.fun-icon {
+  width: 36px; height: 36px;
+  background: var(--accent-light);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .currently-content { grid-template-columns: 1fr; }
+}
+
+/* ========== FOOTER ========== */
+footer {
+  padding: 40px clamp(24px, 6vw, 80px);
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.8rem; color: var(--text-muted);
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { transition: color 0.3s; }
+.footer-links a:hover { color: var(--accent); }
+
+/* ========== LOADER ========== */
+.loader { position: fixed; inset: 0; background: var(--bg-primary); z-index: 100000; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px; transition: opacity 0.6s, visibility 0.6s; }
+.loader.done { opacity: 0; visibility: hidden; }
+.loader-bar { width: 120px; height: 2px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.loader-bar-fill { height: 100%; background: linear-gradient(90deg, var(--olive-light), var(--camel)); border-radius: 2px; animation: load 1.2s ease-in-out; }
+@keyframes load { 0% { width: 0%; } 100% { width: 100%; } }
+.loader-text { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.08em; }
+
+/* Back to top */
+.back-to-top { position: fixed; bottom: 32px; right: 32px; width: 44px; height: 44px; background: var(--accent); color: var(--cream); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; transform: translateY(20px); transition: all 0.3s; z-index: 100; box-shadow: 0 4px 15px rgba(123,123,86,0.3); }
+.back-to-top.visible { opacity: 1; transform: translateY(0); }
+.back-to-top:hover { transform: translateY(-3px); background: var(--accent-dark); }
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="loader" id="loader"><div class="loader-text">ABOUT ME</div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
+
+<!-- CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">HR<span> /about</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="index.html#experience">Experience</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+</ul>
+  <div class="nav-hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-text">
+    <div class="page-hero-tag">About Me</div>
+    <h1 class="page-hero-title">The <span class="accent">story</span> behind<br>the data.</h1>
+    <p class="page-hero-desc">I'm Hansini Rajesh, a Data Science enthusiast with a strong coding foundation and a bias for building solutions that are both technically solid and easy to understand. I'm especially drawn to work in finance and healthcare, but I love exploring different industries because good data thinking transfers everywhere.</p>
+  </div>
+  <div class="page-hero-photo">
+    <div class="photo-frame">
+      <img src="/Users/hansinirajesh/Downloads/about-img1.png" alt="Hansini Rajesh">
+      <div class="photo-frame-accent"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MY STORY -->
+<div class="story-section">
+  <div class="reveal">
+    <div class="section-label">01 — My Story</div>
+    <h2 class="section-title">Where it all began</h2>
+  </div>
+
+  <!-- Row 1: text left, image right -->
+  <div class="story-row reveal">
+    <div class="story-row-text">
+      <h3>Where I started</h3>
+      <p>I began as a Computer Science major at VIT Chennai, India, where I built a strong base in programming and problem-solving. That technical foundation is still the backbone of how I approach data today.</p>
+      <h3>Why data?</h3>
+      <p>What pulled me into data science is how universal it is: every industry runs on data. I realized I could combine my love for coding with my curiosity about almost anything — by using data science to explore, predict, and explain what's happening beneath the surface.</p>
+    </div>
+    <div class="story-row-media">
+      <img src="assets/about-img1" alt="Hansini's journey" />
+    </div>
+  </div>
+
+  <!-- Row 2: image left, text right -->
+  <div class="story-row reverse reveal">
+    <div class="story-row-text">
+      <h3>A moment that clicked</h3>
+      <p>A recent turning point for me was a digital agriculture hackathon. I didn't have much background in food science (or hackathons), but our idea needed a prototype web app — and I was able to build a solid version in under 8 hours.</p>
+      <p>That experience reminded me that I can adapt quickly, build under pressure, and turn messy ideas into working solutions.</p>
+    </div>
+    <div class="story-row-media">
+      <img src="assets/about-img2.png" alt="Hackathon experience" />
+    </div>
+  </div>
+</div>
+
+<!-- HOW I WORK -->
+<div class="values-section">
+  <div class="values-inner">
+    <div class="reveal">
+      <div class="section-label">02 — How I Work</div>
+      <h2 class="section-title">My approach to problem-solving</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="value-icon"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Structure & clarity</h3>
+        <p>I do my best work with clear goals. A little ambiguity can be useful early on, but I prefer knowing what success looks like and building toward it deliberately.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3>Embracing messy data</h3>
+        <p>When data is messy, I'm comfortable (happy, even) doing the unglamorous work: cleaning, preprocessing, correcting, scraping and restructuring until it's ready to analyse.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Clear communication</h3>
+        <p>I avoid heavy technical language when possible, use simple framing (and the occasional metaphor), and tailor the message to the audience without dumbing it down.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><svg class="icon-svg" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <h3>Building with flexibility</h3>
+        <p>When priorities change, I like building with flexibility - saving progress in stages so updates don't mean starting over. Iteration over perfection.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><svg class="icon-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <h3>Data storytelling</h3>
+        <p>At my core, I'm a "data supporter", I find the story behind the numbers, organize it clearly and present it in a way that feels natural, whether through a dashboard or a clean analysis.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><svg class="icon-svg" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>Fast learner</h3>
+        <p>I adapt quickly to new domains and tools. Whether it's a hackathon on digital agriculture or a deep dive into financial modeling, curiosity is my edge.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CURRENTLY -->
+<div class="currently-section">
+  <div class="reveal">
+    <div class="section-label">03 — Currently</div>
+    <h2 class="section-title">What's next</h2>
+  </div>
+  <div class="currently-content">
+    <div class="currently-text reveal">
+      <p>I'm based in Ithaca, NY, open to relocation, and currently seeking full-time roles. If you'd like to collaborate or chat about an opportunity, feel free to reach out - or jump straight to my projects to see what I build.</p>
+      <div class="currently-cta">
+        <a href="index.html#projects" class="btn btn-primary"><svg class="icon-svg" viewBox="0 0 24 24" style="width:18px;height:18px"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>View Projects</a>
+        <a href="index.html#contact" class="btn btn-outline">Get in Touch <svg class="icon-svg" style="width:16px;height:16px" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+    <div class="currently-fun reveal">
+      <h3>Outside of data</h3>
+      <div class="fun-list">
+        <div class="fun-item">
+          <div class="fun-icon"><svg class="icon-svg" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+          <span>Music: LANA DEL REY, RnB & Rap (PND, The Weeknd), Kollywood, the Harry Potter and Interstellar soundtracks</span>
         </div>
-      </nav>
-
-      <section class="hero" style="padding-bottom: 0;">
-        <p class="kicker">About</p>
-        <h1>More about me</h1>
-        <p class="sub">
-          I’m Hansini Rajesh, a Data Science enthusiast with a strong coding foundation and a bias for building solutions 
-          that are both technically solid and easy to understand. I’m especially drawn to work in finance and healthcare, 
-          but I love exploring different industries because good data thinking transfers everywhere.
-          At my core, I’m a “data supporter”: I like finding the story behind the numbers, 
-          organizing it clearly, and presenting it in a way that feels natural - whether that’s through a dashboard, 
-          a narrative, or a clean analysis. I also enjoy experimenting with tools and algorithms until the solution clicks.
-        </p>
-      </section>
-    </header>
-
-    <main class="wrap">
-      <section class="story">
-        <h2>My story</h2>
-
-        <!-- Row 1: text left, image right -->
-        <div class="story-row">
-          <div class="story-text">
-            <h3>Where I started</h3>
-            <p>
-              I began as a Computer Science major at VIT Chennai, India, where 
-              I built a strong base in programming and problem-solving. That technical foundation is still the backbone of how I approach data today.
-            </p>
-            <p>
-              
-            </p>
-            <h3>Why data?</h3>
-            <p>
-              What pulled me into data science is how universal it is: every industry runs on data.
-              I realized I could combine my love for coding with my curiosity about almost anything - by using data science 
-              to explore, predict, and explain what’s happening beneath the surface.
-            </p>
-            <p>
-              
-            </p>
-            <h3>A moment that clicked</h3>
-            <p>
-              A recent turning point for me was a digital agriculture hackathon. 
-              I didn’t have much background in food science (or hackathons), but our idea needed a prototype 
-              web app - and I was able to build a solid version in under 8 hours. 
-              That experience reminded me that I can adapt quickly, build under pressure, and turn messy ideas into working solutions.
-            </p>
-            <p>
-              
-            </p>
-          </div>
-          <div class="story-media">
-            <img
-              src="assets/about11.png"
-              alt="Story photo 1"
-              class="img-profile"
-            />
-          </div>
+        <div class="fun-item">
+          <div class="fun-icon"><svg class="icon-svg" style="width:18px;height:18px" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="12" x2="6" y2="12"/><line x1="10" y1="12" x2="10" y2="12"/><line x1="14" y1="12" x2="14" y2="12"/><line x1="18" y1="12" x2="18" y2="12"/></svg></div>
+          <span>Video games: currently getting ragebaited by Elden Ring</span>
         </div>
-
-        <!-- Row 2: image left, text right -->
-        <div class="story-row reverse">
-          <div class="story-text">
-            <h3>What I love</h3>
-            <p>
-              Outside of data, I’m happiest with things that keep me learning (and usually indoors): music, video games, and reading. 
-              I’m naturally curious (sometimes to an extreme) and that curiosity shows up in my work too.
-            </p>
-            <p>
-              
-            </p>
-            <h3>How I Work</h3>
-            <p>
-              I tend to do my best work with structure and clear goals. 
-              A little ambiguity can be useful early on, but I prefer knowing what success looks like and building toward it deliberately.
-            </p>
-            <p>
-              When data is messy, I’m comfortable, or infact, happy, doing the unglamorous work: 
-              cleaning, preprocessing, correcting, scraping/extracting, and restructuring until it’s ready to analyse.
-            </p>
-            <p>
-              For communicating insights, I focus on clarity: I avoid heavy technical language when needed, 
-              use simple framing (and the occasional metaphor), and tailor the message to the audience without “dumbing it down.” 
-            </p>
-            <p>
-              When priorities change, I like building with flexibility, saving progress in stages so updates don’t mean starting over.
-            </p>
-          </div>
-          <div class="story-media">
-            <img
-              src="assets/about2.png"
-              alt="Story photo 2"
-              class="img-square"
-            />
-          </div>
+        <div class="fun-item">
+          <div class="fun-icon"><svg class="icon-svg" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+          <span>Reading: fantasy (i finally got around to reading the LOTR trilogy), astrophysics, rom-com genres</span>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="padding:60px clamp(24px,6vw,80px);text-align:center;max-width:800px;margin:0 auto;">
+  <div class="reveal" style="position:relative;">
+    <svg style="width:40px;height:40px;color:var(--camel);opacity:0.3;margin-bottom:16px" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+    <blockquote style="font-family:var(--font-display);font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:400;line-height:1.6;color:var(--text-primary);font-style:italic;margin-bottom:16px;">
+      No matter how ridiculous the odds may seem, within us resides the power to overcome these challenges and achieve something beautiful. And one day.... we'll look back at where we started and be amazed by how far we've come..""
+    </blockquote>
+    <p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);letter-spacing:0.05em;">- Technoblade (never dies)</p>
+  </div>
+</div>
 
-        <!-- Everything below becomes normal full-width writing -->
-        <div class="story-after">
-          <h3>Currently</h3>
-          <p>
-            I’m based in Ithaca, NY, open to relocation, and currently seeking full-time roles. 
-            If you’d like to collaborate or chat about an opportunity, feel free to reach out - or jump straight to my projects to see what I build.
-          </p>
-        </div>
+<!-- FOOTER -->
+<footer>
+  <span>&copy; <span id="year"></span> Hansini Rajesh</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="mailto:hr394@cornell.edu">Email</a>
+    <a href="https://www.linkedin.com/in/hansini-rajesh" target="_blank">LinkedIn</a>
+    <a href="https://github.com/hansinirajesh92" target="_blank">GitHub</a>
+  </div>
+</footer>
 
-        <p class="moreLink" style="margin-top: 22px;">
-          <a href="index.html">← Back to home</a>
-        </p>
-      </section>
-    </main>
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg class="icon-svg" viewBox="0 0 24 24" style="color:var(--cream)"><polyline points="18 15 12 9 6 15"/></svg></button>
 
-    <footer class="wrap footer">
-      <span>© <span id="year"></span> Hansini Rajesh</span>
-      <span class="dot">•</span>
-      <span><a href="index.html">Home</a></span>
-    </footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('done'),1200)});
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+// Cursor
+const dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx-4+'px';dot.style.top=my-4+'px'});
+function ar(){rx+=(mx-rx)*0.15;ry+=(my-ry)*0.15;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(ar)}ar();
+document.querySelectorAll('a,button,.value-card,.story-row-media,.photo-frame,.fun-item').forEach(el=>{el.addEventListener('mouseenter',()=>ring.classList.add('hovering'));el.addEventListener('mouseleave',()=>ring.classList.remove('hovering'))});
+
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>50);
+  document.getElementById('backToTop').classList.toggle('visible',window.scrollY>400);
+});
+
+// Reveal
+const ro=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// Mobile nav
+document.querySelectorAll('.nav-links a').forEach(l=>{l.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')})});
+</script>
+</body>
 </html>
