@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="700" height="300">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#FAF6EF"/>
+      <stop offset="100%" stop-color="#F3EDE3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="700" height="300" fill="url(#bg2)"/>
+
+  <!-- Circuit-board style background paths -->
+  <g stroke="#2C2A22" stroke-width="0.6" opacity="0.04" fill="none">
+    <path d="M0,80 H120 V150 H250 V80 H380 V200 H500 V80 H700"/>
+    <path d="M0,220 H80 V150 H200 V250 H350 V180 H480 V250 H600 V180 H700"/>
+    <path d="M60,0 V100 H180 V200 H320 V100 H450 V250 H580 V130 H700"/>
+    <path d="M200,0 V60 H350 V180 H500 V60 H650 V300"/>
+    <path d="M400,0 V50 H550 V150 H680 V300"/>
+    <path d="M100,300 V200 H250 V120"/>
+    <path d="M500,300 V220 H600 V140"/>
+  </g>
+
+  <!-- Connection lines between nodes -->
+  <g stroke="#A49A6E" stroke-width="1" opacity="0.1" fill="none">
+    <!-- Hub connections radiating from center -->
+    <line x1="350" y1="150" x2="120" y2="65"/>
+    <line x1="350" y1="150" x2="220" y2="50"/>
+    <line x1="350" y1="150" x2="480" y2="50"/>
+    <line x1="350" y1="150" x2="580" y2="65"/>
+    <line x1="350" y1="150" x2="100" y2="150"/>
+    <line x1="350" y1="150" x2="600" y2="150"/>
+    <line x1="350" y1="150" x2="120" y2="240"/>
+    <line x1="350" y1="150" x2="250" y2="255"/>
+    <line x1="350" y1="150" x2="450" y2="255"/>
+    <line x1="350" y1="150" x2="580" y2="240"/>
+    <!-- Cross connections -->
+    <line x1="120" y1="65" x2="220" y2="50" stroke-dasharray="4,6"/>
+    <line x1="480" y1="50" x2="580" y2="65" stroke-dasharray="4,6"/>
+    <line x1="120" y1="240" x2="250" y2="255" stroke-dasharray="4,6"/>
+    <line x1="450" y1="255" x2="580" y2="240" stroke-dasharray="4,6"/>
+  </g>
+
+  <!-- Data flow particles along connections -->
+  <g fill="#7B7B56" opacity="0.12">
+    <circle cx="235" cy="108" r="2"/><circle cx="280" cy="130" r="1.5"/>
+    <circle cx="420" cy="100" r="2"/><circle cx="460" cy="85" r="1.5"/>
+    <circle cx="200" cy="150" r="1.5"/><circle cx="500" cy="150" r="2"/>
+    <circle cx="280" cy="200" r="1.5"/><circle cx="420" cy="200" r="2"/>
+    <circle cx="180" cy="80" r="1.5"/><circle cx="530" cy="80" r="1.5"/>
+    <circle cx="170" cy="210" r="2"/><circle cx="520" cy="210" r="1.5"/>
+  </g>
+
+  <!-- Central hub node -->
+  <circle cx="350" cy="150" r="22" fill="#7B7B56" opacity="0.1"/>
+  <circle cx="350" cy="150" r="14" fill="#7B7B56" opacity="0.08"/>
+  <circle cx="350" cy="150" r="6" fill="#5C5C3E" opacity="0.15"/>
+
+  <!-- Worker nodes - outer ring -->
+  <g opacity="0.09">
+    <circle cx="120" cy="65" r="14" fill="#A49A6E"/>
+    <circle cx="220" cy="50" r="12" fill="#C0A07A"/>
+    <circle cx="480" cy="50" r="12" fill="#C0A07A"/>
+    <circle cx="580" cy="65" r="14" fill="#A49A6E"/>
+    <circle cx="100" cy="150" r="13" fill="#7B7B56"/>
+    <circle cx="600" cy="150" r="13" fill="#7B7B56"/>
+    <circle cx="120" cy="240" r="14" fill="#A49A6E"/>
+    <circle cx="250" cy="255" r="11" fill="#D4B896"/>
+    <circle cx="450" cy="255" r="11" fill="#D4B896"/>
+    <circle cx="580" cy="240" r="14" fill="#A49A6E"/>
+  </g>
+
+  <!-- Tiny secondary nodes -->
+  <g fill="#C0A07A" opacity="0.06">
+    <circle cx="50" cy="110" r="6"/><circle cx="660" cy="110" r="6"/>
+    <circle cx="50" cy="200" r="5"/><circle cx="660" cy="200" r="5"/>
+    <circle cx="350" cy="25" r="5"/><circle cx="350" cy="280" r="5"/>
+    <circle cx="170" cy="30" r="4"/><circle cx="530" cy="30" r="4"/>
+  </g>
+
+  <!-- Faint "rank" labels scattered -->
+  <g font-family="monospace" fill="#2C2A22" opacity="0.04" font-size="10">
+    <text x="107" y="69">r1</text>
+    <text x="207" y="54">r2</text>
+    <text x="467" y="54">r3</text>
+    <text x="567" y="69">r4</text>
+    <text x="87" y="154">r5</text>
+    <text x="587" y="154">r6</text>
+    <text x="337" y="154">r0</text>
+  </g>
+
+  <!-- Abstract parallel arrows suggesting scaling -->
+  <g stroke="#7B7B56" stroke-width="1.5" opacity="0.06" fill="none" stroke-linecap="round">
+    <path d="M30,140 L30,160"/>
+    <path d="M40,135 L40,165"/>
+    <path d="M50,130 L50,170"/>
+    <path d="M60,128 L60,172"/>
+    <!-- Right side -->
+    <path d="M640,140 L640,160"/>
+    <path d="M650,135 L650,165"/>
+    <path d="M660,130 L660,170"/>
+    <path d="M670,128 L670,172"/>
+  </g>
+
+  <!-- Concentric rings around center suggesting broadcast -->
+  <circle cx="350" cy="150" r="50" fill="none" stroke="#A49A6E" stroke-width="0.6" opacity="0.05"/>
+  <circle cx="350" cy="150" r="90" fill="none" stroke="#A49A6E" stroke-width="0.5" opacity="0.04"/>
+  <circle cx="350" cy="150" r="130" fill="none" stroke="#A49A6E" stroke-width="0.4" opacity="0.03"/>
+</svg>

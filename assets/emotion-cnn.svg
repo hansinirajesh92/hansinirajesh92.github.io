@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="700" height="300">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#FAF6EF"/>
+      <stop offset="100%" stop-color="#F3EDE3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="700" height="300" fill="url(#bg3)"/>
+
+  <!-- Pixel grid texture -->
+  <g stroke="#2C2A22" stroke-width="0.3" opacity="0.03">
+    <line x1="0" y1="30" x2="700" y2="30"/><line x1="0" y1="60" x2="700" y2="60"/>
+    <line x1="0" y1="90" x2="700" y2="90"/><line x1="0" y1="120" x2="700" y2="120"/>
+    <line x1="0" y1="150" x2="700" y2="150"/><line x1="0" y1="180" x2="700" y2="180"/>
+    <line x1="0" y1="210" x2="700" y2="210"/><line x1="0" y1="240" x2="700" y2="240"/>
+    <line x1="0" y1="270" x2="700" y2="270"/>
+    <line x1="30" y1="0" x2="30" y2="300"/><line x1="60" y1="0" x2="60" y2="300"/>
+    <line x1="90" y1="0" x2="90" y2="300"/><line x1="120" y1="0" x2="120" y2="300"/>
+    <line x1="150" y1="0" x2="150" y2="300"/><line x1="180" y1="0" x2="180" y2="300"/>
+  </g>
+
+  <!-- Scattered abstract face ovals -->
+  <!-- Face 1 - happy (left) -->
+  <g transform="translate(90, 130)" opacity="0.1">
+    <ellipse cx="0" cy="0" rx="42" ry="55" fill="none" stroke="#7B7B56" stroke-width="2"/>
+    <circle cx="-14" cy="-12" r="4" fill="#5C5C3E"/>
+    <circle cx="14" cy="-12" r="4" fill="#5C5C3E"/>
+    <path d="M-16,14 Q0,30 16,14" fill="none" stroke="#5C5C3E" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Face 2 - sad (center-left) -->
+  <g transform="translate(220, 100)" opacity="0.07">
+    <ellipse cx="0" cy="0" rx="35" ry="46" fill="none" stroke="#A49A6E" stroke-width="1.8"/>
+    <circle cx="-11" cy="-10" r="3.5" fill="#7B7B56"/>
+    <circle cx="11" cy="-10" r="3.5" fill="#7B7B56"/>
+    <path d="M-12,16 Q0,6 12,16" fill="none" stroke="#7B7B56" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Face 3 - surprised (center) -->
+  <g transform="translate(350, 155)" opacity="0.09">
+    <ellipse cx="0" cy="0" rx="48" ry="62" fill="none" stroke="#C0A07A" stroke-width="2"/>
+    <ellipse cx="-16" cy="-14" rx="6" ry="7" fill="none" stroke="#7B7B56" stroke-width="1.5"/>
+    <ellipse cx="16" cy="-14" rx="6" ry="7" fill="none" stroke="#7B7B56" stroke-width="1.5"/>
+    <ellipse cx="0" cy="18" rx="8" ry="10" fill="none" stroke="#7B7B56" stroke-width="1.8"/>
+  </g>
+
+  <!-- Face 4 - angry (right) -->
+  <g transform="translate(490, 120)" opacity="0.07">
+    <ellipse cx="0" cy="0" rx="38" ry="50" fill="none" stroke="#A49A6E" stroke-width="1.8"/>
+    <circle cx="-12" cy="-10" r="3.5" fill="#5C5C3E"/>
+    <circle cx="12" cy="-10" r="3.5" fill="#5C5C3E"/>
+    <line x1="-20" y1="-22" x2="-5" y2="-18" stroke="#5C5C3E" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="20" y1="-22" x2="5" y2="-18" stroke="#5C5C3E" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-10" y1="16" x2="10" y2="16" stroke="#5C5C3E" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Face 5 - neutral (far right) -->
+  <g transform="translate(620, 150)" opacity="0.08">
+    <ellipse cx="0" cy="0" rx="40" ry="52" fill="none" stroke="#C0A07A" stroke-width="1.8"/>
+    <circle cx="-13" cy="-10" r="3.5" fill="#7B7B56"/>
+    <circle cx="13" cy="-10" r="3.5" fill="#7B7B56"/>
+    <line x1="-12" y1="14" x2="12" y2="14" stroke="#7B7B56" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- CNN layer rectangles flowing right -->
+  <g opacity="0.05">
+    <rect x="140" y="220" width="30" height="60" rx="4" fill="#7B7B56"/>
+    <rect x="185" y="225" width="25" height="50" rx="4" fill="#A49A6E"/>
+    <rect x="225" y="230" width="20" height="40" rx="4" fill="#A49A6E"/>
+    <rect x="260" y="233" width="16" height="34" rx="3" fill="#C0A07A"/>
+    <rect x="290" y="236" width="12" height="28" rx="3" fill="#C0A07A"/>
+  </g>
+  <!-- Arrows between layers -->
+  <g stroke="#A49A6E" stroke-width="0.8" opacity="0.06">
+    <line x1="172" y1="250" x2="183" y2="250"/>
+    <line x1="212" y1="250" x2="223" y2="250"/>
+    <line x1="247" y1="250" x2="258" y2="250"/>
+    <line x1="278" y1="250" x2="288" y2="250"/>
+  </g>
+
+  <!-- Feature detection squares scattered -->
+  <g fill="none" stroke="#A49A6E" stroke-width="0.8" opacity="0.06" stroke-dasharray="3,3">
+    <rect x="65" y="95" width="25" height="25" rx="2"/>
+    <rect x="85" y="115" width="20" height="20" rx="2"/>
+    <rect x="205" y="70" width="22" height="22" rx="2"/>
+    <rect x="335" y="108" width="28" height="28" rx="2"/>
+    <rect x="475" y="85" width="22" height="22" rx="2"/>
+    <rect x="605" y="112" width="24" height="24" rx="2"/>
+  </g>
+
+  <!-- Floating softmax probability bars -->
+  <g transform="translate(540, 225)" opacity="0.05">
+    <rect x="0" y="0" width="120" height="8" rx="4" fill="#EDEBD8"/>
+    <rect x="0" y="0" width="100" height="8" rx="4" fill="#7B7B56"/>
+    <rect x="0" y="14" width="120" height="8" rx="4" fill="#EDEBD8"/>
+    <rect x="0" y="14" width="25" height="8" rx="4" fill="#A49A6E"/>
+    <rect x="0" y="28" width="120" height="8" rx="4" fill="#EDEBD8"/>
+    <rect x="0" y="28" width="15" height="8" rx="4" fill="#C0A07A"/>
+    <rect x="0" y="42" width="120" height="8" rx="4" fill="#EDEBD8"/>
+    <rect x="0" y="42" width="10" height="8" rx="4" fill="#D4B896"/>
+  </g>
+
+  <!-- Scatter of neuron-like dots -->
+  <g fill="#7B7B56" opacity="0.04">
+    <circle cx="320" cy="40" r="4"/><circle cx="360" cy="30" r="3"/>
+    <circle cx="400" cy="42" r="3.5"/><circle cx="440" cy="35" r="3"/>
+    <circle cx="380" cy="55" r="2.5"/><circle cx="340" cy="60" r="3"/>
+  </g>
+</svg>

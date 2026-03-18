@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="700" height="300">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#FAF6EF"/>
+      <stop offset="100%" stop-color="#F3EDE3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="700" height="300" fill="url(#bg4)"/>
+
+  <!-- Faint frequency lines background -->
+  <g stroke="#2C2A22" stroke-width="0.4" opacity="0.03" fill="none">
+    <path d="M0,40 Q175,20 350,40 Q525,60 700,40"/>
+    <path d="M0,100 Q175,80 350,100 Q525,120 700,100"/>
+    <path d="M0,160 Q175,140 350,160 Q525,180 700,160"/>
+    <path d="M0,220 Q175,200 350,220 Q525,240 700,220"/>
+    <path d="M0,280 Q175,260 350,280 Q525,300 700,280"/>
+  </g>
+
+  <!-- === LEFT SIDE: Mixed/complex signal === -->
+
+  <!-- Mixed waveform - thick and complex -->
+  <path d="M20,150 Q35,110 50,135 Q65,160 75,105 Q85,70 100,130 Q115,175 125,120 Q135,80 150,140 Q160,180 175,110 Q185,65 200,135 Q210,180 225,115 Q235,75 250,145 Q260,190 275,120 Q285,72 300,148"
+    fill="none" stroke="#5C5C3E" stroke-width="2.5" stroke-linecap="round" opacity="0.15"/>
+  <!-- Area fill under mixed -->
+  <path d="M20,150 Q35,110 50,135 Q65,160 75,105 Q85,70 100,130 Q115,175 125,120 Q135,80 150,140 Q160,180 175,110 Q185,65 200,135 Q210,180 225,115 Q235,75 250,145 Q260,190 275,120 Q285,72 300,148 L300,300 L20,300 Z"
+    fill="#5C5C3E" opacity="0.025"/>
+
+  <!-- Noise texture on mixed signal -->
+  <path d="M20,148 L35,155 L48,132 L62,158 L78,108 L90,125 L105,135 L118,170 L130,118 L142,85 L158,142 L168,175 L182,115 L195,68 L208,138 L218,176 L232,118 L242,78 L258,148 L268,185 L282,122 L295,75 L300,145"
+    fill="none" stroke="#7B7B56" stroke-width="0.6" opacity="0.08"/>
+
+  <!-- === CENTER: Separation visual (diverging arrows) === -->
+
+  <!-- Three diverging paths from center -->
+  <g stroke="#A49A6E" stroke-width="1" opacity="0.08" fill="none">
+    <path d="M310,150 Q360,150 400,75"/>
+    <path d="M310,150 Q360,150 400,150"/>
+    <path d="M310,150 Q360,150 400,225"/>
+  </g>
+
+  <!-- Split indicator -->
+  <g opacity="0.06">
+    <line x1="320" y1="70" x2="320" y2="230" stroke="#C0A07A" stroke-width="1" stroke-dasharray="4,6"/>
+  </g>
+
+  <!-- === RIGHT SIDE: Three separated clean signals === -->
+
+  <!-- Signal 1 - low frequency (top) -->
+  <path d="M400,75 Q440,40 480,75 Q520,110 560,75 Q600,40 640,75 Q660,95 680,75"
+    fill="none" stroke="#7B7B56" stroke-width="2" stroke-linecap="round" opacity="0.14"/>
+  <path d="M400,75 Q440,40 480,75 Q520,110 560,75 Q600,40 640,75 Q660,95 680,75 L680,110 L400,110 Z"
+    fill="#7B7B56" opacity="0.025"/>
+
+  <!-- Signal 2 - mid frequency (middle) -->
+  <path d="M400,150 Q415,125 430,150 Q445,175 460,150 Q475,125 490,150 Q505,175 520,150 Q535,125 550,150 Q565,175 580,150 Q595,125 610,150 Q625,175 640,150 Q655,125 670,150 Q678,162 680,150"
+    fill="none" stroke="#A49A6E" stroke-width="2" stroke-linecap="round" opacity="0.14"/>
+  <path d="M400,150 Q415,125 430,150 Q445,175 460,150 Q475,125 490,150 Q505,175 520,150 Q535,125 550,150 Q565,175 580,150 Q595,125 610,150 Q625,175 640,150 Q655,125 670,150 Q678,162 680,150 L680,185 L400,185 Z"
+    fill="#A49A6E" opacity="0.02"/>
+
+  <!-- Signal 3 - high frequency (bottom) -->
+  <path d="M400,225 Q407,210 414,225 Q421,240 428,225 Q435,210 442,225 Q449,240 456,225 Q463,210 470,225 Q477,240 484,225 Q491,210 498,225 Q505,240 512,225 Q519,210 526,225 Q533,240 540,225 Q547,210 554,225 Q561,240 568,225 Q575,210 582,225 Q589,240 596,225 Q603,210 610,225 Q617,240 624,225 Q631,210 638,225 Q645,240 652,225 Q659,210 666,225 Q673,240 680,225"
+    fill="none" stroke="#C0A07A" stroke-width="1.8" stroke-linecap="round" opacity="0.14"/>
+  <path d="M400,225 Q407,210 414,225 Q421,240 428,225 Q435,210 442,225 Q449,240 456,225 Q463,210 470,225 Q477,240 484,225 Q491,210 498,225 Q505,240 512,225 Q519,210 526,225 Q533,240 540,225 Q547,210 554,225 Q561,240 568,225 Q575,210 582,225 Q589,240 596,225 Q603,210 610,225 Q617,240 624,225 Q631,210 638,225 Q645,240 652,225 Q659,210 666,225 Q673,240 680,225 L680,260 L400,260 Z"
+    fill="#C0A07A" opacity="0.02"/>
+
+  <!-- Ghost network nodes scattered (DL hint) -->
+  <g fill="#7B7B56" opacity="0.04">
+    <circle cx="340" cy="100" r="5"/>
+    <circle cx="355" cy="140" r="4"/>
+    <circle cx="340" cy="180" r="5"/>
+    <circle cx="370" cy="120" r="3.5"/>
+    <circle cx="370" cy="170" r="3.5"/>
+    <circle cx="385" cy="90" r="3"/>
+    <circle cx="385" cy="150" r="3"/>
+    <circle cx="385" cy="210" r="3"/>
+  </g>
+  <!-- Ghost connections -->
+  <g stroke="#A49A6E" stroke-width="0.5" opacity="0.03">
+    <line x1="340" y1="100" x2="370" y2="120"/>
+    <line x1="340" y1="100" x2="370" y2="170"/>
+    <line x1="355" y1="140" x2="370" y2="120"/>
+    <line x1="355" y1="140" x2="370" y2="170"/>
+    <line x1="340" y1="180" x2="370" y2="120"/>
+    <line x1="340" y1="180" x2="370" y2="170"/>
+    <line x1="370" y1="120" x2="385" y2="90"/>
+    <line x1="370" y1="120" x2="385" y2="150"/>
+    <line x1="370" y1="170" x2="385" y2="150"/>
+    <line x1="370" y1="170" x2="385" y2="210"/>
+  </g>
+
+  <!-- Faint mathematical notation -->
+  <g font-family="Georgia, serif" fill="#2C2A22" opacity="0.03">
+    <text x="30" y="40" font-size="20" font-style="italic">x(t)</text>
+    <text x="420" y="50" font-size="14" font-style="italic">s₁</text>
+    <text x="420" y="140" font-size="14" font-style="italic">s₂</text>
+    <text x="420" y="218" font-size="14" font-style="italic">s₃</text>
+  </g>
+
+  <!-- Decorative spectrum bar at very bottom -->
+  <g opacity="0.04">
+    <rect x="0" y="285" width="700" height="15" fill="#EDEBD8"/>
+    <rect x="0" y="285" width="100" height="15" fill="#5C5C3E"/>
+    <rect x="100" y="285" width="150" height="15" fill="#7B7B56"/>
+    <rect x="250" y="285" width="150" height="15" fill="#A49A6E"/>
+    <rect x="400" y="285" width="150" height="15" fill="#C0A07A"/>
+    <rect x="550" y="285" width="150" height="15" fill="#D4B896"/>
+  </g>
+</svg>
