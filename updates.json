@@ -1,0 +1,14 @@
+[
+  {
+    "date": "2026-04-09",
+    "tag": "Research",
+    "title": "Working on Panel Projection Modeling",
+    "desc": "Comparing NHIS and RSS datasets for my capstone — currently focused on RSS weight estimation using Taylor linearization."
+  },
+  {
+    "date": "2026-04-01",
+    "tag": "Learning",
+    "title": "Diving into Power BI & Tableau",
+    "desc": "Building dashboards for the patient goal classification project with Professor Charlson at Weill Cornell."
+  }
+]
