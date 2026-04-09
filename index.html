@@ -86,7 +86,7 @@ nav.scrolled { border-bottom-color: var(--border); box-shadow: var(--shadow-sm);
 .terminal-line .string { color: var(--camel); }
 .terminal-line .func { color: var(--olive-light); }
 .terminal-line .comment { color: var(--text-muted); font-style: italic; opacity: 0.6; }
-.terminal-line .output { color: var(--text-muted); }
+.terminal-line .output { color: var(--text-muted); white-space: normal; display: block; padding-left: 4px; font-size: 0.72rem; line-height: 1.6; }
 .terminal-line .number { color: var(--camel); }
 .terminal-cursor-block { display: inline-block; width: 8px; height: 15px; background: var(--olive-light); animation: blink 0.8s infinite; vertical-align: text-bottom; margin-left: 2px; opacity: 0.5; }
 .terminal-glow { position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(123,123,86,0.05), transparent 70%); pointer-events: none; border-radius: 50%; }
@@ -259,7 +259,7 @@ footer { padding: 40px clamp(24px, 6vw, 80px); border-top: 1px solid var(--borde
         <div class="terminal-dot red"></div>
         <div class="terminal-dot yellow"></div>
         <div class="terminal-dot green"></div>
-        <span class="terminal-title">.py</span>
+        <span class="terminal-title">updates.log</span>
       </div>
       <div class="terminal-body" id="terminalBody"></div>
     </div>
@@ -287,17 +287,6 @@ footer { padding: 40px clamp(24px, 6vw, 80px); border-top: 1px solid var(--borde
       <div class="highlight-card"><div class="highlight-icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg></div><h4>Education</h4><p>MPS Applied Stats, Cornell '26</p></div>
     </div>
     <a href="about.html" style="display:inline-flex;align-items:center;gap:6px;font-size:0.9rem;font-weight:600;color:var(--accent);margin-top:32px;transition:gap 0.3s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">More about me <svg style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-  </div>
-</section>
-  <!-- UPDATES -->
-<section id="updates">
-  <div class="reveal">
-    <div class="section-label">What I'm Up To</div>
-    <h2 class="section-title">Live Updates</h2>
-    <p class="section-desc">What I'm currently building, learning, and exploring.</p>
-  </div>
-  <div class="updates-grid" id="updatesGrid">
-    <div class="updates-empty">Loading updates...</div>
   </div>
 </section>
 <section id="projects">
@@ -331,15 +320,15 @@ footer { padding: 40px clamp(24px, 6vw, 80px); border-top: 1px solid var(--borde
     <h2 class="section-title">Let's Connect</h2>
     <p class="section-desc" style="margin: 0 auto 40px;">I'm actively looking for Quant Research/Trading, Data Science and Analytics roles. The best way to reach me is via email or LinkedIn.</p>
     <div class="contact-links">
-      <a href="mailto:hr394@cornell.edu" class="contact-card"><span class="c-icon"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><span>Email Me</span></a>
+      <a href="/cdn-cgi/l/email-protection#670f15545e532704081509020b0b49020312" class="contact-card"><span class="c-icon"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><span>Email Me</span></a>
       <a href="https://www.linkedin.com/in/hansini-rajesh" target="_blank" class="contact-card"><span class="c-icon"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span><span>LinkedIn</span></a>
       <a href="https://github.com/hansinirajesh92" target="_blank" class="contact-card"><span class="c-icon"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></span><span>GitHub</span></a>
     </div>
   </div>
 </section>
-<footer><span>&copy; 2026 Hansini Rajesh</span><div class="footer-links"><a href="mailto:hr394@cornell.edu">Email</a><a href="https://www.linkedin.com/in/hansini-rajesh" target="_blank">LinkedIn</a><a href="https://github.com/hansinirajesh92" target="_blank">GitHub</a></div></footer>
+<footer><span>&copy; 2026 Hansini Rajesh</span><div class="footer-links"><a href="/cdn-cgi/l/email-protection#ddb5afeee4e99dbeb2afb3b8b1b1f3b8b9a8">Email</a><a href="https://www.linkedin.com/in/hansini-rajesh" target="_blank">LinkedIn</a><a href="https://github.com/hansinirajesh92" target="_blank">GitHub</a></div></footer>
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg class="icon-svg" viewBox="0 0 24 24" style="color:var(--cream)"><polyline points="18 15 12 9 6 15"/></svg></button>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('done'),1600)});
 const dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing');
 let mouseX=0,mouseY=0,ringX=0,ringY=0;
@@ -361,84 +350,55 @@ window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scr
 function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}document.querySelectorAll('.nav-links a').forEach(l=>{l.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')})});
 document.querySelectorAll('.project-card').forEach(card=>{card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,cx=r.width/2,cy=r.height/2;card.style.transform=`perspective(800px) rotateX(${(y-cy)/20}deg) rotateY(${(cx-x)/20}deg) translateY(-6px)`});card.addEventListener('mouseleave',()=>{card.style.transform=''})});
 
-/* ========== TERMINAL ANIMATION ========== */
-const terminalLines = [
-  { text: '<span class="comment"># Monte Carlo VaR Estimation</span>' },
-  { text: '<span class="prompt">>>> </span><span class="keyword">import</span> numpy <span class="keyword">as</span> np' },
-  { text: '<span class="prompt">>>> </span><span class="keyword">import</span> pandas <span class="keyword">as</span> pd' },
-  { text: '<span class="prompt">>>> </span><span class="keyword">from</span> scipy <span class="keyword">import</span> stats' },
-  { text: '' },
-  { text: '<span class="comment"># Simulate 10k portfolio returns</span>' },
-  { text: '<span class="prompt">>>> </span>n_sims = <span class="number">10_000</span>' },
-  { text: '<span class="prompt">>>> </span>mu, sigma = <span class="number">0.08</span>, <span class="number">0.15</span>' },
-  { text: '<span class="prompt">>>> </span>returns = np.<span class="func">random.normal</span>(mu, sigma, n_sims)' },
-  { text: '' },
-  { text: '<span class="comment"># Compute risk metrics</span>' },
-  { text: '<span class="prompt">>>> </span>VaR_95 = np.<span class="func">percentile</span>(returns, <span class="number">5</span>)' },
-  { text: '<span class="prompt">>>> </span>CVaR = returns[returns <= VaR_95].<span class="func">mean</span>()' },
-  { text: '<span class="prompt">>>> </span>sharpe = (mu - <span class="number">0.04</span>) / sigma' },
-  { text: '' },
-  { text: '<span class="prompt">>>> </span><span class="keyword">print</span>(<span class="string">f"VaR (95%):  </span><span class="number">{VaR_95:.4f}</span><span class="string">"</span>)' },
-  { text: '<span class="output">VaR (95%):  -0.1689</span>' },
-  { text: '<span class="prompt">>>> </span><span class="keyword">print</span>(<span class="string">f"CVaR:       </span><span class="number">{CVaR:.4f}</span><span class="string">"</span>)' },
-  { text: '<span class="output">CVaR:       -0.2134</span>' },
-  { text: '<span class="prompt">>>> </span><span class="keyword">print</span>(<span class="string">f"Sharpe:     </span><span class="number">{sharpe:.2f}</span><span class="string">"</span>)' },
-  { text: '<span class="output">Sharpe:     0.27</span>' },
+/* ========== TERMINAL: LIVE UPDATES FROM JSON ========== */
+const fallbackLines = [
+  { text: '<span class="comment"># No updates yet</span>' },
+  { text: '<span class="prompt">>>> </span><span class="func">print</span>(<span class="string">"Check back soon!"</span>)' },
+  { text: '<span class="output">Check back soon!</span>' },
 ];
 
-function runTerminal() {
+function buildTerminalLines(updates) {
+  const lines = [];
+  lines.push({ text: '<span class="comment"># Latest Updates</span>' });
+  lines.push({ text: '<span class="prompt">>>> </span><span class="keyword">from</span> portfolio <span class="keyword">import</span> updates' });
+  lines.push({ text: '<span class="prompt">>>> </span>updates.<span class="func">fetch</span>(<span class="string">"latest"</span>)' });
+  lines.push({ text: '' });
+  updates.slice(0, 4).forEach((u, i) => {
+    const d = new Date(u.date).toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
+    lines.push({ text: `<span class="comment"># ${d}</span>` });
+    lines.push({ text: `<span class="prompt">>>> </span><span class="func">log</span>(${u.tag ? '<span class="string">"' + u.tag + '"</span>, ' : ''}<span class="string">"${u.title}"</span>)` });
+    lines.push({ text: `<span class="output">  ${u.desc}</span>` });
+    if (i < Math.min(updates.length, 4) - 1) lines.push({ text: '' });
+  });
+  return lines;
+}
+
+function runTerminal(lines) {
   const body = document.getElementById('terminalBody');
   if (!body) return;
   body.innerHTML = '';
-  terminalLines.forEach((line, i) => {
+  lines.forEach((line, i) => {
     const div = document.createElement('div');
     div.className = 'terminal-line';
-    if (line.text === '') {
-      div.innerHTML = '&nbsp;';
-    } else {
-      div.innerHTML = line.text;
-    }
+    div.innerHTML = line.text === '' ? '&nbsp;' : line.text;
     body.appendChild(div);
-    setTimeout(() => {
-      div.classList.add('visible');
-    }, 2000 + i * 250);
+    setTimeout(() => div.classList.add('visible'), 2000 + i * 250);
   });
-  // Add blinking cursor at the end
   const cursorLine = document.createElement('div');
   cursorLine.className = 'terminal-line';
   cursorLine.innerHTML = '<span class="prompt">>>> </span><span class="terminal-cursor-block"></span>';
   body.appendChild(cursorLine);
-  setTimeout(() => {
-    cursorLine.classList.add('visible');
-  }, 2000 + terminalLines.length * 250);
-
-  // Loop: restart after all lines are shown + pause
-  setTimeout(() => {
-    runTerminal();
-  }, 2000 + terminalLines.length * 250 + 6000);
+  setTimeout(() => cursorLine.classList.add('visible'), 2000 + lines.length * 250);
+  setTimeout(() => runTerminal(lines), 2000 + lines.length * 250 + 8000);
 }
-runTerminal();
-// Live Updates from JSON
+
 fetch('updates.json')
   .then(r => r.json())
   .then(updates => {
-    const grid = document.getElementById('updatesGrid');
-    if (!updates.length) { grid.innerHTML = '<div class="updates-empty">No updates yet — check back soon!</div>'; return; }
-    grid.innerHTML = updates.slice(0, 4).map(u => `
-      <div class="update-card reveal">
-        <div class="update-meta">
-          <span class="update-date">${new Date(u.date).toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'})}</span>
-          ${u.tag ? `<span class="update-tag">${u.tag}</span>` : ''}
-        </div>
-        <h3>${u.title}</h3>
-        <p>${u.desc}</p>
-      </div>
-    `).join('');
-    grid.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+    const lines = updates.length ? buildTerminalLines(updates) : fallbackLines;
+    runTerminal(lines);
   })
-  .catch(() => {
-    document.getElementById('updatesGrid').innerHTML = '<div class="updates-empty">No updates yet — check back soon!</div>';
-  });
+  .catch(() => runTerminal(fallbackLines));
 </script>
 </body>
 </html>
