@@ -576,3 +576,16 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   margin-top: 24px;
 }
 
+.updates-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.update-card { background: var(--bg-card); border-radius: 14px; border: 1px solid var(--border); padding: 28px; transition: all 0.3s; position: relative; overflow: hidden; }
+.update-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--olive-light), var(--camel)); transform: scaleX(0); transition: transform 0.4s; }
+.update-card:hover::before { transform: scaleX(1); }
+.update-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--border-hover); }
+.update-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.update-date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); }
+.update-tag { font-family: var(--font-mono); font-size: 0.68rem; padding: 3px 10px; border-radius: 100px; background: var(--accent-light); color: var(--accent); font-weight: 500; }
+.update-card h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; margin-bottom: 8px; }
+.update-card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
+.updates-empty { text-align: center; padding: 40px; color: var(--text-muted); font-family: var(--font-mono); font-size: 0.85rem; }
+@media (max-width: 768px) { .updates-grid { grid-template-columns: 1fr; } }
+
