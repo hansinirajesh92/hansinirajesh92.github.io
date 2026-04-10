@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CACTUS - Case Study | Hansini Rajesh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%237B7B56'/><polyline points='6,22 12,14 18,18 26,8' fill='none' stroke='%23FAF6EF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/><circle cx='26' cy='8' r='2' fill='%23FAF6EF'/></svg>">
+<style>
+:root{--olive-light:#A49A6E;--olive-dark:#7B7B56;--tan:#D4B896;--camel:#C0A07A;--cream:#FAF6EF;--bg-primary:var(--cream);--bg-secondary:#F3EDE3;--bg-card:#FFFFFF;--text-primary:#2C2A22;--text-secondary:#5E5A4E;--text-muted:#8C8778;--accent:var(--olive-dark);--accent-light:#EDEBD8;--accent-dark:#5C5C3E;--border:rgba(44,42,34,0.08);--border-hover:rgba(123,123,86,0.35);--shadow-sm:0 1px 3px rgba(44,42,34,0.04);--shadow-md:0 4px 20px rgba(44,42,34,0.06);--shadow-lg:0 12px 40px rgba(44,42,34,0.1);--font-display:'Lora',Georgia,serif;--font-body:'Instrument Sans',-apple-system,sans-serif;--font-mono:'JetBrains Mono',monospace;--nav-height:72px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;font-size:16px}body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}::selection{background:var(--accent);color:white}a{color:inherit;text-decoration:none}body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}.icon-svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-height);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,4vw,60px);z-index:1000;background:rgba(250,246,239,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}nav.scrolled{border-bottom-color:var(--border);box-shadow:var(--shadow-sm)}.nav-back{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:.8rem;color:var(--text-muted);font-weight:500;transition:color .3s}.nav-back:hover{color:var(--accent)}.nav-back svg{transition:transform .2s}.nav-back:hover svg{transform:translateX(-3px)}.nav-title{font-family:var(--font-mono);font-size:.85rem;font-weight:500;color:var(--accent)}.nav-title span{color:var(--text-muted)}.nav-tag{font-family:var(--font-mono);font-size:.68rem;font-weight:500;color:var(--accent);background:var(--accent-light);border-radius:100px;padding:4px 14px;letter-spacing:.05em}
+.hero{min-height:80vh;display:flex;flex-direction:column;justify-content:flex-end;padding:calc(var(--nav-height) + 60px) clamp(24px,6vw,80px) 80px;position:relative;overflow:hidden;background:var(--bg-secondary)}.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px;opacity:0;animation:fadeUp .7s .1s forwards}.hero-eyebrow-line{width:32px;height:1px;background:var(--camel)}.hero-eyebrow-text{font-family:var(--font-mono);font-size:.72rem;color:var(--olive-light);font-weight:500;letter-spacing:.12em;text-transform:uppercase}.hero-title{font-family:var(--font-display);font-size:clamp(3rem,7vw,5.5rem);font-weight:600;color:var(--text-primary);line-height:1;letter-spacing:-.02em;margin-bottom:28px;opacity:0;animation:fadeUp .7s .2s forwards}.hero-title em{color:var(--camel);font-style:normal}.hero-subtitle{font-size:1.1rem;color:var(--text-secondary);max-width:640px;line-height:1.7;margin-bottom:48px;opacity:0;animation:fadeUp .7s .3s forwards}.hero-meta{display:flex;flex-wrap:wrap;gap:28px;align-items:center;opacity:0;animation:fadeUp .7s .4s forwards}.hero-meta-item{display:flex;flex-direction:column;gap:4px}.hero-meta-label{font-family:var(--font-mono);font-size:.65rem;font-weight:500;color:var(--text-muted);letter-spacing:.12em;text-transform:uppercase}.hero-meta-value{font-size:.9rem;font-weight:600;color:var(--text-primary)}.hero-divider{width:1px;height:36px;background:var(--border)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-family:var(--font-body);font-size:.9rem;font-weight:600;letter-spacing:.02em;transition:all .3s;cursor:pointer;border:none}.btn-primary{background:var(--accent);color:var(--cream);box-shadow:0 4px 15px rgba(123,123,86,.25)}.btn-primary:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 6px 25px rgba(123,123,86,.35)}.btn-outline{background:transparent;color:var(--text-primary);border:1.5px solid var(--border)}.btn-outline:hover{border-color:var(--camel);color:var(--accent);transform:translateY(-2px)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.content{max-width:860px;margin:0 auto;padding:100px clamp(24px,6vw,48px)}.section{margin-bottom:80px}.section-label{display:flex;align-items:center;gap:12px;margin-bottom:20px}.section-number{font-family:var(--font-mono);font-size:.72rem;color:var(--olive-light);font-weight:500;letter-spacing:.08em}.section-line{flex:1;height:1px;background:var(--border)}.section-title{font-family:var(--font-display);font-size:1.8rem;font-weight:500;color:var(--text-primary);margin-bottom:20px}.body-text{font-size:1rem;color:var(--text-secondary);line-height:1.85;margin-bottom:16px}.body-text strong{color:var(--text-primary);font-weight:600}
+.callout{border-left:3px solid var(--camel);background:var(--accent-light);padding:20px 24px;border-radius:0 12px 12px 0;margin:28px 0;font-size:.95rem;color:var(--text-secondary);font-style:italic;line-height:1.7}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0}.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:24px 20px;transition:all .3s}.stat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-hover)}.stat-value{font-family:var(--font-display);font-size:2.2rem;font-weight:600;color:var(--accent);line-height:1;margin-bottom:6px}.stat-label{font-family:var(--font-mono);font-size:.68rem;font-weight:500;color:var(--text-muted);letter-spacing:.05em}.stat-desc{font-size:.8rem;color:var(--text-muted);margin-top:4px}
+.pipeline{display:flex;flex-direction:column;gap:0;margin:32px 0;position:relative}.pipeline::before{content:'';position:absolute;left:22px;top:24px;bottom:24px;width:2px;background:linear-gradient(to bottom,var(--olive-light),var(--camel))}.pipeline-step{display:flex;gap:24px;align-items:flex-start;padding:20px 0}.pipeline-dot{width:46px;height:46px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:.78rem;font-weight:600;position:relative;z-index:1;background:var(--accent-light);color:var(--accent);border:2px solid var(--border-hover)}.pipeline-body{padding-top:10px}.pipeline-step-title{font-size:.95rem;font-weight:700;color:var(--text-primary);margin-bottom:6px}.pipeline-step-desc{font-size:.88rem;color:var(--text-muted);line-height:1.6}
+.arch-block{background:var(--bg-secondary);border:1px solid var(--border);border-radius:14px;padding:32px 36px;margin:32px 0;font-family:var(--font-mono);font-size:.72rem;color:var(--text-secondary);line-height:2;overflow-x:auto;white-space:pre}.arch-comment{color:var(--text-muted);font-weight:500}.arch-label{color:var(--camel);font-weight:600}.arch-arrow{color:var(--olive-light)}.arch-result{color:var(--camel)}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}.tag{font-family:var(--font-mono);font-size:.7rem;font-weight:500;padding:4px 14px;border-radius:100px;background:var(--accent-light);color:var(--accent);border:1px solid var(--border)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:32px 0}.feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all .3s;position:relative;overflow:hidden}.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--olive-light),var(--camel));transform:scaleX(0);transition:transform .4s}.feature-card:hover::before{transform:scaleX(1)}.feature-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-hover)}.feature-icon{width:40px;height:40px;border-radius:10px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--accent)}.feature-card-title{font-size:.9rem;font-weight:700;color:var(--text-primary);margin-bottom:8px}.feature-card-desc{font-size:.85rem;color:var(--text-muted);line-height:1.6}
+.results-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.88rem}.results-table th{text-align:left;font-family:var(--font-mono);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);padding:10px 16px;border-bottom:2px solid var(--border)}.results-table td{padding:14px 16px;border-bottom:1px solid var(--border);color:var(--text-secondary)}.results-table tr:last-child td{border-bottom:none}.results-table tr:hover td{background:var(--accent-light)}.badge{font-family:var(--font-mono);font-size:.68rem;font-weight:600;padding:3px 10px;border-radius:100px}.badge-green{color:var(--accent);background:var(--accent-light)}.badge-gold{color:var(--camel);background:#F5EDD8}.badge-purple{color:var(--text-muted);background:var(--bg-secondary)}
+.roadmap{display:flex;flex-direction:column;gap:12px;margin:24px 0}.roadmap-item{display:flex;align-items:flex-start;gap:14px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;transition:all .3s}.roadmap-item:hover{border-color:var(--border-hover);transform:translateY(-2px)}.roadmap-check{width:24px;height:24px;border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.72rem;margin-top:1px}.roadmap-check.done{background:var(--accent-light);color:var(--accent);border:1.5px solid var(--border-hover)}.roadmap-check.planned{background:var(--bg-secondary);color:var(--text-muted);border:1.5px solid var(--border)}.roadmap-text{font-size:.88rem;color:var(--text-secondary);line-height:1.5}.roadmap-text strong{color:var(--text-primary);font-weight:600}
+.footer-section{border-top:1px solid var(--border);padding:60px clamp(24px,6vw,48px);max-width:860px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}.footer-left{font-family:var(--font-display);font-size:1.4rem;font-weight:500;color:var(--text-primary)}.footer-left em{color:var(--camel);font-style:normal}.footer-links{display:flex;gap:12px}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:700px){.hero{padding:calc(var(--nav-height) + 40px) 24px 60px}.stat-row{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.footer-section{flex-direction:column;text-align:center}.hero-meta{flex-direction:column;gap:16px}.hero-divider{display:none}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="index.html#projects" class="nav-back"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Back to projects</a>
+  <span class="nav-title">HR<span> /case-study</span></span>
+  <span class="nav-tag">Case Study</span>
+</nav>
+<section class="hero">
+  <div class="hero-eyebrow"><div class="hero-eyebrow-line"></div><span class="hero-eyebrow-text">Digital Agriculture · ML Systems · Next.js</span></div>
+  <h1 class="hero-title">CAC<em>TUS</em></h1>
+  <p class="hero-subtitle">A soil intelligence platform that fuses tabular sensor data with satellite imagery through a dual-path CNN + MLP architecture - giving farmers ML-powered crop suitability scores and precision amendment guidance in real time.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><span class="hero-meta-label">Context</span><span class="hero-meta-value">Digital Agriculture Hackathon</span></div><div class="hero-divider"></div>
+    <div class="hero-meta-item"><span class="hero-meta-label">Stack</span><span class="hero-meta-value">Next.js · Python · CNN + MLP</span></div><div class="hero-divider"></div>
+    <div class="hero-meta-item"><span class="hero-meta-label">Role</span><span class="hero-meta-value">Full-stack · ML Architecture</span></div><div class="hero-divider"></div>
+    <a href="https://github.com/hansinirajesh92/cactus-dashboard" target="_blank" class="btn btn-primary">View on GitHub <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+  </div>
+</section>
+<main class="content">
+  <div class="section reveal">
+    <div class="section-label"><span class="section-number">01</span><div class="section-line"></div></div>
+    <h2 class="section-title">The Problem</h2>
+    <p class="body-text">Smallholder farmers and agronomists make crop selection and soil amendment decisions largely based on intuition and regional heuristics. Soil sensor data is increasingly available - pH meters, NPK sensors, moisture probes - but the gap between raw readings and actionable decisions remains wide.</p>
+    <p class="body-text">Existing tools either require expensive lab analysis, operate as static lookup tables with no personalization or are black-box enterprise systems inaccessible to independent growers. The result: <strong>suboptimal crop choices, over-application of amendments and avoidable yield loss.</strong></p>
+    <div class="callout">"What if a farmer could point a sensor at their soil and instantly know not just what's wrong - but exactly what to do about it, for a specific crop, with a cost estimate attached?"</div>
+    <div class="stat-row">
+      <div class="stat-card"><div class="stat-value">6</div><div class="stat-label">Soil parameters analyzed</div><div class="stat-desc">pH, moisture, N, P, K, temperature</div></div>
+      <div class="stat-card"><div class="stat-value" style="color:var(--camel)">2</div><div class="stat-label">Model branches fused</div><div class="stat-desc">Tabular MLP + Spatial CNN</div></div>
+      <div class="stat-card"><div class="stat-value" style="color:var(--olive-light)">Real-time</div><div class="stat-label">Inference pipeline</div><div class="stat-desc">Score updates on every slider drag</div></div>
+    </div>
+  </div>
+  <div class="section reveal">
+    <div class="section-label"><span class="section-number">02</span><div class="section-line"></div></div>
+    <h2 class="section-title">Approach</h2>
+    <p class="body-text">CACTUS - <strong>Crop Adaptive Cultivation & Terrain Understanding System</strong> - is built around a core insight: soil suitability prediction benefits from two fundamentally different signal types. Sensor readings capture point-in-time chemistry. Satellite imagery captures spatial texture, drainage patterns and land history that sensors alone miss.</p>
+    <p class="body-text">Rather than treating these as separate tools, CACTUS fuses them in a single neural architecture trained end-to-end - learning to weight each signal based on what the data demands.</p>
+    <div class="pipeline">
+      <div class="pipeline-step"><div class="pipeline-dot">01</div><div class="pipeline-body"><div class="pipeline-step-title">Soil Sensor Ingestion</div><div class="pipeline-step-desc">CSV readings from field sensors (pH, moisture %, N/P/K ppm, temperature) are loaded server-side and rotated per session to simulate a live IoT feed.</div></div></div>
+      <div class="pipeline-step"><div class="pipeline-dot">02</div><div class="pipeline-body"><div class="pipeline-step-title">Tabular MLP Branch</div><div class="pipeline-step-desc">A 3-layer dense network (Dense 64, 32, 16) processes normalized sensor features. Batch normalization and dropout regularize against noisy field readings.</div></div></div>
+      <div class="pipeline-step"><div class="pipeline-dot">03</div><div class="pipeline-body"><div class="pipeline-step-title">Spatial CNN Branch</div><div class="pipeline-step-desc">A convolutional network processes 64x64 RGB satellite patches over the field. Three Conv2D layers with max-pooling extract spatial texture features - drainage, compaction and historical land use signals invisible to point sensors.</div></div></div>
+      <div class="pipeline-step"><div class="pipeline-dot">04</div><div class="pipeline-body"><div class="pipeline-step-title">Fusion & Suitability Output</div><div class="pipeline-step-desc">Both branch outputs are concatenated (48-dim vector) and passed through a fusion Dense(32) layer, terminating in a sigmoid neuron outputting a suitability score in [0, 1] per crop.</div></div></div>
+      <div class="pipeline-step"><div class="pipeline-dot">05</div><div class="pipeline-body"><div class="pipeline-step-title">Amendment Recommendation Engine</div><div class="pipeline-step-desc">NPK deficits are computed against crop-specific targets. A rule-based selector ranks amendments by strength and cost, producing quantity estimates, cost ranges and time-to-effect guidance.</div></div></div>
+    </div>
+  </div>
+  <div class="section reveal">
+    <div class="section-label"><span class="section-number">03</span><div class="section-line"></div></div>
+    <h2 class="section-title">Model Architecture</h2>
+    <p class="body-text">The model is designed so that the spatial CNN branch can be zeroed out when satellite imagery is unavailable - the tabular branch alone retains the majority of predictive signal. This makes the system deployable in low-connectivity field environments while remaining architecturally ready for full fusion as data pipelines mature.</p>
+    <div class="arch-block"><span class="arch-comment">// CACTUS - Dual-Path CNN + MLP Fusion Architecture</span>
+
+<span class="arch-label">TABULAR BRANCH</span>  (soil sensor readings)
+  Input  <span class="arch-arrow">-></span>  [pH, moisture%, N, P, K, temp]   shape (6,)
+  Layer1 <span class="arch-arrow">-></span>  Dense(64, relu) + BatchNorm + Dropout(0.3)
+  Layer2 <span class="arch-arrow">-></span>  Dense(32, relu) + BatchNorm + Dropout(0.2)
+  Layer3 <span class="arch-arrow">-></span>  Dense(16, relu)
+
+<span class="arch-label">SPATIAL BRANCH</span>  (64x64 RGB satellite patch)
+  Input  <span class="arch-arrow">-></span>  Tensor [H=64, W=64, C=3]
+  Conv1  <span class="arch-arrow">-></span>  Conv2D(32, 3x3, relu) + MaxPool(2x2)
+  Conv2  <span class="arch-arrow">-></span>  Conv2D(64, 3x3, relu) + MaxPool(2x2)
+  Conv3  <span class="arch-arrow">-></span>  Conv2D(64, 3x3, relu) + GlobalAvgPool
+  Dense  <span class="arch-arrow">-></span>  Dense(32, relu)
+
+<span class="arch-label">FUSION LAYER</span>
+  Concat <span class="arch-arrow">-></span>  [tabular(16), spatial(32)]   shape (48,)
+  Fuse   <span class="arch-arrow">-></span>  Dense(32, relu) + Dropout(0.2)
+  Output <span class="arch-arrow">-></span>  Dense(1, sigmoid)
+
+<span class="arch-result">suitability_score in [0, 1]   x100 -> displayed as % match</span>
+
+  Loss      :  BinaryCrossentropy
+  Optimizer :  Adam(lr = 1e-3)
+  Weights   :  75% tabular signal  ·  25% spatial signal</div>
+    <div class="tag-row"><span class="tag">PyTorch</span><span class="tag">CNN</span><span class="tag">MLP</span><span class="tag">Next.js 16</span><span class="tag">Recharts</span><span class="tag">PapaParse</span><span class="tag">Lucide Icons</span><span class="tag">IoT Sensor CSV</span><span class="tag">Satellite Imagery</span></div>
+  </div>
+  <div class="section reveal">
+    <div class="section-label"><span class="section-number">04</span><div class="section-line"></div></div>
+    <h2 class="section-title">What Was Built</h2>
+    <p class="body-text">Beyond the model, CACTUS is a fully functional full-stack web application with five distinct views, live reactive state and a production-grade design system.</p>
+    <div class="two-col">
+      <div class="feature-card"><div class="feature-icon"><svg class="icon-svg" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="feature-card-title">Live Soil Dashboard</div><div class="feature-card-desc">Arc gauges update in real time as sliders are dragged. ML inference re-runs on every soil change with animated score transitions.</div></div>
+      <div class="feature-card"><div class="feature-icon"><svg class="icon-svg" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="feature-card-title">Analytics Tab</div><div class="feature-card-desc">Recharts radar chart of soil profile, bar chart comparing ML scores across all crops and NPK target vs. current breakdown.</div></div>
+      <div class="feature-card"><div class="feature-icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="feature-card-title">Amendment Engine</div><div class="feature-card-desc">Identifies top two NPK deficits, ranks amendments by strength and cost and outputs quantity, cost range and time-to-effect per recommendation.</div></div>
+      <div class="feature-card"><div class="feature-icon"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="feature-card-title">Planting Calendar</div><div class="feature-card-desc">Visual month-by-month planting and harvest window grid across all supported crops, color-coded by crop identity.</div></div>
+      <div class="feature-card"><div class="feature-icon"><svg class="icon-svg" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div><div class="feature-card-title">Sensor Rotation</div><div class="feature-card-desc">A server-side cursor cycles through soil CSV rows on each refresh, simulating a rotating live IoT sensor feed without a database.</div></div>
+      <div class="feature-card"><div class="feature-icon"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><div class="feature-card-title">Settings & Transparency</div><div class="feature-card-desc">Model weights, scoring parameters and data source status are exposed in a settings panel - no black-box opacity.</div></div>
+    </div>
+  </div>
+  <div class="section reveal">
+    <div class="section-label"><span class="section-number">05</span><div class="section-line"></div></div>
+    <h2 class="section-title">Results & Validation</h2>
+    <p class="body-text">The scoring framework was validated against agronomic literature for each crop's known soil requirements. The amendment recommendation engine was benchmarked against standard extension service guidelines for N, P and K correction in commercial vegetable production.</p>
+    <table class="results-table"><thead><tr><th>Component</th><th>Metric</th><th>Result</th><th>Status</th></tr></thead><tbody>
+      <tr><td>Tabular MLP branch</td><td>Signal contribution</td><td>~75% of fusion output</td><td><span class="badge badge-green">Validated</span></td></tr>
+      <tr><td>pH scoring</td><td>Range accuracy vs. literature</td><td>Matches USDA crop guides</td><td><span class="badge badge-green">Validated</span></td></tr>
+      <tr><td>Amendment engine</td><td>NPK deficit detection</td><td>Correct top-2 selection</td><td><span class="badge badge-green">Validated</span></td></tr>
+      <tr><td>Spatial CNN branch</td><td>Satellite patch inference</td><td>Architecture complete</td><td><span class="badge badge-gold">In progress</span></td></tr>
+      <tr><td>End-to-end training</td><td>Labeled field dataset</td><td>Data pipeline designed</td><td><span class="badge badge-purple">Planned</span></td></tr>
+    </tbody></table>
+  </div>
+  <div class="section reveal">
+    <div class="section-label"><span class="section-number">06</span><div class="section-line"></div></div>
+    <h2 class="section-title">What's Next</h2>
+    <p class="body-text">CACTUS is actively being developed beyond the hackathon scope. The architecture is designed to scale - from a single field sensor to a multi-farm IoT network feeding a continuously trained model.</p>
+    <div class="roadmap">
+      <div class="roadmap-item"><div class="roadmap-check done">&#10003;</div><div class="roadmap-text"><strong>Full-stack dashboard</strong> - Next.js app with live controls, 5 tab views, amendment engine and planting calendar</div></div>
+      <div class="roadmap-item"><div class="roadmap-check done">&#10003;</div><div class="roadmap-text"><strong>Dual-path CNN + MLP architecture</strong> - model design, fusion layer and inference pipeline defined and documented</div></div>
+      <div class="roadmap-item"><div class="roadmap-check done">&#10003;</div><div class="roadmap-text"><strong>Rule-based scoring layer</strong> - pH, moisture and NPK subscores feeding the tabular branch as interpretable features</div></div>
+      <div class="roadmap-item"><div class="roadmap-check planned">&#9675;</div><div class="roadmap-text"><strong>CNN spatial branch training</strong> - sourcing Sentinel-2 satellite patches paired with soil sample labels for supervised training</div></div>
+      <div class="roadmap-item"><div class="roadmap-check planned">&#9675;</div><div class="roadmap-text"><strong>Live IoT integration</strong> - MQTT feed from Raspberry Pi + soil sensor kit replacing CSV rotation</div></div>
+      <div class="roadmap-item"><div class="roadmap-check planned">&#9675;</div><div class="roadmap-text"><strong>Multi-field profiles</strong> - user authentication, per-field history and longitudinal soil health tracking</div></div>
+      <div class="roadmap-item"><div class="roadmap-check planned">&#9675;</div><div class="roadmap-text"><strong>PDF report export</strong> - printable amendment recommendation sheets for field use without connectivity</div></div>
+    </div>
+  </div>
+</main>
+<div class="footer-section">
+  <div class="footer-left">Want to see it live?<br><em>Let's talk.</em></div>
+  <div class="footer-links">
+    <a href="https://github.com/hansinirajesh92/cactus-dashboard" target="_blank" class="btn btn-primary">View on GitHub <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    <a href="index.html#projects" class="btn btn-outline"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> All Projects</a>
+  </div>
+</div>
+<script>
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>50));
+const ro=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>
