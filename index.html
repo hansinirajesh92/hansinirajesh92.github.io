@@ -76,19 +76,27 @@
   .bio { font-size: 21px; line-height: 1.5; max-width: 660px; }
   .about-links { margin-top: 24px; display: flex; gap: 24px; font-size: 15px; }
 
-  .lower { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: stretch; }
+  .lower { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: minmax(260px, auto); gap: 16px; align-items: stretch; }
   .card { background: #0d0d0d; border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; }
   .looking ul { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; margin: 20px 0 24px; }
   .looking li { font-size: 20px; font-weight: 500; line-height: 1.3; }
   .looking .meta { font-size: 14px; margin-top: auto; }
 
-  .updates .feed { margin: 12px -28px -24px; max-height: 260px; overflow-y: auto; }
-  .post { padding: 10px 28px; }
-  .post:last-child { padding-bottom: 24px; }
+  .updates { height: 0; min-height: 100%; }
+  .updates.editing { height: auto; }
+  .updates-head { display: flex; justify-content: space-between; align-items: center; }
+  .pager { display: flex; align-items: center; gap: 4px; }
+  .pager .count { font-size: 13px; color: #9a9a9a; margin-right: 8px; font-variant-numeric: tabular-nums; }
+  .arrow { background: none; border: 0; padding: 2px 6px; cursor: pointer; font-size: 16px; line-height: 1; color: #fff; }
+  .arrow:disabled { color: #3a3a3a; cursor: default; }
+  .updates .feed { flex: 1; min-height: 0; overflow-y: auto; margin-top: 16px; }
+  .post { padding: 0; }
+  .post p { animation: fade 0.25s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(4px); } }
   .post time { font-size: 12px; color: #9a9a9a; display: block; margin-bottom: 4px; }
-  .post p { font-size: 15px; white-space: pre-line; }
+  .post p { font-size: 16px; line-height: 1.5; white-space: pre-line; }
   .post .del { margin-top: 8px; font-size: 12px; background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; color: #9a9a9a; }
-  .feed-empty { padding: 10px 28px 24px; font-size: 14px; color: #9a9a9a; }
+  .feed-empty { font-size: 14px; color: #9a9a9a; }
 
   .composer { display: none; padding: 16px 0 4px; }
   .editing .composer { display: block; }
@@ -214,6 +222,8 @@
     h1 { font-size: 48px; }
     .bio { font-size: 18px; }
     .lower { grid-template-columns: 1fr; }
+    .updates { height: auto; min-height: 200px; }
+    .lower { grid-auto-rows: auto; }
     .featured { grid-template-columns: 1fr; }
     .feature { min-height: 0; }
     .row-btn { grid-template-columns: 56px 1fr 24px; }
@@ -231,8 +241,6 @@
     .tagline { font-size: 16px; margin-top: 8px; }
     .bio { font-size: 17px; }
     .card { padding: 20px; }
-    .updates .feed { margin: 12px -20px -20px; }
-    .post, .feed-empty { padding-left: 20px; padding-right: 20px; }
     .looking li { font-size: 17px; }
     .looking ul { grid-template-columns: 1fr; gap: 8px; }
     .chapter { grid-template-columns: 1fr; gap: 24px; padding: 48px 0; }
@@ -300,9 +308,16 @@
         </div>
 
         <aside class="card updates" id="updates" aria-label="Updates">
-          <div class="label">Updates</div>
+          <div class="updates-head">
+            <div class="label">Updates</div>
+            <div class="pager" id="pager">
+              <span class="count" id="pCount"></span>
+              <button class="arrow" id="newer" type="button" aria-label="Newer update">&#8593;</button>
+              <button class="arrow" id="older" type="button" aria-label="Older update">&#8595;</button>
+            </div>
+          </div>
           <div class="composer" id="composer">
-            <textarea id="postText" placeholder="What are you working on?" maxlength="600"></textarea>
+            <textarea id="postText" placeholder="What are you working on?" maxlength="400"></textarea>
             <input id="tokenInput" type="password" placeholder="GitHub token (only needed once on this device)" autocomplete="off">
             <div class="row">
               <span class="status" id="postStatus"></span>
@@ -398,8 +413,9 @@
           <p class="story">At Cornell I completed a Master's in Applied Statistics and put it to work on real problems: aligning health survey data with national benchmarks for the CDC, and helping compare how AI and law students interpret constitutions. This is where engineering met statistics.</p>
           <ul class="roles">
             <li><span>Master of Professional Studies, Applied Statistics<span class="org">Cornell University</span></span><span class="d">Aug 2025 to May 2026</span></li>
-            <li><span>Student Researcher, Applied Statistics<span class="org">Cornell University</span></span><span class="d">Jan 2026 to Present</span></li>
+            <li><span>Student Researcher, Applied Statistics<span class="org">Cornell University</span></span><span class="d">Jan 2026 to May 2026</span></li>
             <li><span>Survey Panel Projection<span class="org">CDC, National Center for Health Statistics</span></span><span class="d">2026</span></li>
+            <li><span>Research Fellow, Applied Statistics<span class="org">Cornell University</span></span><span class="d">Jul 2026 to Present</span></li>
           </ul>
           <div class="takeaway"><span class="label">Took away</span><span>Statistical depth, applied to decisions that matter.</span></div>
         </div>
@@ -655,15 +671,29 @@ function fmtDate(d) {
   const time = dt.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZoneName: "short" });
   return day + " at " + time;
 }
+let cur = 0;
 function renderFeed() {
   const feed = $("feed");
-  if (!updates.length) { feed.innerHTML = `<div class="feed-empty">No updates yet.</div>`; return; }
-  feed.innerHTML = updates.map((u, i) => {
-    const text = u.text || [u.title, u.desc].filter(Boolean).join("\n");
-    return `<article class="post"><time datetime="${esc(u.date)}">${esc(fmtDate(u.date))}</time><p>${esc(text)}</p>${editing ? `<button class="del" data-del="${i}" type="button">Delete</button>` : ""}</article>`;
-  }).join("");
+  const n = updates.length;
+  $("pager").style.visibility = n > 1 ? "visible" : "hidden";
+  if (!n) { feed.innerHTML = `<div class="feed-empty">No updates yet.</div>`; return; }
+  cur = Math.max(0, Math.min(cur, n - 1));
+  const u = updates[cur];
+  const text = u.text || [u.title, u.desc].filter(Boolean).join("\n");
+  feed.innerHTML = `<article class="post"><time datetime="${esc(u.date)}">${esc(fmtDate(u.date))}</time><p>${esc(text)}</p>${editing ? `<button class="del" data-del="${cur}" type="button">Delete</button>` : ""}</article>`;
+  $("pCount").textContent = (cur + 1) + " of " + n;
+  $("newer").disabled = cur === 0;
+  $("older").disabled = cur === n - 1;
   feed.querySelectorAll("[data-del]").forEach(b => b.addEventListener("click", () => deletePost(+b.dataset.del)));
 }
+function step(d) { if (updates[cur + d]) { cur += d; renderFeed(); } }
+$("newer").addEventListener("click", () => step(-1));
+$("older").addEventListener("click", () => step(1));
+$("updates").addEventListener("keydown", e => {
+  if (e.target.matches("textarea, input")) return;
+  if (e.key === "ArrowUp") { e.preventDefault(); step(-1); }
+  if (e.key === "ArrowDown") { e.preventDefault(); step(1); }
+});
 function sortUpdates() { updates.sort((a, b) => (b.date > a.date ? 1 : -1)); }
 
 async function loadUpdates() {
@@ -724,7 +754,7 @@ $("postBtn").addEventListener("click", async () => {
     const entry = { date: new Date().toISOString(), text };
     data.unshift(entry);
     await ghPut(data, sha, "Post update");
-    updates = data; sortUpdates(); renderFeed();
+    updates = data; sortUpdates(); cur = 0; renderFeed();
     $("postText").value = "";
     status("Posted. Visitors will see it within a minute or two.");
   } catch (e) {
@@ -758,6 +788,7 @@ const EVENTS = [
   { date: "2025-08", label: "Started Master's at Cornell", ch: "ithaca" },
   { date: "2026-01", label: "Researcher at Cornell and CDC project", ch: "ithaca" },
   { date: "2026-05", label: "Graduated from Cornell", ch: "ithaca" }
+  { date: "2026-07", label: "Research Fellow at Cornell", ch: "ithaca" },
 ];
 (function buildTimeline() {
   const tl = $("timeline");
