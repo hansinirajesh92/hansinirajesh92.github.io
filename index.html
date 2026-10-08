@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hansini Rajesh</title>
-<meta name="description" content="Hansini Rajesh. Data scientist and quantitative analyst. Cornell MPS Applied Statistics. Open to full time roles in quantitative research, data science and analytics.">
+<meta name="description" content="Hansini Rajesh. Cornell MPS in Applied Statistics. Looking for full time roles in quantitative research, data science, data analytics and ML engineering.">
 <meta property="og:title" content="Hansini Rajesh">
-<meta property="og:description" content="Data scientist and quantitative analyst. Cornell MPS Applied Statistics.">
+<meta property="og:description" content="Cornell MPS in Applied Statistics. Data, finance, public health and machine learning.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hansinirajesh92.github.io/">
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
@@ -19,577 +19,359 @@
     background: #000;
     color: #fff;
     font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  button, input, textarea { font: inherit; color: inherit; }
-  a { color: #fff; }
+  h1, h2, h3, p, ul, ol { margin: 0; }
+  ul, ol { padding: 0; list-style: none; }
+  button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
   img { display: block; max-width: 100%; }
-  h1, h2, h3, p, ul { margin: 0; }
-  ul { padding: 0; list-style: none; }
+  a { color: #fff; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  ::selection { background: #fff; color: #000; }
 
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-  .muted { color: #9a9a9a; }
-  .label {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #9a9a9a;
-  }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 28px; }
+  .dim { color: #8c8c8c; }
+  h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
 
-  /* Header */
-  header {
-    position: sticky; top: 0; z-index: 10;
-    background: #000;
-  }
-  header .wrap {
-    display: flex; align-items: center; justify-content: center;
-    height: 60px;
-  }
-  .brand { font-weight: 700; text-decoration: none; }
-  nav { display: flex; gap: 28px; font-size: 14px; }
-  nav a { text-decoration: none; }
-  nav a:hover { text-decoration: underline; }
+  /* Nav */
+  nav { display: flex; justify-content: center; gap: 28px; padding: 22px 16px; font-size: 15px; }
+  nav a { text-decoration: none; color: #8c8c8c; }
+  nav a:hover { color: #fff; }
 
-  /* Sections */
-  section { padding: 80px 0; }
-  section:last-of-type { border-bottom: 0; }
-  .section-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 40px; gap: 16px; }
-  h2 { font-size: 28px; font-weight: 700; letter-spacing: -0.01em; }
-
-  /* About + Updates */
-  .intro { display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: stretch; margin-bottom: 56px; }
-  .photo {
-    width: 300px; aspect-ratio: 4 / 5;
-    background: #161616;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 40px; font-weight: 700; color: #777;
-  }
+  /* Intro */
+  .intro { display: grid; grid-template-columns: 260px 1fr; gap: 48px; padding: 72px 0 96px; align-items: end; }
+  .photo { width: 260px; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 4px; background: #111; display: flex; align-items: center; justify-content: center; color: #555; font-size: 36px; font-weight: 700; }
   .photo img { width: 100%; height: 100%; object-fit: cover; }
-  .intro-text { display: flex; flex-direction: column; justify-content: space-between; gap: 32px; }
-  h1 { font-size: 64px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; margin: -4px 0 0; }
-  .tagline { font-size: 18px; color: #9a9a9a; margin-top: 12px; }
-  .bio { font-size: 21px; line-height: 1.5; max-width: 660px; }
-  .about-links { margin-top: 24px; display: flex; gap: 24px; font-size: 15px; }
+  h1 { font-size: 60px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; }
+  .tagline { color: #8c8c8c; margin: 10px 0 36px; }
+  .bio p + p { margin-top: 16px; }
+  .bio { max-width: 580px; }
 
-  .lower { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: minmax(260px, auto); gap: 16px; align-items: stretch; }
-  .card { background: #0d0d0d; border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; }
-  .looking ul { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; margin: 20px 0 24px; }
-  .looking li { font-size: 20px; font-weight: 500; line-height: 1.3; }
-  .looking .meta { font-size: 14px; margin-top: auto; }
+  /* Now: looking for + updates */
+  .now { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding-bottom: 120px; }
+  .now h2 { margin-bottom: 14px; }
+  .roles li { font-size: 22px; line-height: 1.45; }
+  .now .note { margin-top: 14px; font-size: 16px; }
 
-  .updates { height: 0; min-height: 100%; }
-  .updates.editing { height: auto; }
-  .updates-head { display: flex; justify-content: space-between; align-items: center; }
-  .pager { display: flex; align-items: center; gap: 4px; }
-  .pager .count { font-size: 13px; color: #9a9a9a; margin-right: 8px; font-variant-numeric: tabular-nums; }
-  .arrow { background: none; border: 0; padding: 2px 6px; cursor: pointer; font-size: 16px; line-height: 1; color: #fff; }
-  .arrow:disabled { color: #3a3a3a; cursor: default; }
-  .updates .feed { flex: 1; min-height: 0; overflow-y: auto; margin-top: 16px; }
-  .post { padding: 0; }
-  .post p { animation: fade 0.25s ease; }
-  @keyframes fade { from { opacity: 0; transform: translateY(4px); } }
-  .post time { font-size: 12px; color: #9a9a9a; display: block; margin-bottom: 4px; }
-  .post p { font-size: 16px; line-height: 1.5; white-space: pre-line; }
-  .post .del { margin-top: 8px; font-size: 12px; background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; color: #9a9a9a; }
-  .feed-empty { font-size: 14px; color: #9a9a9a; }
+  .updates-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
+  .pager { font-size: 15px; color: #8c8c8c; display: flex; gap: 14px; align-items: baseline; }
+  .pager button { font-size: 17px; line-height: 1; padding: 2px 4px; }
+  .pager button:disabled { color: #333; cursor: default; }
+  .feed { height: 9.5em; overflow-y: auto; }
+  .post time { display: block; font-size: 14px; color: #8c8c8c; margin-bottom: 4px; }
+  .post p { white-space: pre-line; animation: fade 0.25s ease; }
+  @keyframes fade { from { opacity: 0; } }
+  .post .del { margin-top: 6px; font-size: 13px; color: #8c8c8c; text-decoration: underline; }
 
-  .composer { display: none; padding: 16px 0 4px; }
+  .composer { display: none; margin-bottom: 20px; }
   .editing .composer { display: block; }
-  .composer textarea, .composer input {
-    width: 100%; border: 0; border-radius: 6px; background: #1a1a1a; padding: 10px; font-size: 15px; resize: vertical; border-radius: 0;
-  }
-  .composer textarea { min-height: 84px; }
-  .composer input { margin-top: 8px; font-size: 13px; }
-  .composer .row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; gap: 12px; }
-  .composer .status { font-size: 12px; color: #9a9a9a; }
-  .plain-btn { background: #fff; color: #000; border: 0; padding: 6px 16px; cursor: pointer; border-radius: 6px; font-size: 14px; }
-  .plain-btn:disabled { opacity: 0.4; cursor: default; }
-  .link-btn { background: none; border: 0; padding: 0; font-size: 12px; text-decoration: underline; cursor: pointer; color: #9a9a9a; }
+  .editing .feed { height: auto; }
+  .composer textarea, .composer input { width: 100%; font: inherit; font-size: 16px; color: #fff; background: #141414; border: 0; border-radius: 4px; padding: 10px 12px; }
+  .composer textarea { min-height: 90px; resize: vertical; }
+  .composer input { margin-top: 8px; font-size: 14px; }
+  .composer .row { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 10px; font-size: 14px; }
+  .composer .status { color: #8c8c8c; }
+  .composer .post-btn { text-decoration: underline; font-weight: 700; }
+  .composer .post-btn:disabled { color: #555; }
+  .composer .forget { color: #8c8c8c; text-decoration: underline; font-size: 13px; }
 
-  /* Projects */
-  .featured { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .feature {
-    text-align: left; background: #0d0d0d; border: 0; border-radius: 8px;
-    padding: 28px; cursor: pointer; display: flex; flex-direction: column; gap: 12px; min-height: 280px;
-  }
-  .feature:hover { background: #161616; }
-  .feature h3 { font-size: 20px; font-weight: 700; line-height: 1.3; }
-  .feature p { font-size: 15px; color: #c8c8c8; flex: 1; }
-  .feature .stat { font-size: 32px; font-weight: 700; line-height: 1; }
-  .feature .stat-label { font-size: 13px; color: #9a9a9a; }
-  .open-hint { font-size: 13px; text-decoration: underline; }
+  /* Featured */
+  .featured { padding-bottom: 112px; }
+  .featured > h2 { margin-bottom: 48px; }
+  .feat { display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; margin-bottom: 72px; }
+  .feat:last-child { margin-bottom: 0; }
+  .feat h3 { font-size: 30px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
+  .feat .yr { color: #8c8c8c; font-size: 15px; margin-top: 10px; }
+  .feat .hook { font-size: 20px; margin-bottom: 16px; }
+  .feat .body p { color: #cfcfcf; }
+  .feat .body p + p { margin-top: 14px; }
+  .feat .foot { margin-top: 16px; font-size: 15px; color: #8c8c8c; }
 
-  .all-list { }
-  .row-btn {
-    width: 100%; text-align: left; background: #000; border: 0; border-radius: 6px;
-    padding: 18px 0; cursor: pointer;
-    display: grid; grid-template-columns: 80px 1fr 260px 24px; gap: 24px; align-items: baseline;
-  }
-  .row-btn:hover { background: #141414; }
-  .row-btn .yr { font-size: 14px; color: #9a9a9a; padding-left: 8px; }
-  .row-btn .t { font-weight: 700; }
-  .row-btn .s { display: block; font-weight: 400; font-size: 14px; color: #9a9a9a; }
-  .row-btn .tags { font-size: 13px; color: #9a9a9a; }
-  .row-btn .plus { font-size: 20px; line-height: 1; }
+  /* All projects */
+  .all { padding-bottom: 112px; }
+  .all > h2 { margin-bottom: 20px; }
+  .proj summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 14px 0; }
+  .proj summary::-webkit-details-marker { display: none; }
+  .proj summary .t { font-weight: 700; font-size: 19px; }
+  .proj summary .t span { display: block; font-weight: 400; font-size: 16px; color: #8c8c8c; }
+  .proj summary .yr { color: #8c8c8c; font-size: 15px; white-space: nowrap; }
+  .proj summary:hover .t { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+  .proj summary .yr::after { content: "  +"; }
+  .proj[open] summary .yr::after { content: "  \2212"; }
+  .proj .inside { padding: 4px 0 28px; max-width: 640px; }
+  .proj .inside p { color: #cfcfcf; }
+  .proj .inside p + p { margin-top: 12px; }
+  .proj .inside .foot { margin-top: 14px; font-size: 15px; color: #8c8c8c; }
 
-  /* Panel */
-  .scrim { position: fixed; inset: 0; background: rgba(0,0,0,0.7); opacity: 0; pointer-events: none; transition: opacity 0.25s; z-index: 20; }
-  .panel {
-    position: fixed; top: 0; right: 0; bottom: 0; width: min(560px, 100%);
-    background: #0b0b0b; z-index: 21;
-    transform: translateX(100%); transition: transform 0.3s ease;
-    overflow-y: auto; padding: 32px 40px 48px;
-  }
-  .panel-open .scrim { opacity: 1; pointer-events: auto; }
-  .panel-open .panel { transform: none; }
-  .panel-open { overflow: hidden; }
-  .panel-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
-  .close { background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; font-size: 14px; }
-  .panel h3 { font-size: 28px; font-weight: 700; line-height: 1.2; margin: 8px 0 16px; letter-spacing: -0.01em; }
-  .panel .overview { margin-bottom: 32px; }
-  .panel h4 { font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #9a9a9a; margin: 0 0 12px; }
-  .metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 32px; }
-  .metric { padding: 16px; background: #161616; border-radius: 6px; }
-  .metric b { display: block; font-size: 24px; font-weight: 700; line-height: 1.2; }
-  .metric span { font-size: 13px; color: #9a9a9a; }
-  .outcomes { margin-bottom: 32px; }
-  .outcomes li { padding: 8px 0 8px 20px; position: relative; }
-  .outcomes li::before { content: ""; position: absolute; left: 2px; top: 18px; width: 5px; height: 5px; border-radius: 50%; background: #fff; }
-  .panel .tools { margin-bottom: 32px; font-size: 15px; }
-  .panel .links a { margin-right: 24px; font-size: 14px; }
-
-  /* Journey: timeline + city chapters */
-  .journey-intro { max-width: 560px; color: #9a9a9a; margin-top: -24px; margin-bottom: 48px; }
-  .timeline { position: relative; height: 96px; margin: 0 8px 72px; }
-  .tl-line { position: absolute; left: 0; right: 0; top: 40px; height: 1px; background: #3a3a3a; }
-  .tl-fill { position: absolute; left: 0; top: 40px; height: 1px; background: #fff; width: 0; transition: width 0.6s ease; }
-  .tl-tick { position: absolute; top: 56px; transform: translateX(-50%); font-size: 13px; color: #9a9a9a; }
-  .tl-tick::before { content: ""; position: absolute; left: 50%; top: -16px; width: 1px; height: 6px; background: #3a3a3a; }
-  .tl-now { position: absolute; right: 0; top: 56px; font-size: 13px; transform: translateX(50%); }
-  .tl-dot {
-    position: absolute; top: 34px; width: 13px; height: 13px; margin-left: -6.5px;
-    border-radius: 50%; border: 1px solid #fff; background: #000; padding: 0; cursor: pointer;
-    transition: background 0.3s;
-  }
-  .tl-dot.on { background: #fff; }
-  .tl-tip {
-    position: absolute; bottom: 72px; left: 50%; transform: translateX(-50%);
-    white-space: nowrap; font-size: 13px; background: #fff; color: #000; padding: 4px 10px;
-    opacity: 0; pointer-events: none; transition: opacity 0.15s;
-  }
-  .tl-dot:hover .tl-tip, .tl-dot:focus-visible .tl-tip { opacity: 1; }
-  .tl-dot.edge-l .tl-tip { left: 0; transform: none; }
-  .tl-dot.edge-r .tl-tip { left: auto; right: 0; transform: none; }
-
-  .chapter { scroll-margin-top: 80px; display: grid; grid-template-columns: 340px 1fr; gap: 64px; padding: 56px 0; }
-  .chapter .num { font-size: 14px; color: #9a9a9a; margin-bottom: 8px; }
-  .chapter .city { font-size: 72px; font-weight: 700; line-height: 0.95; letter-spacing: -0.03em; }
-  .chapter .country { font-size: 18px; margin-top: 12px; }
-  .chapter .years { font-size: 14px; color: #9a9a9a; margin-top: 4px; }
-  .chapter .headline { font-size: 26px; font-weight: 500; line-height: 1.3; letter-spacing: -0.01em; margin-bottom: 16px; }
-  .chapter .story { color: #c8c8c8; margin-bottom: 32px; max-width: 620px; }
-  .roles { margin-bottom: 28px; }
-  .roles li { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 8px 0; font-size: 15px; }
-  .roles .org { display: block; color: #9a9a9a; font-size: 14px; }
-  .roles .d { color: #9a9a9a; font-size: 14px; white-space: nowrap; }
-  .takeaway { display: flex; gap: 16px; align-items: baseline; }
-  .takeaway .label { flex: none; }
-  .chapter.next { padding: 48px 0 0; }
-  .chapter.next .city { font-size: 40px; }
+  /* Experience */
+  .exp { padding-bottom: 104px; }
+  .exp > h2 { margin-bottom: 32px; }
+  .job { display: grid; grid-template-columns: 170px 1fr; gap: 32px; margin-bottom: 36px; }
+  .job:last-child { margin-bottom: 0; }
+  .job .when { color: #8c8c8c; font-size: 15px; padding-top: 3px; }
+  .job h3 { font-size: 19px; font-weight: 700; }
+  .job .where { color: #8c8c8c; font-size: 16px; }
+  .job p.d { margin-top: 8px; color: #cfcfcf; max-width: 620px; }
 
   /* Quote */
-  .quote { text-align: center; padding: 120px 0; }
-  .quote blockquote { margin: 0 auto; max-width: 780px; font-size: 28px; line-height: 1.4; font-weight: 500; letter-spacing: -0.01em; }
-  .quote cite { display: block; margin-top: 24px; font-style: normal; color: #9a9a9a; font-size: 14px; }
+  .quote { padding: 40px 0 120px; }
+  .quote blockquote { margin: 0; max-width: 760px; font-size: 30px; line-height: 1.35; font-weight: 500; letter-spacing: -0.015em; }
+  .quote cite { display: block; margin-top: 18px; font-style: normal; color: #8c8c8c; font-size: 16px; }
 
   /* Footer */
-  footer { background: #000; color: #fff; padding: 64px 0 40px; }
-  footer a { color: #fff; }
-  .social { display: grid; grid-template-columns: repeat(4, 1fr); }
-  .social a { padding: 24px 0; text-decoration: none; display: flex; justify-content: space-between; padding-right: 24px; }
-  .social a:hover { text-decoration: underline; }
-  .footer-head { font-size: 28px; font-weight: 700; margin-bottom: 32px; letter-spacing: -0.01em; }
-  .copy { margin-top: 40px; font-size: 13px; color: #9a9a9a; }
+  footer { padding: 0 0 56px; }
+  footer p { max-width: 560px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 14px; font-size: 20px; }
+  .copy { margin-top: 64px; font-size: 14px; color: #555; }
 
-  @media (max-width: 960px) {
-    .intro { grid-template-columns: 240px 1fr; gap: 40px; }
-    .photo { width: 240px; }
-    h1 { font-size: 48px; }
-    .bio { font-size: 18px; }
-    .lower { grid-template-columns: 1fr; }
-    .updates { height: auto; min-height: 200px; }
-    .lower { grid-auto-rows: auto; }
-    .featured { grid-template-columns: 1fr; }
-    .feature { min-height: 0; }
-    .row-btn { grid-template-columns: 56px 1fr 24px; }
-    .row-btn .tags { display: none; }
-    .social { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 640px) {
-    nav { gap: 18px; font-size: 13px; overflow-x: auto; white-space: nowrap; }
-    .section-head { flex-direction: column; align-items: flex-start; gap: 8px; }
-    section { padding: 56px 0; }
-    .wrap { padding: 0 16px; }
-    .intro { grid-template-columns: 1fr; gap: 24px; margin-bottom: 32px; }
+  @media (max-width: 860px) {
+    .intro { grid-template-columns: 200px 1fr; gap: 32px; padding: 48px 0 72px; }
     .photo { width: 200px; }
+    h1 { font-size: 46px; }
+    .now { grid-template-columns: 1fr; gap: 56px; padding-bottom: 88px; }
+    .feat { grid-template-columns: 1fr; gap: 14px; margin-bottom: 56px; }
+  }
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    .wrap { padding: 0 18px; }
+    nav { gap: 18px; font-size: 14px; flex-wrap: wrap; }
+    .intro { grid-template-columns: 1fr; gap: 24px; padding: 32px 0 64px; }
+    .photo { width: 170px; }
     h1 { font-size: 40px; }
-    .tagline { font-size: 16px; margin-top: 8px; }
-    .bio { font-size: 17px; }
-    .card { padding: 20px; }
-    .looking li { font-size: 17px; }
-    .looking ul { grid-template-columns: 1fr; gap: 8px; }
-    .chapter { grid-template-columns: 1fr; gap: 24px; padding: 48px 0; }
-    .chapter .city { font-size: 52px; }
-    .chapter .headline { font-size: 21px; }
-    .roles li { grid-template-columns: 1fr; gap: 2px; }
-    .takeaway { flex-direction: column; gap: 4px; }
-    .timeline { margin-bottom: 48px; }
-    .tl-tick { font-size: 11px; }
-    .panel { padding: 24px 20px 40px; }
-    .quote { padding: 80px 0; }
-    .quote blockquote { font-size: 22px; }
-    .social { grid-template-columns: 1fr; }
+    .tagline { margin-bottom: 24px; }
+    .roles li { font-size: 20px; }
+    .feed { height: 8em; }
+    .now { padding-bottom: 64px; }
+    .feat h3 { font-size: 26px; }
+    .job { grid-template-columns: 1fr; gap: 4px; margin-bottom: 30px; }
+    .quote blockquote { font-size: 23px; }
+    .links { font-size: 18px; }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <nav>
-      <a href="#about">About</a>
-      <a href="#updates">Updates</a>
-      <a href="#work">Work</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+<nav>
+  <a href="#about">About</a>
+  <a href="#updates">Updates</a>
+  <a href="#work">Work</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-<main id="top">
+<main class="wrap">
 
-  <!-- About + Updates -->
-  <section id="about">
-    <div class="wrap">
-      <div class="intro">
-        <div class="photo" id="photo">
-          <img src="assets/hansini.jpg" alt="Hansini Rajesh" onerror="this.remove(); document.getElementById('photo').textContent='HR';">
-        </div>
-        <div class="intro-text">
-          <div>
-            <h1>Heyy, I'm Hansini</h1>
-            <p class="tagline">diet coke fiend</p>
-          </div>
-          <div>
-            <p class="bio">I hold a Master's in Applied Statistics from Cornell University and a degree in Computer Science. I turn complex data into clear decisions, from building the pipeline to modeling to presenting results that teams can act on. My work spans financial markets, public health and machine learning.</p>
-            <div class="about-links">
-              <a href="Hansini_Rajesh_Resume.pdf" target="_blank" rel="noopener">Resume</a>
-              <a href="#contact">Get in touch</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="lower">
-        <div class="card looking">
-          <div class="label">Looking for</div>
-          <ul>
-            <li>Quantitative Research</li>
-            <li>Data Scientist</li>
-            <li>Data Analyst</li>
-            <li>ML Engineer</li>
-          </ul>
-          <p class="meta muted">Full time. Open to relocation. Available now.</p>
-        </div>
-
-        <aside class="card updates" id="updates" aria-label="Updates">
-          <div class="updates-head">
-            <div class="label">Updates</div>
-            <div class="pager" id="pager">
-              <span class="count" id="pCount"></span>
-              <button class="arrow" id="newer" type="button" aria-label="Newer update">&#8593;</button>
-              <button class="arrow" id="older" type="button" aria-label="Older update">&#8595;</button>
-            </div>
-          </div>
-          <div class="composer" id="composer">
-            <textarea id="postText" placeholder="What are you working on?" maxlength="400"></textarea>
-            <input id="tokenInput" type="password" placeholder="GitHub token (only needed once on this device)" autocomplete="off">
-            <div class="row">
-              <span class="status" id="postStatus"></span>
-              <button class="plain-btn" id="postBtn" type="button">Post</button>
-            </div>
-            <div class="row">
-              <button class="link-btn" id="forgetToken" type="button">Forget token on this device</button>
-            </div>
-          </div>
-          <div class="feed" id="feed"><div class="feed-empty">Loading updates</div></div>
-        </aside>
+  <section class="intro" id="about">
+    <div class="photo" id="photo">
+      <img src="assets/hansini.jpg" alt="Hansini Rajesh" onerror="this.remove(); document.getElementById('photo').textContent='HR';">
+    </div>
+    <div>
+      <h1>Heyy, I'm Hansini</h1>
+      <p class="tagline">diet coke fiend</p>
+      <div class="bio">
+        <p>I have a Master's in Applied Statistics from Cornell and a CS degree from VIT Chennai. Before CS I seriously considered physics, medicine and journalism (?), and data science ended up being the one field where I didn't have to pick.</p>
+        <p>I'm most interested in finance and healthcare, but honestly I'll work with just about any dataset you put in front of me. Here's my <a href="Hansini_Rajesh_Resume.pdf" target="_blank" rel="noopener">resume</a>, or just <a href="#contact">say hi</a>.</p>
       </div>
     </div>
   </section>
 
-  <!-- Featured -->
-  <section id="work">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Featured Work</h2>
-        <span class="label">Select a project for outcomes</span>
+  <section class="now">
+    <div>
+      <h2>Looking for</h2>
+      <ul class="roles">
+        <li>Quantitative Research</li>
+        <li>Data Scientist</li>
+        <li>Data Analyst</li>
+        <li>ML Engineer</li>
+      </ul>
+      <p class="note dim">Full time, and happy to relocate.</p>
+    </div>
+
+    <div class="updates" id="updates">
+      <div class="updates-top">
+        <h2>What I'm up to</h2>
+        <div class="pager" id="pager">
+          <span id="pCount"></span>
+          <button id="newer" type="button" aria-label="Newer update">&#8593;</button>
+          <button id="older" type="button" aria-label="Older update">&#8595;</button>
+        </div>
       </div>
-      <div class="featured" id="featured"></div>
+      <div class="composer" id="composer">
+        <textarea id="postText" placeholder="What are you working on?" maxlength="300"></textarea>
+        <input id="tokenInput" type="password" placeholder="GitHub token (only needed once on this device)" autocomplete="off">
+        <div class="row">
+          <span class="status" id="postStatus"></span>
+          <button class="post-btn" id="postBtn" type="button">Post</button>
+        </div>
+        <div class="row"><button class="forget" id="forgetToken" type="button">Forget token on this device</button></div>
+      </div>
+      <div class="feed" id="feed" tabindex="0"><p class="dim">Loading</p></div>
     </div>
   </section>
 
-  <!-- All projects -->
-  <section id="projects">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>All Projects</h2>
-        <span class="label" id="projCount"></span>
+  <section class="featured" id="work">
+    <h2>Featured work</h2>
+    <div id="featured"></div>
+  </section>
+
+  <section class="all" id="projects">
+    <h2>All projects</h2>
+    <div id="allList"></div>
+  </section>
+
+  <section class="exp" id="experience">
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="when">Jul 2026 to now</div>
+      <div>
+        <h3>Research Fellow, Applied Statistics</h3>
+        <div class="where">Cornell University, Ithaca</div>
       </div>
-      <div class="all-list" id="allList"></div>
+    </div>
+
+    <div class="job">
+      <div class="when">Jan to May 2026</div>
+      <div>
+        <h3>Student Researcher, Applied Statistics</h3>
+        <div class="where">Cornell University, Ithaca</div>
+        <p class="d">Cleaning and modeling real research data in R and Python with faculty. The project I liked most compared how large language models and LL.M. law students code hundreds of variables across the world's constitutions.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Aug 2025 to May 2026</div>
+      <div>
+        <h3>MPS, Applied Statistics</h3>
+        <div class="where">Cornell University, Ithaca</div>
+        <p class="d">Linear models, multivariate analysis, neural networks, big data management, and a capstone with the CDC on health survey weighting.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Sep to Dec 2023</div>
+      <div>
+        <h3>Software Engineer Intern</h3>
+        <div class="where">Punt Review, Dubai</div>
+        <p class="d">Joined a consumer web platform before launch and built a lot of its front end in HTML, CSS and JavaScript, working directly with the founders on how people would move through the site.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">2021 to 2025</div>
+      <div>
+        <h3>B.Tech, Computer Science</h3>
+        <div class="where">Vellore Institute of Technology, Chennai</div>
+        <p class="d">Where I got properly into programming. I also co-authored an IEEE paper here and built the indoor navigation app.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Experience: journey -->
-  <section id="experience">
-    <div class="wrap">
-      <div class="section-head"><h2>Experience</h2></div>
-      <p class="journey-intro">Hover over the timeline.</p>
-
-      <div class="timeline" id="timeline" aria-label="Career timeline">
-        <div class="tl-line"></div>
-        <div class="tl-fill" id="tlFill"></div>
-      </div>
-
-      <article class="chapter" id="ch-chennai" data-ch="chennai">
-        <div>
-          <div class="num"></div>
-          <div class="city">Chennai</div>
-          <div class="country">India</div>
-          <div class="years">2021 to 2025</div>
-        </div>
-        <div>
-          <p class="headline">Build.</p>
-          <p class="story">I earned my Bachelor of Technology in Computer Science at VIT, where programming and problem solving became second nature. Along the way I co-authored an IEEE paper on reading driver behavior from camera and in car sensor data, and built an iPhone app that guides visually impaired people through buildings.</p>
-          <ul class="roles">
-            <li><span>Bachelor of Technology, Computer Science<span class="org">Vellore Institute of Technology</span></span><span class="d">2021 to 2025</span></li>
-            <li><span>Co-author, IEEE publication<span class="org">Multi-modal driver behavior analysis</span></span><span class="d">Apr 2024</span></li>
-          </ul>
-          <div class="takeaway"><span class="label">Took away</span><span>A strong engineering foundation and my first published research.</span></div>
-        </div>
-      </article>
-
-      <article class="chapter" id="ch-dubai" data-ch="dubai">
-        <div>
-          <div class="num"></div>
-          <div class="city">Dubai</div>
-          <div class="country">United Arab Emirates</div>
-          <div class="years">2023</div>
-        </div>
-        <div>
-          <p class="headline">Ship.</p>
-          <p class="story">At Punt Review, an early stage startup, I built the front end of a consumer web platform ahead of launch. Working directly with the founding team, I helped shape user flows and fixed issues before real users ever saw them.</p>
-          <ul class="roles">
-            <li><span>Software Engineer Intern<span class="org">Punt Review</span></span><span class="d">Sep 2023 to Dec 2023</span></li>
-          </ul>
-          <div class="takeaway"><span class="label">Took away</span><span>Product thinking, and how to deliver against a launch date.</span></div>
-        </div>
-      </article>
-
-      <article class="chapter" id="ch-ithaca" data-ch="ithaca">
-        <div>
-          <div class="num"></div>
-          <div class="city">Ithaca</div>
-          <div class="country">New York, USA</div>
-          <div class="years">2025 to 2026</div>
-        </div>
-        <div>
-          <p class="headline">Tons of Research.</p>
-          <p class="story">At Cornell I completed a Master's in Applied Statistics and put it to work on real problems: aligning health survey data with national benchmarks for the CDC, and helping compare how AI and law students interpret constitutions. This is where engineering met statistics.</p>
-          <ul class="roles">
-            <li><span>Master of Professional Studies, Applied Statistics<span class="org">Cornell University</span></span><span class="d">Aug 2025 to May 2026</span></li>
-            <li><span>Student Researcher, Applied Statistics<span class="org">Cornell University</span></span><span class="d">Jan 2026 to May 2026</span></li>
-            <li><span>Survey Panel Projection<span class="org">CDC, National Center for Health Statistics</span></span><span class="d">2026</span></li>
-            <li><span>Research Fellow, Applied Statistics<span class="org">Cornell University</span></span><span class="d">Jul 2026 to Present</span></li>
-          </ul>
-          <div class="takeaway"><span class="label">Took away</span><span>Statistical depth, applied to decisions that matter.</span></div>
-        </div>
-      </article>
-
-      <article class="chapter next">
-        <div>
-          <div class="num"></div>
-          <div class="city">Next</div>
-        </div>
-        <div>
-          <p class="headline">Your team, wherever that is.</p>
-          <p class="story">Open to relocation and ready to start. <a href="#contact">Let's talk.</a></p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Quote -->
   <section class="quote">
-    <div class="wrap">
-      <blockquote>"No matter how ridiculous the odds may seem, within us resides the power to overcome these challenges and achieve something beautiful."</blockquote>
-      <cite>Technoblade</cite>
-    </div>
+    <blockquote>"No matter how ridiculous the odds may seem, within us resides the power to overcome these challenges and achieve something beautiful."</blockquote>
+    <cite>Technoblade</cite>
   </section>
 
 </main>
 
-<footer id="contact">
-  <div class="wrap">
-    <p class="footer-head">Let's connect.</p>
-    <div class="social">
-      <a href="mailto:hr394@cornell.edu">Email <span>&#8599;</span></a>
-      <a href="https://www.linkedin.com/in/hansini-rajesh" target="_blank" rel="noopener">LinkedIn <span>&#8599;</span></a>
-      <a href="https://github.com/hansinirajesh92" target="_blank" rel="noopener">GitHub <span>&#8599;</span></a>
-      <a href="Hansini_Rajesh_Resume.pdf" target="_blank" rel="noopener">Resume <span>&#8599;</span></a>
-    </div>
-    <p class="copy">&copy; <span id="yr"></span> Hansini Rajesh</p>
+<footer class="wrap" id="contact">
+  <h2>Say hi</h2>
+  <p class="dim" style="margin-top:8px">Email is the fastest way to reach me.</p>
+  <div class="links">
+    <a href="mailto:hr394@cornell.edu">Email</a>
+    <a href="https://www.linkedin.com/in/hansini-rajesh" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/hansinirajesh92" target="_blank" rel="noopener">GitHub</a>
+    <a href="Hansini_Rajesh_Resume.pdf" target="_blank" rel="noopener">Resume</a>
   </div>
+  <p class="copy">&copy; <span id="yr"></span> Hansini Rajesh</p>
 </footer>
 
-<!-- Project panel -->
-<div class="scrim" id="scrim"></div>
-<aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="pTitle" aria-hidden="true">
-  <div class="panel-top">
-    <span class="label" id="pMeta"></span>
-    <button class="close" id="pClose" type="button">Close</button>
-  </div>
-  <div class="label" id="pYear"></div>
-  <h3 id="pTitle"></h3>
-  <p class="overview" id="pOverview"></p>
-  <div class="metrics" id="pMetrics"></div>
-  <h4>Outcomes</h4>
-  <ul class="outcomes" id="pOutcomes"></ul>
-  <h4>Tools</h4>
-  <p class="tools" id="pTools"></p>
-  <div class="links" id="pLinks"></div>
-</aside>
-
 <script>
-/* ---------- Projects: edit this list to add, remove or reorder ---------- */
+/* ---------- Projects ----------
+   Edit this list to add, remove or reorder projects.
+   featured: true puts a project in Featured work.
+   hook is the one line people see first. body is a list of paragraphs.
+   Every project ends with "}," except the last one, which ends with "}". */
 const PROJECTS = [
   {
-    title: "Astrophysical Signal Separation",
+    title: "Earnings call sentiment vs. stock returns",
+    featured: true,
     year: "2026",
-    type: "Machine Learning Research",
-    summary: "Using deep learning to isolate faint signals in sky maps from background noise.",
-    overview: "Explored deep learning methods for separating Sunyaev Zel'dovich signals from the cosmic microwave background and other foreground sources in multi frequency sky maps.",
-    metrics: [],
-    outcomes: [
-      "Generated simulated sky map datasets to train and evaluate models.",
-      "Built prototype model architectures in PyTorch.",
-      "Benchmarked against established classical methods to assess feasibility and guide model design."
+    hook: "Does the way a CEO talks on an earnings call tell you anything the numbers don't?",
+    body: [
+      "I pulled 20 earnings call transcripts for Apple, Microsoft, Google, Meta and Amazon from SEC filings, scored the tone with FinBERT, and measured how each stock moved over the five days around the call after adjusting for the market with a Fama French three factor model.",
+      "Earnings surprise mattered: a one standard deviation beat lined up with about 3.3% extra return (significant at the 10% level). Tone on its own didn't reach significance. A simple long short strategy built on the signal returned 12.5% a year against 9.1% for the S&P 500, but with a lower Sharpe ratio (0.54 vs 0.74) and a much deeper drawdown.",
+      "With only 15 usable events I'd call it a promising hint. Next step is running it across the whole S&P 500 with proper risk controls."
+    ],
+    tools: "Python, FinBERT, statsmodels, quantstats",
+    link: ["Code on GitHub", "https://github.com/hansinirajesh92/earnings-alpha"]
+  },
+  {
+    title: "CACTUS",
+    featured: true,
+    year: "2026",
+    hook: "A dashboard that tells a farmer which crops suit their soil and what to add to fix it. Built at a Cornell digital agriculture hackathon.",
+    body: [
+      "You drag sliders for pH, moisture, nitrogen, phosphorus, potassium and temperature, and the score for each crop updates right away. It also finds the two biggest nutrient gaps and suggests amendments with rough quantities, costs and how long they take to work.",
+      "I built the frontend in Next.js and designed a model that combines sensor readings with satellite images. The pH scoring and the amendment advice match USDA crop guides and extension service recommendations. The satellite half of the model is designed but not trained yet, because that needs labeled field data I don't have."
+    ],
+    tools: "Next.js, PyTorch, Recharts",
+    link: ["Code on GitHub", "https://github.com/hansinirajesh92/cactus-dashboard"]
+  },
+  {
+    title: "Health survey weighting with the CDC",
+    featured: true,
+    year: "2026",
+    hook: "My capstone with the National Center for Health Statistics: can commercial survey panels be adjusted to match the government's main health survey?",
+    body: [
+      "Commercial panels are quicker to run, but the people in them aren't a random slice of the country. I built weights that correct for who gets covered, who chooses to answer, and how they were surveyed, then checked the adjusted health estimates against the National Health Interview Survey across demographic groups.",
+      "The variance estimates use Taylor linearization, and everything runs as R and Python pipelines that someone else can pick up and rerun."
+    ],
+    tools: "R, Python, survey statistics",
+    link: null
+  },
+  {
+    title: "Finding galaxy clusters in sky maps",
+    year: "2026",
+    hook: "Using deep learning to pull a very faint signal out of maps of the cosmic microwave background.",
+    body: [
+      "Galaxy clusters leave a tiny distortion in the cosmic microwave background (the Sunyaev Zel'dovich effect), and it's buried under the background itself and a lot of foreground noise. I simulated sky maps, built prototype models in PyTorch, and compared them against the standard methods, ILC and matched filters.",
+      "Still early. I did almost major in physics, so this one is personal."
     ],
     tools: "Python, PyTorch",
-    links: []
+    link: null
   },
   {
-    title: "Earnings Call Trading Signal",
-    featured: true,
-    year: "2026",
-    type: "Quantitative Finance",
-    summary: "A trading signal built from what executives say on earnings calls, tested against the market.",
-    overview: "Built an end to end pipeline that reads earnings call transcripts, scores management tone with a finance specific language model, and combines it with earnings surprise into one signal. The signal was then tested with a factor adjusted event study and run as a long and short portfolio against the S&P 500.",
-    stat: ["23%", "of post earnings price moves explained"],
-    metrics: [["23%", "Variation in abnormal returns explained"], ["12.5%", "Annualized return vs 9.1% for SPY"], ["7.7%", "Total return vs 5.7% for SPY"], ["15", "Earnings events tested"]],
-    outcomes: [
-      "Delivered a working research pipeline from raw SEC filings to a backtested strategy in five notebooks.",
-      "The strategy outperformed the S&P 500 on total and annualized return over the test period.",
-      "Showed earnings surprise has measurable predictive value: one standard deviation of surprise linked to a 3.3% higher abnormal return.",
-      "Identified the clear next steps to improve risk adjusted performance: volatility targeting, sector neutral positions and a wider stock universe."
-    ],
-    tools: "Python, FinBERT, statsmodels, Fama French factors, SEC EDGAR, yfinance",
-    links: [["View code", "https://github.com/hansinirajesh92/earnings-alpha"]]
-  },
-  {
-    title: "CACTUS Soil Intelligence Platform",
-    featured: true,
-    year: "2026",
-    type: "Product and Machine Learning",
-    summary: "A web platform that tells farmers which crops suit their soil and exactly how to fix it.",
-    overview: "Designed and built a full stack platform that combines soil sensor readings with satellite imagery to score how well each crop suits a field. It then recommends specific soil amendments with quantities, cost and time to effect. Built at a Cornell digital agriculture hackathon.",
-    stat: ["5", "product views shipped end to end"],
-    metrics: [["6", "Soil readings analyzed live"], ["5", "Product views shipped"], ["Real time", "Scores update on every change"], ["2", "Data sources fused in one model"]],
-    outcomes: [
-      "Shipped a working application with a live soil dashboard, analytics, an amendment engine, a planting calendar and a settings view.",
-      "Crop suitability scores update instantly as soil conditions change, turning raw sensor data into a clear recommendation.",
-      "Amendment engine correctly identifies the top two nutrient gaps and matches standard agricultural extension guidance.",
-      "Soil pH scoring matches published USDA crop guides.",
-      "Designed the model to keep working without satellite data, so it can run in low connectivity field conditions."
-    ],
-    tools: "Next.js, PyTorch, Python, Recharts",
-    links: [["View code", "https://github.com/hansinirajesh92/cactus-dashboard"]]
-  },
-  {
-    title: "Health Survey Panel Projection",
-    featured: true,
-    year: "2026",
-    type: "Public Health Analytics",
-    summary: "Aligning commercial survey panels with national health benchmarks for the CDC.",
-    overview: "Developed a statistical weighting framework for the CDC's National Center for Health Statistics that adjusts commercial survey panel estimates so they line up with the National Health Interview Survey, the national benchmark for health data in the United States.",
-    stat: ["CDC", "National Center for Health Statistics"],
-    metrics: [["CDC", "Partner organization"], ["3", "Bias sources corrected"]],
-    outcomes: [
-      "Corrected for coverage, selection and mode bias across multiple survey panels and collection methods.",
-      "Benchmarked revised health estimates against national data across demographic subgroups.",
-      "Built reproducible R and Python pipelines with variance and reliability estimates so results can be audited and rerun."
-    ],
-    tools: "R, Python, survey weighting, statistical modeling",
-    links: []
-  },
-  {
-    title: "Indoor Navigation for the Visually Impaired",
+    title: "Indoor navigation for visually impaired people",
     year: "2025",
-    type: "Mobile and Computer Vision",
-    summary: "An iPhone app that guides visually impaired users indoors with spoken directions.",
-    overview: "Built an on device augmented reality navigation prototype that detects obstacles through the camera and gives turn by turn spoken directions inside buildings.",
-    metrics: [],
-    outcomes: [
-      "Delivered a working iOS prototype that runs entirely on device.",
-      "Detects indoor obstacles in real time and warns the user with speech alerts.",
-      "Generates turn by turn routes from floor plans, evaluated on navigation success rate and path deviation with moving obstacles."
+    hook: "An iPhone app that talks you through a building.",
+    body: [
+      "It uses YOLOv8 to spot obstacles through the camera and warns you out loud, and plans turn by turn routes over the floor plan with A*. Everything runs on the phone. I tested how often it reached the destination and how far it drifted from the route when obstacles moved around."
     ],
-    tools: "Swift, ARKit, YOLOv8, A* pathfinding",
-    links: []
+    tools: "Swift, ARKit, YOLOv8",
+    link: null
   },
   {
-    title: "Driver Behavior Analysis",
+    title: "Emotion classification",
+    year: "2025",
+    hook: "A CNN that reads emotions from facial expressions.",
+    body: [
+      "Trained and evaluated a convolutional network in PyTorch on a labeled dataset of facial expressions."
+    ],
+    tools: "Python, PyTorch",
+    link: null
+  },
+  {
+    title: "Driver behavior from cameras and car sensors",
     year: "2024",
-    type: "Published, IEEE",
-    summary: "Combining camera and in car sensor data to estimate speed and classify driver behavior.",
-    overview: "Co-authored an IEEE paper proposing a framework that fuses computer vision with in car sensor data to analyze driver behavior and estimate vehicle speed.",
-    metrics: [],
-    outcomes: [
-      "Published as co-author with IEEE in April 2024.",
-      "Designed deep learning models for vehicle speed estimation and driver state classification.",
-      "Demonstrated better accuracy and robustness than single source approaches."
+    hook: "Co-authored IEEE paper.",
+    body: [
+      "We combined camera footage with the car's own sensor data to estimate speed and classify what state the driver was in. I worked on the deep learning models. Using both sources together beat using either one alone."
     ],
-    tools: "Python, deep learning, computer vision, sensor fusion",
-    links: []
-  },
-  {
-    title: "Emotion Classification",
-    year: "2025",
-    type: "Computer Vision",
-    summary: "A neural network that recognizes emotions from facial expressions.",
-    overview: "Trained and evaluated a convolutional neural network that classifies facial expressions into emotion categories using labeled image data.",
-    metrics: [],
-    outcomes: [
-      "Built the full training and evaluation workflow in PyTorch.",
-      "Delivered a model that classifies facial images into emotion categories."
-    ],
-    tools: "Python, PyTorch",
-    links: [["View GitHub", "https://github.com/hansinirajesh92"]]
+    tools: "Python, deep learning, computer vision",
+    link: null
   }
 ];
 
@@ -605,62 +387,30 @@ const esc = (s) => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt
 $("yr").textContent = new Date().getFullYear();
 
 /* ---------- Render projects ---------- */
+function projBody(p) {
+  const paras = p.body.map(t => `<p>${esc(t)}</p>`).join("");
+  const link = p.link ? ` <a href="${esc(p.link[1])}" target="_blank" rel="noopener">${esc(p.link[0])}</a>` : "";
+  return `${paras}<p class="foot">${esc(p.tools)}.${link}</p>`;
+}
 function renderProjects() {
-  const featured = PROJECTS.map((p, i) => [p, i]).filter(([p]) => p.featured);
-  $("featured").innerHTML = featured.map(([p, i]) => `
-    <button class="feature" type="button" data-i="${i}">
-      <span class="label">${esc(p.type)}</span>
-      <h3>${esc(p.title)}</h3>
-      <p>${esc(p.summary)}</p>
-      ${p.stat ? `<div><div class="stat">${esc(p.stat[0])}</div><div class="stat-label">${esc(p.stat[1])}</div></div>` : ""}
-      <span class="open-hint">View outcomes</span>
-    </button>`).join("");
+  $("featured").innerHTML = PROJECTS.filter(p => p.featured).map(p => `
+    <article class="feat">
+      <div><h3>${esc(p.title)}</h3><p class="yr">${esc(p.year)}</p></div>
+      <div><p class="hook">${esc(p.hook)}</p><div class="body">${projBody(p)}</div></div>
+    </article>`).join("");
 
-  $("allList").innerHTML = PROJECTS.map((p, i) => `
-    <button class="row-btn" type="button" data-i="${i}">
-      <span class="yr">${esc(p.year)}</span>
-      <span class="t">${esc(p.title)}<span class="s">${esc(p.summary)}</span></span>
-      <span class="tags">${esc(p.type)}</span>
-      <span class="plus" aria-hidden="true">+</span>
-    </button>`).join("");
-  $("projCount").textContent = PROJECTS.length + " projects";
-
-  document.querySelectorAll("[data-i]").forEach(el =>
-    el.addEventListener("click", () => openPanel(+el.dataset.i, el)));
+  $("allList").innerHTML = PROJECTS.map(p => `
+    <details class="proj">
+      <summary><span class="t">${esc(p.title)}<span>${esc(p.hook)}</span></span><span class="yr">${esc(p.year)}</span></summary>
+      <div class="inside">${projBody(p)}</div>
+    </details>`).join("");
 }
-
-/* ---------- Panel ---------- */
-let lastFocus = null;
-function openPanel(i, from) {
-  const p = PROJECTS[i];
-  lastFocus = from;
-  $("pMeta").textContent = p.type;
-  $("pYear").textContent = p.year;
-  $("pTitle").textContent = p.title;
-  $("pOverview").textContent = p.overview;
-  $("pMetrics").style.display = p.metrics.length ? "" : "none";
-  $("pMetrics").innerHTML = p.metrics.map(([b, s]) => `<div class="metric"><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join("");
-  $("pOutcomes").innerHTML = p.outcomes.map(o => `<li>${esc(o)}</li>`).join("");
-  $("pTools").textContent = p.tools;
-  $("pLinks").innerHTML = p.links.map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join("");
-  document.body.classList.add("panel-open");
-  $("panel").setAttribute("aria-hidden", "false");
-  $("panel").scrollTop = 0;
-  $("pClose").focus();
-}
-function closePanel() {
-  document.body.classList.remove("panel-open");
-  $("panel").setAttribute("aria-hidden", "true");
-  if (lastFocus) lastFocus.focus();
-}
-$("pClose").addEventListener("click", closePanel);
-$("scrim").addEventListener("click", closePanel);
-document.addEventListener("keydown", e => { if (e.key === "Escape") closePanel(); });
 
 /* ---------- Updates feed ---------- */
 let updates = [];
+let cur = 0;
 const editing = location.hash === "#post";
-if (editing) document.querySelector(".updates").classList.add("editing");
+if (editing) $("updates").classList.add("editing");
 
 function fmtDate(d) {
   const dateOnly = /^\d{4}-\d{2}-\d{2}$/.test(d);
@@ -668,23 +418,21 @@ function fmtDate(d) {
   if (isNaN(dt)) return d;
   const day = dt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
   if (dateOnly) return day;
-  const time = dt.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZoneName: "short" });
-  return day + " at " + time;
+  return day + ", " + dt.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZoneName: "short" });
 }
-let cur = 0;
 function renderFeed() {
-  const feed = $("feed");
   const n = updates.length;
   $("pager").style.visibility = n > 1 ? "visible" : "hidden";
-  if (!n) { feed.innerHTML = `<div class="feed-empty">No updates yet.</div>`; return; }
+  if (!n) { $("feed").innerHTML = `<p class="dim">Nothing yet.</p>`; return; }
   cur = Math.max(0, Math.min(cur, n - 1));
   const u = updates[cur];
   const text = u.text || [u.title, u.desc].filter(Boolean).join("\n");
-  feed.innerHTML = `<article class="post"><time datetime="${esc(u.date)}">${esc(fmtDate(u.date))}</time><p>${esc(text)}</p>${editing ? `<button class="del" data-del="${cur}" type="button">Delete</button>` : ""}</article>`;
+  $("feed").innerHTML = `<article class="post"><time datetime="${esc(u.date)}">${esc(fmtDate(u.date))}</time><p>${esc(text)}</p>${editing ? `<button class="del" type="button">Delete</button>` : ""}</article>`;
   $("pCount").textContent = (cur + 1) + " of " + n;
   $("newer").disabled = cur === 0;
   $("older").disabled = cur === n - 1;
-  feed.querySelectorAll("[data-del]").forEach(b => b.addEventListener("click", () => deletePost(+b.dataset.del)));
+  const del = $("feed").querySelector(".del");
+  if (del) del.addEventListener("click", () => deletePost(cur));
 }
 function step(d) { if (updates[cur + d]) { cur += d; renderFeed(); } }
 $("newer").addEventListener("click", () => step(-1));
@@ -699,8 +447,7 @@ function sortUpdates() { updates.sort((a, b) => (b.date > a.date ? 1 : -1)); }
 async function loadUpdates() {
   try {
     if (editing && getToken()) {
-      const { data } = await ghGet();
-      updates = data;
+      updates = (await ghGet()).data;
     } else {
       const r = await fetch(UPDATES_PATH + "?t=" + Date.now(), { cache: "no-store" });
       updates = r.ok ? await r.json() : [];
@@ -710,7 +457,7 @@ async function loadUpdates() {
   renderFeed();
 }
 
-/* ---------- Posting (only in #post mode, saves to GitHub) ---------- */
+/* ---------- Posting (only at #post, saves to GitHub) ---------- */
 const TOKEN_KEY = "hr_gh_token";
 function getToken() { try { return localStorage.getItem(TOKEN_KEY) || ""; } catch (e) { return ""; } }
 function setToken(t) { try { t ? localStorage.setItem(TOKEN_KEY, t) : localStorage.removeItem(TOKEN_KEY); } catch (e) {} }
@@ -738,7 +485,6 @@ async function ghPut(data, sha, message) {
   if (!r.ok) throw new Error(r.status === 401 || r.status === 403 ? "Token not accepted or lacks write access" : "Save failed (" + r.status + ")");
 }
 function status(msg) { $("postStatus").textContent = msg; }
-
 function syncTokenField() { $("tokenInput").style.display = getToken() ? "none" : ""; }
 syncTokenField();
 
@@ -751,12 +497,11 @@ $("postBtn").addEventListener("click", async () => {
   $("postBtn").disabled = true; status("Posting");
   try {
     const { sha, data } = await ghGet();
-    const entry = { date: new Date().toISOString(), text };
-    data.unshift(entry);
+    data.unshift({ date: new Date().toISOString(), text });
     await ghPut(data, sha, "Post update");
     updates = data; sortUpdates(); cur = 0; renderFeed();
     $("postText").value = "";
-    status("Posted. Visitors will see it within a minute or two.");
+    status("Posted. Visitors will see it in a minute or two.");
   } catch (e) {
     status(e.message);
     if (/Token/.test(e.message)) { setToken(""); syncTokenField(); }
@@ -776,60 +521,7 @@ async function deletePost(i) {
     status("Deleted.");
   } catch (e) { status(e.message); }
 }
-
 $("forgetToken").addEventListener("click", () => { setToken(""); syncTokenField(); status("Token removed from this device."); });
-
-/* ---------- Experience timeline ---------- */
-const EVENTS = [
-  { date: "2021-09", label: "Started Computer Science at VIT", ch: "chennai" },
-  { date: "2023-09", label: "Software Engineer Intern, Punt Review", ch: "dubai" },
-  { date: "2024-04", label: "IEEE paper published", ch: "chennai" },
-  { date: "2025-05", label: "Graduated from VIT", ch: "chennai" },
-  { date: "2025-08", label: "Started Master's at Cornell", ch: "ithaca" },
-  { date: "2026-01", label: "Researcher at Cornell and CDC project", ch: "ithaca" },
-  { date: "2026-05", label: "Graduated from Cornell", ch: "ithaca" },
-  { date: "2026-07", label: "Research Fellow at Cornell", ch: "ithaca" }
-];
-(function buildTimeline() {
-  const tl = $("timeline");
-  const start = new Date(2021, 0, 1), end = new Date();
-  const pos = (d) => Math.max(0, Math.min(100, (d - start) / (end - start) * 100));
-  const toDate = (s) => { const [y, m] = s.split("-").map(Number); return new Date(y, m - 1, 1); };
-  for (let y = 2021; y <= end.getFullYear(); y++) {
-    const x = pos(new Date(y, 0, 1));
-    if (x > 94) continue;
-    tl.insertAdjacentHTML("beforeend", `<span class="tl-tick" style="left:${x}%">${y}</span>`);
-  }
-  tl.insertAdjacentHTML("beforeend", `<span class="tl-now">Now</span>`);
-  const fmt = (s) => toDate(s).toLocaleDateString("en-US", { month: "short", year: "numeric" });
-  EVENTS.forEach((e, i) => {
-    const x = pos(toDate(e.date));
-    const edge = x < 15 ? " edge-l" : x > 85 ? " edge-r" : "";
-    tl.insertAdjacentHTML("beforeend",
-      `<button class="tl-dot${edge}" type="button" style="left:${x}%" data-ch="${e.ch}" data-x="${x}" aria-label="${esc(fmt(e.date) + ": " + e.label)}"><span class="tl-tip">${esc(fmt(e.date))}. ${esc(e.label)}</span></button>`);
-  });
-  tl.querySelectorAll(".tl-dot").forEach(d => d.addEventListener("click", () => {
-    document.getElementById("ch-" + d.dataset.ch).scrollIntoView({ behavior: "smooth", block: "start" });
-  }));
-
-  const order = ["chennai", "dubai", "ithaca"];
-  function setActive(ch) {
-    const dots = [...tl.querySelectorAll(".tl-dot")];
-    let far = 0;
-    dots.forEach(d => {
-      const on = order.indexOf(d.dataset.ch) <= order.indexOf(ch);
-      d.classList.toggle("on", on);
-      if (on) far = Math.max(far, +d.dataset.x);
-    });
-    $("tlFill").style.width = far + "%";
-  }
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(en => { if (en.isIntersecting) setActive(en.target.dataset.ch); });
-    }, { rootMargin: "-40% 0px -50% 0px" });
-    document.querySelectorAll(".chapter[data-ch]").forEach(c => io.observe(c));
-  } else { setActive("ithaca"); }
-})();
 
 renderProjects();
 loadUpdates();
