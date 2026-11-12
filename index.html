@@ -59,24 +59,21 @@
   .bio { grid-column: 4 / 9; grid-row: 2; font-size: clamp(18px, 1.35vw, 21px); }
   .bio p + p { margin-top: 18px; }
   .right { grid-column: 10 / 13; grid-row: 2; }
-  .updates { grid-column: 1 / 4; grid-row: 3; padding-top: 8px; }
+  .updates { grid-column: 1 / 13; grid-row: 3; padding-top: 40px; }
   .right h2 { margin-bottom: 12px; }
   .roles li { font-size: clamp(20px, 1.6vw, 26px); line-height: 1.4; }
   .right .note { margin-top: 12px; font-size: 16px; }
 
   .updates h2 { margin-bottom: 0; }
-  .updates-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; gap: 12px; }
-  .pager { font-size: 15px; color: #8c8c8c; display: flex; gap: 12px; align-items: baseline; white-space: nowrap; }
-  .pager button { font-size: 17px; line-height: 1; padding: 2px 4px; }
-  .pager button:disabled { color: #333; cursor: default; }
-  .feed { height: 15.5em; overflow-y: auto; }
+  .updates-top { margin-bottom: 20px; }
+  .feed { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: clamp(16px, 2vw, 32px); row-gap: 32px; }
+  .feed > .dim { grid-column: 1 / -1; }
   .post time { display: block; font-size: 14px; color: #8c8c8c; margin-bottom: 4px; }
-  .post p { white-space: pre-line; animation: fade 0.25s ease; font-size: 16px; line-height: 1.55; }
+  .post p { white-space: pre-line; animation: fade 0.3s ease; font-size: 17px; line-height: 1.55; }
   @keyframes fade { from { opacity: 0; } }
   .post .del { margin-top: 6px; font-size: 13px; color: #8c8c8c; text-decoration: underline; }
-  .composer { display: none; margin-bottom: 20px; }
+  .composer { display: none; margin-bottom: 32px; max-width: 640px; }
   .editing .composer { display: block; }
-  .editing .feed { height: auto; }
   .composer textarea, .composer input { width: 100%; font: inherit; font-size: 16px; color: #fff; background: #141414; border: 0; border-radius: 4px; padding: 10px 12px; }
   .composer textarea { min-height: 90px; resize: vertical; }
   .composer input { margin-top: 8px; font-size: 14px; }
@@ -142,8 +139,9 @@
     .photo { grid-column: 1 / 5; }
     .hello { grid-column: 5 / 13; }
     .bio { grid-column: 5 / 13; }
-    .right { grid-column: 5 / 13; grid-row: 3; }
-    .updates { grid-column: 1 / 5; grid-row: 3; }
+    .right { grid-column: 1 / 13; grid-row: 3; }
+    .updates { grid-column: 1 / 13; grid-row: 4; }
+    .feed { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .feat { grid-column: 1 / 13; display: grid; grid-template-columns: 1fr 1.6fr; grid-template-rows: auto 1fr; gap: 0 40px; }
     .feat h3 { align-self: start; }
     .feat .yr { grid-column: 1; }
@@ -159,7 +157,8 @@
     .hero { padding-top: 24px; padding-bottom: 72px; row-gap: 28px; }
     .photo { grid-column: 1 / 9; grid-row: auto; }
     .hello, .bio, .right, .updates { grid-column: 1 / 13; grid-row: auto; }
-    .feed { height: 17em; }
+    .feed { grid-template-columns: 1fr; row-gap: 28px; }
+    .updates { padding-top: 16px; }
     .featured, .all, .exp { padding-bottom: 88px; }
     .feat { display: block; }
     .proj summary { grid-template-columns: 1fr auto; gap: 4px 16px; }
@@ -219,11 +218,6 @@
     <div class="updates" id="updates">
       <div class="updates-top">
         <h2 class="small">What I'm up to</h2>
-        <div class="pager" id="pager">
-          <span id="pCount"></span>
-          <button id="newer" type="button" aria-label="Newer update">&#8593;</button>
-          <button id="older" type="button" aria-label="Older update">&#8595;</button>
-        </div>
       </div>
       <div class="composer" id="composer">
         <textarea id="postText" placeholder="What are you working on?" maxlength="500"></textarea>
@@ -234,7 +228,7 @@
         </div>
         <div class="row"><button class="forget" id="forgetToken" type="button">Forget token on this device</button></div>
       </div>
-      <div class="feed" id="feed" tabindex="0"><p class="dim">Loading</p></div>
+      <div class="feed" id="feed"><p class="dim">Loading</p></div>
     </div>
   </section>
 
@@ -443,7 +437,6 @@ function renderProjects() {
 
 /* ---------- Updates feed ---------- */
 let updates = [];
-let cur = 0;
 const editing = location.hash === "#post";
 if (editing) $("updates").classList.add("editing");
 
@@ -455,28 +448,15 @@ function fmtDate(d) {
   if (dateOnly) return day;
   return day + ", " + dt.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZoneName: "short" });
 }
+const SHOW = 4;   // how many recent updates to show
 function renderFeed() {
-  const n = updates.length;
-  $("pager").style.visibility = n > 1 ? "visible" : "hidden";
-  if (!n) { $("feed").innerHTML = `<p class="dim">Nothing yet.</p>`; return; }
-  cur = Math.max(0, Math.min(cur, n - 1));
-  const u = updates[cur];
-  const text = u.text || [u.title, u.desc].filter(Boolean).join("\n");
-  $("feed").innerHTML = `<article class="post"><time datetime="${esc(u.date)}">${esc(fmtDate(u.date))}</time><p>${esc(text)}</p>${editing ? `<button class="del" type="button">Delete</button>` : ""}</article>`;
-  $("pCount").textContent = (cur + 1) + " of " + n;
-  $("newer").disabled = cur === 0;
-  $("older").disabled = cur === n - 1;
-  const del = $("feed").querySelector(".del");
-  if (del) del.addEventListener("click", () => deletePost(cur));
+  if (!updates.length) { $("feed").innerHTML = `<p class="dim">Nothing yet.</p>`; return; }
+  $("feed").innerHTML = updates.slice(0, SHOW).map((u, i) => {
+    const text = u.text || [u.title, u.desc].filter(Boolean).join("\n");
+    return `<article class="post"><time datetime="${esc(u.date)}">${esc(fmtDate(u.date))}</time><p>${esc(text)}</p>${editing ? `<button class="del" type="button" data-i="${i}">Delete</button>` : ""}</article>`;
+  }).join("");
+  $("feed").querySelectorAll(".del").forEach(b => b.addEventListener("click", () => deletePost(+b.dataset.i)));
 }
-function step(d) { if (updates[cur + d]) { cur += d; renderFeed(); } }
-$("newer").addEventListener("click", () => step(-1));
-$("older").addEventListener("click", () => step(1));
-$("updates").addEventListener("keydown", e => {
-  if (e.target.matches("textarea, input")) return;
-  if (e.key === "ArrowUp") { e.preventDefault(); step(-1); }
-  if (e.key === "ArrowDown") { e.preventDefault(); step(1); }
-});
 function sortUpdates() { updates.sort((a, b) => (b.date > a.date ? 1 : -1)); }
 
 async function loadUpdates() {
@@ -534,7 +514,7 @@ $("postBtn").addEventListener("click", async () => {
     const { sha, data } = await ghGet();
     data.unshift({ date: new Date().toISOString(), text });
     await ghPut(data, sha, "Post update");
-    updates = data; sortUpdates(); cur = 0; renderFeed();
+    updates = data; sortUpdates(); renderFeed();
     $("postText").value = "";
     status("Posted. Visitors will see it in a minute or two.");
   } catch (e) {
