@@ -2,9 +2,5 @@
   {
     "date": "2026-11-12T10:38:43.641Z",
     "text": "building a lens design optimizer from scratch. this week i simulated 1000 imperfect lenses to see how many survive manufacturing: about 69% pass, one of the four errors (the front radius) does most of the damage, and letting the camera refocus saves all of them. now working on the edges of the photo"
-  },
-  {
-    "date": "2026-10-07T11:30:00.000Z",
-    "text": "New website is live. Updates on what I am learning and building will show up here."
   }
 ]
