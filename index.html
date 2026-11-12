@@ -348,8 +348,19 @@ const PROJECTS = [
     link: null
   },
   {
-    title: "Earnings call sentiment vs. stock returns",
+    title: "Parallel N-body gravity simulation",
     featured: true,
+    year: "2025",
+    hook: "Simulating how particles pull on each other under gravity, then splitting the work across processors with MPI to see how much faster it gets.",
+    body: [
+      "Every particle pulls on every other particle, so the work grows with the square of the count: 10,000 particles means 100 million force calculations every step. I wrote the physics in Python and NumPy, with a leapfrog integrator that keeps energy stable over long runs and a softening term so close encounters don't blow up, then split the particles across processors with mpi4py.",
+      "With 1000 particles over 50 steps, 8 processors ran 6.1 times faster than 1, taking the run from 12.3 seconds to 2.0. Efficiency slipped from 95% on 2 processors to 77% on 8, because every processor has to share every particle's position at every step, and that communication starts to take over. A tree method like Barnes-Hut would cut that cost and is the next step for scaling to millions of particles."
+    ],
+    tools: "Python, NumPy, mpi4py, Matplotlib",
+    link: ["Code on GitHub", "https://github.com/hansinirajesh92/mpi-scaling-simulation"]
+  },
+  {
+    title: "Earnings call sentiment vs. stock returns",
     year: "2026",
     hook: "Does the way a CEO talks on an earnings call tell you anything the numbers don't?",
     body: [
@@ -382,14 +393,15 @@ const PROJECTS = [
     link: null
   },
   {
-    title: "Emotion classification",
-    year: "2025",
-    hook: "A CNN that reads emotions from facial expressions.",
+    title: "CNNs vs. vision transformers on sign language",
+    year: "2026",
+    hook: "Coursework for my advanced neural networks class at Cornell: which kind of model copes better when there isn't much data?",
     body: [
-      "Trained and evaluated a convolutional network in PyTorch on a labeled dataset of facial expressions."
+      "I built a small CNN and a small vision transformer from scratch in PyTorch and trained both to read 24 American Sign Language letters from 28 by 28 pixel hand images (Sign Language MNIST), once on all the training data and once on just 10% of it.",
+      "The CNN won both times, and the gap got bigger when data was scarce. With all the data it reached 93% test accuracy against 85% for the transformer. With 10% of the data the CNN still got 77%, while the transformer fell to 61%. That's the whole point of the project: a CNN is built to look for local patterns like edges and shapes, so it needs fewer examples, while a transformer has to work that structure out from the data itself."
     ],
     tools: "Python, PyTorch",
-    link: null
+    link: ["Code on GitHub", "https://github.com/hansinirajesh92/sign-language-inductive-bias"]
   },
   {
     title: "Driver behavior from cameras and car sensors",
