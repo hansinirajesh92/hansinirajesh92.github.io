@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hansini Rajesh</title>
-<meta name="description" content="Hansini Rajesh. Cornell MPS in Applied Statistics. Looking for full time roles in quantitative research, data science, data analytics and ML engineering.">
-<meta property="og:title" content="Hansini Rajesh">
-<meta property="og:description" content="Cornell MPS in Applied Statistics. Data, finance, public health and machine learning.">
+<title>hansini rajesh</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2710%27 fill=%27%23000%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Helvetica,Arial,sans-serif%27 font-size=%2730%27 font-weight=%27700%27 fill=%27%23fff%27 text-anchor=%27middle%27%3Ehr%3C/text%3E%3C/svg%3E">
+<meta name="description" content="hansini rajesh. cornell MPS in applied statistics. looking for full time roles in quantitative research, data science, data analytics and ML engineering.">
+<meta property="og:title" content="hansini rajesh">
+<meta property="og:description" content="cornell MPS in applied statistics. data, finance, public health and machine learning.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hansinirajesh92.github.io/">
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
@@ -50,12 +51,13 @@
   nav a:hover { color: #fff; }
 
   /* Hero */
-  .hero { padding-top: 48px; padding-bottom: 120px; row-gap: 48px; }
+  .hero { padding-top: 32px; padding-bottom: 112px; row-gap: 36px; }
   .photo { grid-column: 1 / 4; grid-row: 1 / 3; align-self: start; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 4px; background: #111; display: flex; align-items: center; justify-content: center; color: #555; font-size: 36px; font-weight: 700; }
   .photo img { width: 100%; height: 100%; object-fit: cover; }
   .hello { grid-column: 4 / 13; grid-row: 1; }
-  h1 { font-size: clamp(56px, 8.4vw, 148px); font-weight: 700; line-height: 0.92; letter-spacing: -0.04em; }
-  .tagline { color: #8c8c8c; font-size: clamp(18px, 1.5vw, 24px); margin-top: 16px; }
+  h1 { font-size: clamp(48px, 6.2vw, 108px); font-weight: 700; line-height: 0.95; letter-spacing: -0.04em; }
+  .pitch { font-size: clamp(20px, 1.75vw, 28px); line-height: 1.3; margin-top: 18px; max-width: 30em; }
+  .tagline { color: #8c8c8c; font-size: clamp(16px, 1.25vw, 19px); margin-top: 8px; }
   .bio { grid-column: 4 / 9; grid-row: 2; font-size: clamp(18px, 1.35vw, 21px); }
   .bio p + p { margin-top: 18px; }
   .right { grid-column: 10 / 13; grid-row: 2; }
@@ -122,10 +124,16 @@
   .job p.d { color: #cfcfcf; font-size: 17px; }
   .job p.d:empty { display: none; }
 
+  /* Tools */
+  .tools { padding-bottom: 128px; }
+  .tools-grid { grid-column: 4 / 13; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px clamp(24px, 3vw, 56px); }
+  .tool h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+  .tool p { color: #cfcfcf; font-size: 17px; line-height: 1.55; }
+
   /* Quote */
-  .quote { padding-top: 24px; padding-bottom: 144px; }
-  .quote blockquote { grid-column: 1 / 11; margin: 0; font-size: clamp(30px, 3.9vw, 66px); line-height: 1.12; font-weight: 500; letter-spacing: -0.03em; }
-  .quote cite { grid-column: 1 / 11; margin-top: 28px; font-style: normal; color: #8c8c8c; font-size: 18px; }
+  .quote { padding-top: 8px; padding-bottom: 112px; }
+  .quote blockquote { grid-column: 4 / 11; margin: 0; font-size: clamp(20px, 1.6vw, 26px); line-height: 1.4; font-weight: 500; letter-spacing: -0.01em; }
+  .quote cite { grid-column: 4 / 11; margin-top: 12px; font-style: normal; color: #8c8c8c; font-size: 15px; }
 
   /* Footer */
   footer { padding-bottom: 48px; }
@@ -149,7 +157,8 @@
     .feat .rest { grid-column: 2; grid-row: 1 / 3; }
     .side-title { grid-column: 1 / 13; margin-bottom: 24px; }
     .sticky { position: static; }
-    .list, .jobs { grid-column: 1 / 13; }
+    .list, .jobs, .tools-grid { grid-column: 1 / 13; }
+    .quote blockquote, .quote cite { grid-column: 1 / 13; }
   }
   @media (max-width: 700px) {
     body { font-size: 17px; }
@@ -167,6 +176,8 @@
     .proj .inside { display: block; }
     .job { grid-template-columns: 1fr; gap: 4px; padding: 14px 0; }
     .job p.d { margin-top: 6px; }
+    .tools { padding-bottom: 88px; }
+    .tools-grid { grid-template-columns: 1fr; gap: 22px; }
     .quote { padding-bottom: 96px; }
     .say, .links { grid-column: 1 / 13; }
     .links { margin-top: 28px; }
@@ -177,142 +188,158 @@
 <body>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#updates">Updates</a>
-  <a href="#work">Work</a>
-  <a href="#experience">Experience</a>
-  <a href="#contact">Contact</a>
+  <a href="#about">about</a>
+  <a href="#updates">updates</a>
+  <a href="#work">work</a>
+  <a href="#experience">experience</a>
+  <a href="#tools">tools</a>
+  <a href="#contact">contact</a>
 </nav>
 
 <main>
 
   <section class="wrap grid hero" id="about">
     <div class="photo" id="photo">
-      <img src="assets/hansini.jpg" alt="Hansini Rajesh" onerror="this.remove(); document.getElementById('photo').textContent='HR';">
+      <img src="assets/hansini.jpg" alt="hansini rajesh" onerror="this.remove(); document.getElementById('photo').textContent='hr';">
     </div>
 
     <div class="hello">
-      <h1>Heyy, I'm Hansini</h1>
+      <h1>heyy, i'm hansini</h1>
+      <p class="pitch">ML engineer and statistician</p>
       <p class="tagline">diet coke fiend</p>
     </div>
 
     <div class="bio">
-      <p>I have a Master's in Applied Statistics from Cornell and a CS degree from VIT Chennai. Before CS I seriously considered physics, medicine and journalism (?), and data science ended up being the one field where I didn't have to pick.</p>
-      <p>I'm most interested in finance and healthcare, but honestly I'll work with just about any dataset you put in front of me. Here's my <a href="Hansini_Rajesh_Resume.pdf" target="_blank" rel="noopener">resume</a>, or just <a href="#contact">say hi</a>.</p>
+      <p>i have a master's in applied statistics from cornell and a CS degree from VIT chennai. before CS i seriously considered physics, medicine and journalism (?), and data science ended up being the one field where i didn't have to pick.</p>
+      <p>i'm most interested in finance and healthcare, but honestly i'll work with just about any dataset you put in front of me. here's my <a href="Hansini_Rajesh_Resume.pdf" target="_blank" rel="noopener">resume</a>, or just <a href="#contact">say hi</a>.</p>
     </div>
 
     <div class="right">
       <div>
-        <h2 class="small">Looking for</h2>
+        <h2 class="small">looking for</h2>
         <ul class="roles">
-          <li>Quantitative Research</li>
-          <li>Data Scientist</li>
-          <li>Data Analyst</li>
-          <li>ML Engineer</li>
+          <li>ML engineer</li>
+          <li>AI engineer</li>
+          <li>data scientist</li>
+          <li>data analyst</li>
         </ul>
-        <p class="note dim">Full time, and happy to relocate.</p>
+        <p class="note dim">full time, and happy to relocate.</p>
       </div>
 
     </div>
 
     <div class="updates" id="updates">
       <div class="updates-top">
-        <h2 class="small">What I'm up to</h2>
+        <h2 class="small">what i'm up to</h2>
       </div>
       <div class="composer" id="composer">
-        <textarea id="postText" placeholder="What are you working on?" maxlength="500"></textarea>
+        <textarea id="postText" placeholder="what are you working on?" maxlength="500"></textarea>
         <input id="tokenInput" type="password" placeholder="GitHub token (only needed once on this device)" autocomplete="off">
         <div class="row">
           <span class="status" id="postStatus"></span>
-          <button class="post-btn" id="postBtn" type="button">Post</button>
+          <button class="post-btn" id="postBtn" type="button">post</button>
         </div>
-        <div class="row"><button class="forget" id="forgetToken" type="button">Forget token on this device</button></div>
+        <div class="row"><button class="forget" id="forgetToken" type="button">forget token on this device</button></div>
       </div>
-      <div class="feed" id="feed"><p class="dim">Loading</p></div>
+      <div class="feed" id="feed"><p class="dim">loading</p></div>
     </div>
   </section>
 
   <section class="wrap featured" id="work">
-    <h2 class="small">Featured work</h2>
+    <h2 class="small">featured work</h2>
     <div class="grid feat-row" id="featured"></div>
   </section>
 
   <section class="wrap grid all" id="projects">
-    <h2 class="side-title sticky">All projects<span class="sub">Click one to open it.</span></h2>
+    <h2 class="side-title sticky">all projects<span class="sub">click one to open it.</span></h2>
     <div class="list" id="allList"></div>
   </section>
 
   <section class="wrap grid exp" id="experience">
-    <h2 class="side-title sticky">Experience</h2>
+    <h2 class="side-title sticky">experience</h2>
     <div class="jobs">
 
       <div class="job">
-        <div class="when">Jul 2026 to now</div>
+        <div class="when">jul 2026 to now</div>
         <div>
-          <h3>Research Fellow, Applied Statistics</h3>
-          <div class="where">Cornell University, Ithaca</div>
+          <h3>research fellow, applied statistics</h3>
+          <div class="where">cornell university, ithaca</div>
         </div>
-        <p class="d"></p>
+        <p class="d">building reproducible R and R Markdown analysis workflows across roughly 15,000 event-level records, covering regression, rate estimation and distributional modeling, all version-controlled in Git.</p>
       </div>
 
       <div class="job">
-        <div class="when">Jan to May 2026</div>
+        <div class="when">jan to may 2026</div>
         <div>
-          <h3>Student Researcher, Applied Statistics</h3>
-          <div class="where">Cornell University, Ithaca</div>
+          <h3>student researcher, applied statistics</h3>
+          <div class="where">cornell university, ithaca</div>
         </div>
-        <p class="d">Cleaning and modeling real research data in R and Python with faculty. The project I liked most compared how large language models and LL.M. law students code hundreds of variables across the world's constitutions.</p>
+        <p class="d">cleaning and modeling real research data in R and Python with faculty. the project i liked most compared how large language models and LL.M. law students code hundreds of variables across the world's constitutions.</p>
       </div>
 
       <div class="job">
-        <div class="when">Aug 2025 to May 2026</div>
+        <div class="when">aug 2025 to may 2026</div>
         <div>
-          <h3>MPS, Applied Statistics</h3>
-          <div class="where">Cornell University, Ithaca</div>
+          <h3>MPS, applied statistics</h3>
+          <div class="where">cornell university, ithaca</div>
         </div>
-        <p class="d">Linear models, multivariate analysis, neural networks, big data management, and a capstone with the CDC on health survey weighting.</p>
+        <p class="d">linear models, multivariate analysis, neural networks, big data management, and a capstone with the CDC on health survey weighting.</p>
       </div>
 
       <div class="job">
-        <div class="when">Sep to Dec 2023</div>
+        <div class="when">sep to dec 2023</div>
         <div>
-          <h3>Software Engineer Intern</h3>
-          <div class="where">Punt Review, Dubai</div>
+          <h3>software engineer intern</h3>
+          <div class="where">punt review, dubai</div>
         </div>
-        <p class="d">Joined a consumer web platform before launch and built a lot of its front end in HTML, CSS and JavaScript, working directly with the founders on how people would move through the site.</p>
+        <p class="d">joined a consumer web platform before launch and built a lot of its front end in HTML, CSS and JavaScript, working directly with the founders on how people would move through the site.</p>
       </div>
 
       <div class="job">
         <div class="when">2021 to 2025</div>
         <div>
-          <h3>B.Tech, Computer Science</h3>
-          <div class="where">Vellore Institute of Technology, Chennai</div>
+          <h3>B.Tech, computer science</h3>
+          <div class="where">vellore institute of technology, chennai</div>
         </div>
-        <p class="d">Where I got properly into programming. I also co-authored an IEEE paper here and built the indoor navigation app.</p>
+        <p class="d">where i got properly into programming. i also co-authored an IEEE paper here and built the indoor navigation app.</p>
       </div>
 
     </div>
   </section>
 
+  <section class="wrap grid tools" id="tools">
+    <h2 class="side-title sticky">tools i use</h2>
+    <div class="tools-grid">
+      <div class="tool"><h3>languages</h3><p>Python, R, SQL, SAS, C++, C, Java, JavaScript, Swift, MATLAB</p></div>
+      <div class="tool"><h3>machine learning and deep learning</h3><p>PyTorch, TensorFlow, scikit-learn, XGBoost, HuggingFace, CNNs, model evaluation and benchmarking, feature engineering</p></div>
+      <div class="tool"><h3>NLP and LLMs</h3><p>natural language processing, text classification, Sentence-BERT, FinBERT, Anthropic API, prompt engineering, structured extraction, LLM evaluation, Claude Code</p></div>
+      <div class="tool"><h3>computer vision</h3><p>object detection, YOLOv8, CoreML, on-device inference, sensor fusion, OpenCV, ARKit</p></div>
+      <div class="tool"><h3>statistics and methods</h3><p>regression, logistic regression, multivariate analysis, probability and inference, experimental design, A/B testing, causal inference, survey weighting (raking, IPW), variance estimation, hypothesis testing</p></div>
+      <div class="tool"><h3>data and analytics</h3><p>pandas, NumPy, SciPy, statsmodels, Apache Spark and PySpark, MySQL, data cleaning, exploratory data analysis, Excel</p></div>
+      <div class="tool"><h3>visualization</h3><p>Tableau, Power BI, Matplotlib, ggplot2</p></div>
+      <div class="tool"><h3>computing and tools</h3><p>Git, Linux, Docker, Jupyter, R Markdown, MPI (mpi4py, OpenMPI), CUDA, parallel computing, LaTeX</p></div>
+    </div>
+  </section>
+
   <section class="wrap grid quote">
-    <blockquote>"No matter how ridiculous the odds may seem, within us resides the power to overcome these challenges and achieve something beautiful."</blockquote>
-    <cite>Technoblade</cite>
+    <blockquote>"no matter how ridiculous the odds may seem, within us resides the power to overcome these challenges and achieve something beautiful."</blockquote>
+    <cite>technoblade</cite>
   </section>
 
 </main>
 
 <footer class="wrap grid" id="contact">
   <div class="say">
-    <h2>Say hi</h2>
-    <p class="dim">Email is the fastest way to reach me.</p>
+    <h2>say hi</h2>
+    <p class="dim">email is the fastest way to reach me.</p>
   </div>
   <div class="links">
-    <a href="mailto:hr394@cornell.edu">Email</a>
-    <a href="https://www.linkedin.com/in/hansini-rajesh" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:hansinirajesh92@gmail.com">email</a>
+    <a href="https://www.linkedin.com/in/hansini-rajesh" target="_blank" rel="noopener">linkedin</a>
     <a href="https://github.com/hansinirajesh92" target="_blank" rel="noopener">GitHub</a>
-    <a href="Hansini_Rajesh_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    <a href="Hansini_Rajesh_Resume.pdf" target="_blank" rel="noopener">resume</a>
   </div>
-  <p class="copy">&copy; <span id="yr"></span> Hansini Rajesh</p>
+  <p class="copy">&copy; <span id="yr"></span> hansini rajesh</p>
 </footer>
 
 <script>
@@ -324,94 +351,95 @@
    Every project ends with "}," except the last one, which ends with "}". */
 const PROJECTS = [
   {
-    title: "Lens design optimizer",
+    title: "lens design optimizer",
     featured: true,
     year: "2026",
-    hook: "Building a camera lens designer from scratch: simulate the light, measure the blur, then let an optimizer reshape the glass.",
+    hook: "building a camera lens designer from scratch: simulate the light, measure the blur, then let an optimizer reshape the glass.",
     body: [
-      "A lens is a few pieces of curved glass, and designing one means choosing the curves, thicknesses and glass so light from one point in the scene lands on one point on the sensor. I wrote a ray tracer in Python and NumPy that follows light through the glass with exact Snell's law and turns the blur into one number, the RMS spot size.",
-      "Gradient descent then reshapes the lens. Starting from a 30 mm front radius, it curved the glass to 24.9 mm and shrank the blur from 1.04 mm to 0.077 mm, about 13 times sharper. Giving it a second curved surface while holding the focal length at exactly 50 mm got it to 0.068 mm, the shape optical designers call a best form lens.",
-      "Then I simulated 1000 slightly imperfect lenses to see how many survive manufacturing. About 69% pass. The front radius alone fails about a quarter of them, so tightening just that and the glass quality takes the yield to 97.7%, and letting the camera refocus saves every single one. Now I'm working on the edges of the photo, which come out about 11 times blurrier than the center because the lens focuses on a curved bowl while the sensor is flat."
+      "a lens is a few pieces of curved glass, and designing one means choosing the curves, thicknesses and glass so light from one point in the scene lands on one point on the sensor. i wrote a ray tracer in Python and NumPy that follows light through the glass with exact snell's law and turns the blur into one number, the RMS spot size.",
+      "gradient descent then reshapes the lens. starting from a 30 mm front radius, it curved the glass to 24.9 mm and shrank the blur from 1.04 mm to 0.077 mm, about 13 times sharper. giving it a second curved surface while holding the focal length at exactly 50 mm got it to 0.068 mm, the shape optical designers call a best form lens.",
+      "then i simulated 1000 slightly imperfect lenses to see how many survive manufacturing. about 69% pass. the front radius alone fails about a quarter of them, so tightening just that and the glass quality takes the yield to 97.7%, and letting the camera refocus saves every single one. now i'm working on the edges of the photo, which come out about 11 times blurrier than the center because the lens focuses on a curved bowl while the sensor is flat."
     ],
     tools: "Python, NumPy, Matplotlib",
-    link: ["Code on GitHub", "https://github.com/hansinirajesh92/lens-design-optimizer"]
+    link: ["code on GitHub", "https://github.com/hansinirajesh92/lens-design-optimizer"]
   },
   {
-    title: "Health survey weighting with the CDC",
+    title: "health survey weighting with the CDC",
     featured: true,
     year: "2026",
-    hook: "My capstone with the National Center for Health Statistics: can commercial survey panels be adjusted to match the government's main health survey?",
+    hook: "my capstone with the CDC's national center for health statistics: can quick online survey panels be adjusted to match the government's gold standard health survey?",
     body: [
-      "Commercial panels are quicker to run, but the people in them aren't a random slice of the country. I built weights that correct for who gets covered, who chooses to answer, and how they were surveyed, then checked the adjusted health estimates against the National Health Interview Survey across demographic groups.",
-      "The variance estimates use Taylor linearization, and everything runs as R and Python pipelines that someone else can pick up and rerun."
+      "the CDC's rapid survey system runs on two commercial online panels. it's faster and cheaper than the national health interview survey, but the people who sign up for online panels aren't a random slice of the country. our team of five matched 59 health variables across both surveys and compared five rounds of the panel, about 39,600 people, against the 2024 national survey of 32,629 adults.",
+      "we built a weighting framework that combines raking on age and education with an inverse probability adjustment for which panel each person came from. it cut the bias in high cholesterol estimates by 50%, asthma by 45% and hypertension by 21%, while standard errors went up by only 6.5%. adults aged 18 to 34 are still off, which points to differences that demographics alone can't explain."
     ],
-    tools: "R, Python, survey statistics",
+    tools: "R (survey package), raking, inverse probability weighting, taylor linearization",
     link: null
   },
   {
-    title: "Earnings call sentiment vs. stock returns",
+    title: "earnings call sentiment vs. stock returns",
     year: "2026",
-    hook: "Does the way a CEO talks on an earnings call tell you anything the numbers don't?",
+    hook: "does the way a ceo talks on an earnings call tell you anything the numbers don't?",
     body: [
-      "I pulled 20 earnings call transcripts for Apple, Microsoft, Google, Meta and Amazon from SEC filings, scored the tone with FinBERT, and measured how each stock moved over the five days around the call after adjusting for the market with a Fama French three factor model.",
-      "Earnings surprise mattered: a one standard deviation beat lined up with about 3.3% extra return (significant at the 10% level). Tone on its own didn't reach significance. A simple long short strategy built on the signal returned 12.5% a year against 9.1% for the S&P 500, but with a lower Sharpe ratio (0.54 vs 0.74) and a much deeper drawdown.",
-      "With only 15 usable events I'd call it a promising hint. Next step is running it across the whole S&P 500 with proper risk controls."
+      "i pulled 20 earnings call transcripts for apple, microsoft, google, meta and amazon from SEC filings, scored the tone with FinBERT, and measured how each stock moved over the five days around the call after adjusting for the market with a fama french three factor model.",
+      "earnings surprise mattered: a one standard deviation beat lined up with about 3.3% extra return (significant at the 10% level). tone on its own didn't reach significance. a simple long short strategy built on the signal returned 12.5% a year against 9.1% for the S&P 500, but with a lower sharpe ratio (0.54 vs 0.74) and a much deeper drawdown.",
+      "with only 15 usable events i'd call it a promising hint. next step is running it across the whole S&P 500 with proper risk controls."
     ],
     tools: "Python, FinBERT, statsmodels, quantstats",
-    link: ["Code on GitHub", "https://github.com/hansinirajesh92/earnings-alpha"]
+    link: ["code on GitHub", "https://github.com/hansinirajesh92/earnings-alpha"]
   },
   {
     title: "CNNs vs. vision transformers on sign language",
     year: "2026",
-    hook: "Coursework for my advanced neural networks class at Cornell: which kind of model copes better when there isn't much data?",
+    hook: "coursework for my advanced neural networks class at cornell: which kind of model copes better when there isn't much data?",
     body: [
-      "I built a small CNN and a small vision transformer from scratch in PyTorch and trained both to read 24 American Sign Language letters from 28 by 28 pixel hand images (Sign Language MNIST), once on all the training data and once on just 10% of it.",
-      "The CNN won both times, and the gap got bigger when data was scarce. With all the data it reached 93% test accuracy against 85% for the transformer. With 10% of the data the CNN still got 77%, while the transformer fell to 61%. That's the whole point of the project: a CNN is built to look for local patterns like edges and shapes, so it needs fewer examples, while a transformer has to work that structure out from the data itself."
+      "i built a small CNN and a small vision transformer from scratch in PyTorch and trained both to read 24 american sign language letters from 28 by 28 pixel hand images (sign language MNIST), once on all the training data and once on just 10% of it.",
+      "the CNN won both times, and the gap got bigger when data was scarce. with all the data it reached 93% test accuracy against 85% for the transformer. with 10% of the data the CNN still got 77%, while the transformer fell to 61%. that's the whole point of the project: a CNN is built to look for local patterns like edges and shapes, so it needs fewer examples, while a transformer has to work that structure out from the data itself."
     ],
     tools: "Python, PyTorch",
-    link: ["Code on GitHub", "https://github.com/hansinirajesh92/sign-language-inductive-bias"]
+    link: ["code on GitHub", "https://github.com/hansinirajesh92/sign-language-inductive-bias"]
   },
   {
-    title: "Finding galaxy clusters in sky maps",
+    title: "finding galaxy clusters in sky maps",
     year: "2026",
-    hook: "Using deep learning to pull a very faint signal out of maps of the cosmic microwave background.",
+    hook: "using deep learning to pull a very faint signal out of maps of the cosmic microwave background.",
     body: [
-      "Galaxy clusters leave a tiny distortion in the cosmic microwave background (the Sunyaev Zel'dovich effect), and it's buried under the background itself and a lot of foreground noise. I simulated sky maps, built prototype models in PyTorch, and compared them against the standard methods, ILC and matched filters.",
-      "Still early. I did almost major in physics, so this one is personal."
+      "galaxy clusters leave a tiny distortion in the cosmic microwave background, called the sunyaev zel'dovich effect, and it's buried under the background itself and a lot of foreground noise. i simulated sky maps with all three mixed together, built prototype models in PyTorch to separate them, and compared them against the standard methods, ILC and matched filters. it's ongoing research, so the results are still early."
     ],
     tools: "Python, PyTorch",
     link: null
   },
   {
-    title: "Parallel N-body gravity simulation",
+    title: "parallel n-body gravity simulation",
     featured: true,
     year: "2025",
-    hook: "Simulating how particles pull on each other under gravity, then splitting the work across processors with MPI to see how much faster it gets.",
+    hook: "simulating how particles pull on each other under gravity, then splitting the work across processors with MPI to see how much faster it gets.",
     body: [
-      "Every particle pulls on every other particle, so the work grows with the square of the count: 10,000 particles means 100 million force calculations every step. I wrote the physics in Python and NumPy, with a leapfrog integrator that keeps energy stable over long runs and a softening term so close encounters don't blow up, then split the particles across processors with mpi4py.",
-      "With 1000 particles over 50 steps, 8 processors ran 6.1 times faster than 1, taking the run from 12.3 seconds to 2.0. Efficiency slipped from 95% on 2 processors to 77% on 8, because every processor has to share every particle's position at every step, and that communication starts to take over. A tree method like Barnes-Hut would cut that cost and is the next step for scaling to millions of particles."
+      "every particle pulls on every other particle, so the work grows with the square of the count: 10,000 particles means 100 million force calculations every step. i wrote the physics in Python and NumPy, with a leapfrog integrator that keeps energy stable over long runs and a softening term so close encounters don't blow up, then split the particles across processors with mpi4py.",
+      "with 1000 particles over 50 steps, 8 processors ran 6.1 times faster than 1, taking the run from 12.3 seconds to 2.0. efficiency slipped from 95% on 2 processors to 77% on 8, because every processor has to share every particle's position at every step, and that communication starts to take over. a tree method like barnes-hut would cut that cost and is the next step for scaling to millions of particles."
     ],
     tools: "Python, NumPy, mpi4py, Matplotlib",
-    link: ["Code on GitHub", "https://github.com/hansinirajesh92/mpi-scaling-simulation"]
+    link: ["code on GitHub", "https://github.com/hansinirajesh92/mpi-scaling-simulation"]
   },
   {
-    title: "Indoor navigation for visually impaired people",
+    title: "indoor navigation for visually impaired people",
     year: "2025",
-    hook: "An iPhone app that talks you through a building.",
+    hook: "an iphone app that talks you through a building.",
     body: [
-      "It uses YOLOv8 to spot obstacles through the camera and warns you out loud, and plans turn by turn routes over the floor plan with A*. Everything runs on the phone. I tested how often it reached the destination and how far it drifted from the route when obstacles moved around."
+      "three of us built it for people who can't rely on GPS indoors. you say where you want to go, the app plans a route over the building's floor plan with a*, and it guides you with spoken turn by turn directions and AR arrows. a YOLOv8 model runs on the phone through CoreML, watching the camera for chairs, doors and people, and it reroutes or warns you out loud when something is in the way.",
+      "we hand drew the floor plan of an academic block at VIT chennai, turned it into a navigation graph, and tested the app there with volunteers who had no training beforehand, on simple routes and on routes with several turns and obstacles. their feedback changed how and when the directions are spoken."
     ],
-    tools: "Swift, ARKit, YOLOv8",
+    tools: "Swift, ARKit, CoreML, YOLOv8, a*",
     link: null
   },
   {
-    title: "Driver behavior from cameras and car sensors",
+    title: "driver behavior from cameras and car sensors",
     year: "2024",
-    hook: "Co-authored IEEE paper.",
+    hook: "co-authored IEEE paper on spotting risky driving from both the car and the driver.",
     body: [
-      "We combined camera footage with the car's own sensor data to estimate speed and classify what state the driver was in. I worked on the deep learning models. Using both sources together beat using either one alone."
+      "six of us at VIT designed a system that watches the car and the driver at the same time. RADAR, LiDAR and inertial sensors flag risky driving like speeding, sudden acceleration or braking and swerving, and computer vision then checks the driver for distractions such as using a phone, eating, drinking or smoking.",
+      "speed is estimated by blending camera and sensor readings, and a gaussian mixture model combined with DBSCAN clustering picks out objects around the car. i worked on the models for speed estimation and for classifying the driver's state."
     ],
-    tools: "Python, deep learning, computer vision",
+    tools: "Python, computer vision, sensor fusion, DBSCAN",
     link: null
   }
 ];
@@ -458,15 +486,16 @@ function fmtDate(d) {
   const dt = new Date(dateOnly ? d + "T12:00:00" : d);
   if (isNaN(dt)) return d;
   const day = dt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
-  if (dateOnly) return day;
-  return day + ", " + dt.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZoneName: "short" });
+  if (dateOnly) return day.toLowerCase();
+  const time = dt.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZoneName: "short" }).replace(/\b(AM|PM)\b/, m => m.toLowerCase());
+  return day.toLowerCase() + ", " + time;
 }
 const SHOW = 4;   // how many recent updates to show
 function renderFeed() {
-  if (!updates.length) { $("feed").innerHTML = `<p class="dim">Nothing yet.</p>`; return; }
+  if (!updates.length) { $("feed").innerHTML = `<p class="dim">nothing yet.</p>`; return; }
   $("feed").innerHTML = updates.slice(0, SHOW).map((u, i) => {
     const text = u.text || [u.title, u.desc].filter(Boolean).join("\n");
-    return `<article class="post"><time datetime="${esc(u.date)}">${esc(fmtDate(u.date))}</time><p>${esc(text)}</p>${editing ? `<button class="del" type="button" data-i="${i}">Delete</button>` : ""}</article>`;
+    return `<article class="post"><time datetime="${esc(u.date)}">${esc(fmtDate(u.date))}</time><p>${esc(text)}</p>${editing ? `<button class="del" type="button" data-i="${i}">delete</button>` : ""}</article>`;
   }).join("");
   $("feed").querySelectorAll(".del").forEach(b => b.addEventListener("click", () => deletePost(+b.dataset.i)));
 }
@@ -498,7 +527,7 @@ async function ghGet() {
     headers: { Authorization: "Bearer " + getToken(), Accept: "application/vnd.github+json" }, cache: "no-store"
   });
   if (r.status === 404) return { sha: null, data: [] };
-  if (!r.ok) throw new Error(r.status === 401 ? "Token not accepted" : "Could not reach GitHub (" + r.status + ")");
+  if (!r.ok) throw new Error(r.status === 401 ? "token not accepted" : "could not reach GitHub (" + r.status + ")");
   const j = await r.json();
   return { sha: j.sha, data: JSON.parse(b64decode(j.content) || "[]") };
 }
@@ -510,7 +539,7 @@ async function ghPut(data, sha, message) {
     headers: { Authorization: "Bearer " + getToken(), Accept: "application/vnd.github+json", "Content-Type": "application/json" },
     body: JSON.stringify(body)
   });
-  if (!r.ok) throw new Error(r.status === 401 || r.status === 403 ? "Token not accepted or lacks write access" : "Save failed (" + r.status + ")");
+  if (!r.ok) throw new Error(r.status === 401 || r.status === 403 ? "token not accepted or lacks write access" : "save failed (" + r.status + ")");
 }
 function status(msg) { $("postStatus").textContent = msg; }
 function syncTokenField() { $("tokenInput").style.display = getToken() ? "none" : ""; }
@@ -520,36 +549,36 @@ $("postBtn").addEventListener("click", async () => {
   const text = $("postText").value.trim();
   const tokenField = $("tokenInput").value.trim();
   if (tokenField) { setToken(tokenField); $("tokenInput").value = ""; syncTokenField(); }
-  if (!text) { status("Write something first."); return; }
-  if (!getToken()) { status("Add your GitHub token first."); return; }
-  $("postBtn").disabled = true; status("Posting");
+  if (!text) { status("write something first."); return; }
+  if (!getToken()) { status("add your GitHub token first."); return; }
+  $("postBtn").disabled = true; status("posting");
   try {
     const { sha, data } = await ghGet();
     data.unshift({ date: new Date().toISOString(), text });
     await ghPut(data, sha, "Post update");
     updates = data; sortUpdates(); renderFeed();
     $("postText").value = "";
-    status("Posted. Visitors will see it in a minute or two.");
+    status("posted. visitors will see it in a minute or two.");
   } catch (e) {
     status(e.message);
-    if (/Token/.test(e.message)) { setToken(""); syncTokenField(); }
+    if (/token/i.test(e.message)) { setToken(""); syncTokenField(); }
   }
   $("postBtn").disabled = false;
 });
 
 async function deletePost(i) {
-  if (!confirm("Delete this update?")) return;
+  if (!confirm("delete this update?")) return;
   const target = updates[i];
-  status("Deleting");
+  status("deleting");
   try {
     const { sha, data } = await ghGet();
     const kept = data.filter(u => !(u.date === target.date && (u.text || u.title) === (target.text || target.title)));
     await ghPut(kept, sha, "Delete update");
     updates = kept; sortUpdates(); renderFeed();
-    status("Deleted.");
+    status("deleted.");
   } catch (e) { status(e.message); }
 }
-$("forgetToken").addEventListener("click", () => { setToken(""); syncTokenField(); status("Token removed from this device."); });
+$("forgetToken").addEventListener("click", () => { setToken(""); syncTokenField(); status("token removed from this device."); });
 
 renderProjects();
 loadUpdates();
